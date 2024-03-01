@@ -8,7 +8,7 @@ page: true
 
 if (typeof window !== 'undefined') {
   const preferredLang = 'zh-CN'
-  window.location.pathname =`/LLOneBotDoc/${preferredLang}/`
+  window.location.pathname =`/${preferredLang}/`
 }
 
 </script>
