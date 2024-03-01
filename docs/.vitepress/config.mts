@@ -8,12 +8,12 @@ export default defineConfig({
     '/zh-CN/': {
       label: "简体中文",
       lang: "zh-CN",
-      link: '/zh-CN/'
+      link: $withBase('/zh-CN/')
     },
     '/en-US/': {
       label: 'English',
       lang: 'en-us',
-      link: '/en-US/'
+      link: $withBase('/en-US/')
     }
   },
   themeConfig: {

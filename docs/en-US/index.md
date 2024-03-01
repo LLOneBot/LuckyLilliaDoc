@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Start
-      link: /en-US/guide/getting-started
+      link: $withBase('/en-US/guide/getting-started')
     - theme: alt
       text: Github
       link: https://github.com/LLOneBot/LLOneBot
