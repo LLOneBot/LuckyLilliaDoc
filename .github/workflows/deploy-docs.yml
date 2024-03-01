@@ -17,20 +17,20 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: 设置 Node.js
+      - name: Use Node.js 
         uses: actions/setup-node@v3
         with:
-          node-version: 20
-          cache: npm
+          node-version: 20.x
+          registry-url: https://registry.npmjs.org
 
-      - name: 安装依赖
-        run: npm i
+      - name: Install
+        run: npm install
 
-      - name: 构建文档
+      - name: Build
         run: |
           npm run docs:build
 
-      - name: 部署文档
+      - name: deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
