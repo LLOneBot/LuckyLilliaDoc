@@ -28,10 +28,10 @@ jobs:
 
       - name: Build
         run: |
-          npm run docs:build
+              npm run docs:build
 
       - name: deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: docs/.vitepress/dist
+         env:
+            GITHUB_TOKEN: ${{ secrets.LLOneBot_GH_TOKEN }}
+        run: |
+             bash ./script/deploy.sh
