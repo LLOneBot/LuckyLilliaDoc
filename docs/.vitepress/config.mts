@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "LLOneBot",
   description: "LLOneBot",
+  base: '/LLOneBotDoc/',
   locales: {
     '/zh-CN/': {
       label: "简体中文",
