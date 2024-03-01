@@ -4,7 +4,7 @@ GITHUB_URL=https://oauth:${LLOneBot_GH_TOKEN}@github.com/LLOneBot/llonebot.githu
 git clone ${GITHUB_URL} temp
 
 rm -rf temp/*
-mv ./LLOneBotDoc/docs/.vitepress/* temp
+mv ./LLOneBotDoc/docs/.vitepress/dist/* temp
 
 cd ./temp
 
