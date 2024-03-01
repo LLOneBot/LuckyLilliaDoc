@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: 快速开始
-      link: $withBase('/zh-CN/guide/getting-started')
+      link: '/zh-CN/guide/getting-started'
     - theme: alt
       text: Github
       link: https://github.com/LLOneBot/LLOneBot
