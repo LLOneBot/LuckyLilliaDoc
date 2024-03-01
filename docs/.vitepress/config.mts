@@ -18,22 +18,22 @@ export default defineConfig({
   },
   themeConfig: {
     nav: [
-      { text: '指南', link: './' },
-      { text: '参考', link: './markdown' }
+      { text: '指南', link: '/' },
+      { text: '参考', link: '/markdown' }
     ],
 
     sidebar: [
       {
         text: '基础配置',
         items: [
-          { text: '快速开始', link: './guide/getting-started' },
-          { text: '配置选项', link: './guide/configuration' },
-          { text: '常见问题', link: './guide/faq' }
+          { text: '快速开始', link: '/guide/getting-started' },
+          { text: '配置选项', link: '/guide/configuration' },
+          { text: '常见问题', link: '/guide/faq' }
         ]
       }, {
         text: '其它配置',
         items: [
-          { text: '语音配置', link: './other/voice' }
+          { text: '语音配置', link: '/other/voice' }
         ]
       }
     ],
