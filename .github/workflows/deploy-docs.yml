@@ -31,7 +31,7 @@ jobs:
               npm run docs:build
 
       - name: deploy
-         env:
-            GITHUB_TOKEN: ${{ secrets.LLOneBot_GH_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.LLOneBot_GH_TOKEN }}
         run: |
              bash ./script/deploy.sh
