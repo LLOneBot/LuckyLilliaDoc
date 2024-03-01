@@ -1,4 +1,4 @@
-GITHUB_URL=https://oauth:${LLOneBot_GH_TOKEN}/LLOneBot/llonebot.github.io
+GITHUB_URL=https://oauth:${LLOneBot_GH_TOKEN}@github.com/LLOneBot/llonebot.github.io
 git clone ${GITHUB_URL} LLOneBotDocRemote
 mv ./docs/.vitepress/* LLOneBotDocRemote
 cd ./LLOneBotDocRemote
