@@ -12,7 +12,8 @@ export const zhCN = defineConfig({
         nav: nav(),
 
         sidebar: {
-            '/zh-CN/guide/': { base: '/zh-CN/guide/', items: sidebarGuide() }
+            '/zh-CN/guide/': { base: '/zh-CN/', items: sidebarGuide() },
+            '/zh-CN/develop/': { base: '/zh-CN/', items: sidebarDevelop() }
         },
 
         editLink: {
@@ -48,8 +49,8 @@ export const zhCN = defineConfig({
 
 function nav() {
     return [
-        { text: '指南', link: '/' },
-        { text: '参考', link: '/markdown' }
+        { text: '指南', link: '/zh-CN/guide/getting-started' },
+        { text: '开发', link: '/zh-CN/develop/api' }
     ];
 }
 function sidebarGuide() {
@@ -58,9 +59,20 @@ function sidebarGuide() {
             text: '基础配置',
             collapsed: false,
             items: [
-                { text: '快速开始', link: 'getting-started', activeMatch: '/zh-CN/guide/' },
-                { text: '配置选项', link: 'configuration', activeMatch: '/zh-CN/guide/' },
-                { text: '常见问题', link: 'faq', activeMatch: '/zh-CN/guide/' }
+                { text: '快速开始', link: 'guide/getting-started', activeMatch: '/zh-CN/guide/' },
+                { text: '配置选项', link: 'guide/configuration', activeMatch: '/zh-CN/guide/' },
+                { text: '常见问题', link: 'guide/faq', activeMatch: '/zh-CN/guide/' }
+            ]
+        }
+    ];
+}
+function sidebarDevelop() {
+    return [
+        {
+            text: '开发信息',
+            collapsed: false,
+            items: [
+                { text: 'Api List', link: 'develop/api', activeMatch: '/zh-CN/develop/' },
             ]
         }
     ];

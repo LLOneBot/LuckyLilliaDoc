@@ -1,7 +1,6 @@
 # 快速开始
 
-## 安装方法
-### Linux 容器化快速安装
+## Linux 容器化快速安装
 
 执行以下任意脚本，按照提示设置NoVnc密码，即可运行，脚本问题与异常参考 [llonebot-docker](https://github.com/MliKiowa/llonebot-docker) 项目。
 
@@ -12,7 +11,7 @@ curl https://cdn.jsdelivr.net/gh/MliKiowa/llonebot-docker/fastboot.sh -o fastboo
 wget -O fastboot.sh https://cdn.jsdelivr.net/gh/MliKiowa/llonebot-docker/fastboot.sh & chmod +x fastboot.sh & sudo sh fastboot.sh
  ```
 
-### 通用手动安装方法
+## 通用手动安装方法
 
 1.安装[LiteLoaderQQNT](https://liteloaderqqnt.github.io/guide/install.html)
 
@@ -33,6 +32,6 @@ wget -O fastboot.sh https://cdn.jsdelivr.net/gh/MliKiowa/llonebot-docker/fastboo
 │   │   └── node_modules/...
 ```
 
-### 使用termux安装
+## 使用termux安装
 
 见<https://github.com/LLOneBot/llonebot-termux>

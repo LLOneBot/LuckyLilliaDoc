@@ -11,31 +11,43 @@ export const enUS = defineConfig({
         nav: nav(),
 
         sidebar: {
-            '/en-US/guide/': { base: '/en-US/guide/', items: sidebarGuide() }
+            '/en-US/guide/': { base: '/en-US/', items: sidebarGuide() },
+            '/en-US/develop/': { base: '/en-US/', items: sidebarDevelop() }
         },
 
         editLink: {
             pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
             text: 'Edit this page on GitHub'
-          }
+        }
     }
 })
 
 function nav() {
     return [
-        { text: '指南', link: '/' },
-        { text: '参考', link: '/markdown' }
+        { text: 'Reference', link: '/en-US/guide/getting-started' },
+        { text: 'Develop', link: '/en-US/develop/api'  }
     ];
 }
 function sidebarGuide() {
     return [
         {
-            text: '基础配置',
+            text: 'Configuration',
             collapsed: false,
             items: [
-                { text: 'Quick Start', link: 'getting-started', activeMatch: '/en-US/guide/' },
-                { text: 'Config', link: 'configuration', activeMatch: '/en-US/guide/' },
-                { text: 'Q&A', link: 'faq', activeMatch: '/en-US/guide/' }
+                { text: 'Quick Start', link: 'guide/getting-started', activeMatch: '/en-US/guide/' },
+                { text: 'Config', link: 'guide/configuration', activeMatch: '/en-US/guide/' },
+                { text: 'Q&A', link: 'guide/faq', activeMatch: '/en-US/guide/' }
+            ]
+        }
+    ];
+}
+function sidebarDevelop() {
+    return [
+        {
+            text: 'Develop',
+            collapsed: false,
+            items: [
+                { text: 'Api List', link: 'develop/api', activeMatch: '/en-US/develop/' },
             ]
         }
     ];
