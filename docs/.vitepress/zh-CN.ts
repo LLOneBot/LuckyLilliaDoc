@@ -63,6 +63,11 @@ function sidebarGuide() {
                 { text: '配置选项', link: 'guide/configuration', activeMatch: '/zh-CN/guide/' },
                 { text: '常见问题', link: 'guide/faq', activeMatch: '/zh-CN/guide/' }
             ]
+        }, {
+            text: '进阶配置',
+            collapsed: false,
+            items: [{ text: '语音配置', link: 'guide/voice', activeMatch: '/en-US/guide/' }]
+
         }
     ];
 }
