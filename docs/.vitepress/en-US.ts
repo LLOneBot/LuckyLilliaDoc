@@ -31,13 +31,19 @@ function nav() {
 function sidebarGuide() {
     return [
         {
-            text: 'Configuration',
+            text: 'Basic Configuration',
             collapsed: false,
             items: [
                 { text: 'Quick Start', link: 'guide/getting-started', activeMatch: '/en-US/guide/' },
                 { text: 'Config', link: 'guide/configuration', activeMatch: '/en-US/guide/' },
+                
                 { text: 'Q&A', link: 'guide/faq', activeMatch: '/en-US/guide/' }
             ]
+        },{
+            text: 'Pro Configuration',
+            collapsed: false,
+            items: [{ text: 'Voice With FFempg', link: 'guide/voice', activeMatch: '/en-US/guide/' }]
+
         }
     ];
 }
