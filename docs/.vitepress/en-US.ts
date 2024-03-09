@@ -16,7 +16,7 @@ export const enUS = defineConfig({
         },
 
         editLink: {
-            pattern: "https://github.com/LLOneBot/LLOneBotDoc/docs/:path",
+            pattern: "https://github.com/LLOneBot/LLOneBotDoc/tree/main/docs/:path",
             text: 'Edit this page on GitHub'
         }
     }

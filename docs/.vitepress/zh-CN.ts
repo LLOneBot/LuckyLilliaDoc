@@ -17,7 +17,7 @@ export const zhCN = defineConfig({
         },
 
         editLink: {
-            pattern: 'https://github.com/LLOneBot/LLOneBotDoc/docs/:path',
+            pattern: 'https://github.com/LLOneBot/LLOneBotDoc/tree/main/docs/:path',
             text: '在 GitHub 上编辑此页面'
         },
 
