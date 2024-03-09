@@ -9,7 +9,7 @@
 ::: 
 ## 反向WS配置
 ::: details
-![反向WS设置](/asset/RWS_Config.png)
+![反向WS设置](/asset/img/RWS_Config.png)
 ::: 
 
 ## 配置 Koishi + LLOneBot
