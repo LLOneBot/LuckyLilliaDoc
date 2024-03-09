@@ -1,5 +1,26 @@
 # 配置
-图形化GUI配置
+## HTTP配置
+::: details
 
-## ffempg配置
-参考侧栏 语音配置
+::: 
+## 正向WS配置
+::: details
+
+::: 
+## 反向WS配置
+::: details
+![反向WS设置](/asset/RWS_Config.png)
+::: 
+
+## 配置 Koishi + LLOneBot
+::: details
+
+::: 
+## 配置 NoneBot + LLOneBot
+::: details
+
+::: 
+## FFEMPG配置
+::: tip
+前往侧栏语音配置查看
+::: 
