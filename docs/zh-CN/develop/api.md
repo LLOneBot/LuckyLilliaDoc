@@ -1,5 +1,10 @@
 # Api List
-## 协议支持情况
+
+## api 详细说明
+
+见 [go-cqhttp](https://docs.go-cqhttp.org/api)
+
+## 连接方式支持情况
 | 连接方式   |可用|
 |----------|:-:| 
 | HTTP接口调用 | ✔ |
