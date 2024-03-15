@@ -53,10 +53,10 @@ koishi onebot 的 ws 反向地址为 `ws://127.0.0.1:5140/onebot`
 
 ![](../../asset/img/configuration/llonebot-nonebot-rws-setting.png)
 
-在 LLOneBot 配置页面添加反向 ws 地址，地址为 `ws://127.0.0.1:8080/onebot/v11`, 这里的 `8080` 是 NoneBot 输出的端口号，`/onebot/v11` 是 NoneBot onebot 适配器默认的路径
+在 LLOneBot 配置页面添加反向 ws 地址，地址为 `ws://127.0.0.1:8080/onebot/v11/ws`, 这里的 `8080` 是 NoneBot 输出的端口号，`/onebot/v11/ws` 是 NoneBot onebot 适配器默认的路径
 
 ::: tip
-记得 LLOneBot 配置的 token 需要和 NoneBot 配置的 一致，为空可能会连不上
+记得 LLOneBot 配置的 token 需要和 NoneBot 配置的 一致
 
 :::
 
