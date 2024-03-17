@@ -2,7 +2,9 @@
 
 ## api 详细说明
 
-见 [go-cqhttp](https://docs.go-cqhttp.org/api)
+[onebot v11](https://11.onebot.dev/)
+
+[go-cqhttp](https://docs.go-cqhttp.org/api)
 
 ## 连接方式支持情况
 | 连接方式   |可用|
@@ -104,13 +106,15 @@ http事件上报，不支持快捷回复等快捷操作
 | 群成员减少 | ✔ | |
 | 群文件上传 | ✔ | |
 | 群禁言 | ✔ | |
-| 群内戳一戳 | ❌ | |
+| 群内戳一戳 | ✔ | 暂时只支持 Windows 残缺状态，识别不了谁戳的，戳的谁 |
+| 好友戳一戳 | ✔ | 暂时只支持 Windows |
 | 群红包运气王 | ❌ | |
 | 群成员荣誉变更 | ❌ | |
-| 生命周期 | ✔ | 目前只有ws的connect |
+| 生命周期 | ✔ | 目前只有 ws 的 connect |
 | ws心跳 | ✔ | |
 :::
-### 特殊说明
+
+### 扩展api
 
 ::: details 发送文件名自定义
 发送文件时支持参数 `name` 用于自定义显示的文件名
@@ -121,6 +125,34 @@ http事件上报，不支持快捷回复等快捷操作
         "file": "file:///D:/1.txt",
         "name": "自定义显示的文件名.txt"
     }
+}
+```
+:::
+
+::: details 发送图片支持自定义图片预览文字
+`/send_group_msg`
+
+```json5
+{
+  "group_id": 123456,
+  "message": [
+    {
+      "type": "image",
+      "data": {
+        "file": "file://D:/1.jpg",
+        "summary": "喵喵喵"  // LLOneBot的扩展字段：图片预览文字
+      }
+    }
+  ]
+}
+```
+:::
+
+::: details 设置头像api
+`/set_qq_avatar`
+```json5
+{
+  "file": "file://D:/1.jpg"  // 支持http://, base64://
 }
 ```
 :::

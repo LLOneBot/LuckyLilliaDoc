@@ -22,10 +22,6 @@
 前往配置界面将消息上报类型格式更改从消息段为CQ码即可
 ::: 
 
-::: details 发送的语音对方无法播放
-需要配置 ffmpeg 路径
-::: 
-
-::: details 无法发送视频
-需要配置 ffmpeg 路径
+::: details 无法发送语音或视频
+需要在 LLOneBot 配置 ffmpeg 路径, [ffmpeg 下载地址](/zh-CN/guide/ffmpeg)
 ::: 
