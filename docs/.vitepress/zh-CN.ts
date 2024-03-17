@@ -60,13 +60,13 @@ function sidebarGuide() {
             collapsed: false,
             items: [
                 { text: '快速开始', link: 'guide/getting-started', activeMatch: '/zh-CN/guide/' },
-                { text: '配置选项', link: 'guide/configuration', activeMatch: '/zh-CN/guide/' },
+                { text: '对接配置', link: 'guide/configuration', activeMatch: '/zh-CN/guide/' },
                 { text: '常见问题', link: 'guide/faq', activeMatch: '/zh-CN/guide/' }
             ]
         }, {
             text: '进阶配置',
             collapsed: false,
-            items: [{ text: '语音配置', link: 'guide/voice', activeMatch: '/en-US/guide/' }]
+            items: [{ text: 'ffmpeg', link: 'guide/ffmpeg', activeMatch: '/en-US/guide/' }]
 
         }
     ];
