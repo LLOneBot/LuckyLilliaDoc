@@ -156,3 +156,25 @@ http事件上报，不支持快捷回复等快捷操作
 }
 ```
 :::
+
+::: details 获取已过滤的加群通知
+
+`/get_group_ignore_add_request`
+
+return
+
+```json5
+{
+  "status": "ok",
+  "retcode": 0,
+  "data": [
+    {
+      "group_id": 123122,
+      "user_id": 123123,
+      "flag": "1710117534729787"
+    }
+  ],
+  "message": "",
+  "wording": "",
+}
+```
