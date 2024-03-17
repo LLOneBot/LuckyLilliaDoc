@@ -178,7 +178,8 @@ return
   "wording": "",
 }
 ```
+:::
 
 ::: details message_sent 事件的 target_id
-
 相比于 go-cq 多了个 `target_id` 字段表示发送的目标QQ号或者群号
+:::
