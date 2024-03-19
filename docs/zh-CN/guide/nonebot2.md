@@ -86,7 +86,7 @@ nb create
 
 ​	提示要使用哪些内置插件? 直接回车。然后cd 进入刚刚的项目文件夹
 
-​	![image-20240319204748235](C:\Users\10750\AppData\Roaming\Typora\typora-user-images\image-20240319204748235.png)
+​	![image](https://jsd.cdn.zzko.cn/gh/bilili-syy/picx-images-hosting@master/20240319/image.101xbjgb09.png)
 
 
 
