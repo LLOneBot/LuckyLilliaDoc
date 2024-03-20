@@ -184,7 +184,7 @@ return
 相比于 go-cq 多了个 `target_id` 字段表示发送的目标QQ号或者群号
 :::
 
-::: details 获取收到的文件
+::: details 下载收到的群文件或私聊文件
 
 `/get_file`
 
@@ -214,4 +214,6 @@ return
 
 ::: details /download_file
 与 gocq 用法一样，但是支持 base64 参数用于直接下载 base64 编码的文件
+
+::: tip 此 api 不是用于下载群文件或者私聊文件的
 :::
