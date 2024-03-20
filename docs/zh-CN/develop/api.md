@@ -82,10 +82,10 @@ http事件上报，不支持快捷回复等快捷操作
 |   引用消息 | ✔ | ✔ |  |
 |   @群成员 | ✔ | ✔ |  |
 |   语音| ✔ | ✔ |  支持mp3、wav等多种音频格式直接发送|
-|   json消息 | ✔ | ❌ |   |
+|   json消息 | ✔ | ✔ | 发送需要自行签名token  |
 |   转发消息记录 | ❌ | ✔ | **不能伪造，需要先发给自己再转发出去，不建议发送大量节点，有封号风险** |
-|   视频 | ✔ | ✔ | 上报时暂时只有个空的file |
-|   文件 | ✔ | ✔ | 上报时暂时只有个空的file, 发送时可以指定`name`参数自定义文件名，详见本页下方的特殊说明 |
+|   视频 | ✔ | ✔ |  |
+|   文件 | ✔ | ✔ | 发送时可以指定`name`参数自定义文件名，详见本页下方的特殊说明 |
 |  音乐卡片 | ❌ | ❌ | 实现有难度，遥遥无期 |
 |  红包 | ❌ | ❌ | 没有计划支持|
 |  xml | ❌ | ❌ | 没有计划支持 |
@@ -182,4 +182,36 @@ return
 
 ::: details message_sent 事件的 target_id
 相比于 go-cq 多了个 `target_id` 字段表示发送的目标QQ号或者群号
+:::
+
+::: details 获取收到的文件
+
+`/get_file`
+
+```json5
+{
+  "file_id": "/xxxxx-xxxxx"
+}
+```
+
+return
+
+```json5
+{
+  "status": "ok",
+  "retcode": 0,
+  "data": {
+    "file": "d:/xxxx",  // 文件的绝对路径
+    "file_name": "文件名",
+    "file_size": 123123,
+    "base64": "/9j/4AAQSkZJRgABAQEASxxxx", // 文件的 base64 编码, 需要在 LLOneBot 的配置文件中开启 base64
+  },
+  "message": "",
+  "wording": "",
+}
+```
+:::
+
+::: details /download_file
+与 gocq 用法一样，但是支持 base64 参数用于直接下载 base64 编码的文件
 :::
