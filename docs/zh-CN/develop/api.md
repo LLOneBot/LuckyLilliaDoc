@@ -215,5 +215,5 @@ return
 ::: details /download_file
 与 gocq 用法一样，但是支持 base64 参数用于直接下载 base64 编码的文件
 
-::: tip 此 api 不是用于下载群文件或者私聊文件的
+::: tip 此 api 不适用于下载群文件或者私聊文件
 :::
