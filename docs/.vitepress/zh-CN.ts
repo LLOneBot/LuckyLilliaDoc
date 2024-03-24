@@ -78,6 +78,9 @@ function sidebarDevelop() {
             collapsed: false,
             items: [
                 { text: 'Api List', link: 'develop/api', activeMatch: '/zh-CN/develop/' },
+                { text: '上报事件', link: 'develop/event', activeMatch: '/zh-CN/develop/event' },
+                { text: '消息类型', link: 'develop/msg', activeMatch: '/zh-CN/develop/msg' },
+                { text: '扩展api', link: 'develop/extends_api', activeMatch: '/zh-CN/develop/extends_api' },
             ]
         }
     ];
