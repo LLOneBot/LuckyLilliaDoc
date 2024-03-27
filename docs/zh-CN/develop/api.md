@@ -63,9 +63,11 @@
 
 ::: details Go-CQHTTP Api 支持情况
 |     Api    |可用|
-| -------------  |:--:| 
+| -------------  |:--:|
+|   send_forward_msg | ✔ |
 |   send_private_forward_msg | ✔ |
 |   send_group_forward_msg | ✔ |
+|   get_forward_msg | ✔ |
 |   upload_group_file | ✔ |
 |   download_file | ✔ |
 :::
