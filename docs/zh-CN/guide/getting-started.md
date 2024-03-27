@@ -1,5 +1,9 @@
 # 快速开始
 
+## Windows 用户一键安装方案
+
+<https://github.com/super1207/install_llob/releases>下载exe，双击运行即可，之后打开QQ的设置，看到了 `LLOneBot` 就代表安装成功了.
+
 ## 通用安装方法
 
 ::: details 安装LiteLoaderQQNT
