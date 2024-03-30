@@ -1,5 +1,11 @@
 # 快速开始
 
+## QQ 版本
+
+LLOneBot 支持到最新版本的 QQ
+
+不推荐太老的版本，9.9.7 之前的版本都没有经过仔细测试，可能会有一些问题.
+
 ## Windows 用户一键安装方案
 
 <https://github.com/super1207/install_llob/releases>下载exe，双击运行即可，之后打开QQ的设置，看到了 `LLOneBot` 就代表安装成功了.
