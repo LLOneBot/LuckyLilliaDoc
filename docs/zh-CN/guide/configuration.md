@@ -94,9 +94,9 @@ http 事件上报，不支持快捷回复等快捷操作
 ## 反向WS配置
 ::: details 用于 LLOneBot 主动连接应用端绑定的反向WS地址
 
-如在 NoneBot2 配置了 onebot 的端口为 8080，路径为 `/onebot/v11`
+如在 NoneBot2 配置了 onebot 的端口为 8080，路径为 `/onebot/v11/ws`
 
-那么在 LLOneBot 配置的反向WS地址为 `ws://localhost:8080/onebot/v11`
+那么在 LLOneBot 配置的反向WS地址为 `ws://localhost:8080/onebot/v11/ws`
 
 ::: 
 
