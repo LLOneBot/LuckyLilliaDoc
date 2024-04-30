@@ -24,7 +24,7 @@
     "type": "mface",
     "data": {
         "url": "https://xxxx",  // 只有上报时有
-        "key": "xxx",
+        "key": "xxx",  // 如果不知道key，可以通过上报获取，别自己乱填！有风险！
         "emoji_id": "xxx",
         "emoji_package_id": "xxx",
         "summary": "[表情文字描述]"
