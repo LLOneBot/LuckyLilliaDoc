@@ -50,6 +50,8 @@ LLOneBot 支持到最新版本的 QQ
 bash <(curl -s -L https://cdn.jsdelivr.net/gh/LLOneBot/llonebot-docker/fastboot.sh)
 ```
 
+浏览器配置 LLOneBot 千万不要点那个选择 FFMPEG， 不要点！不要点！不要点！
+
 ::: 
 
 ## 使用termux安装
