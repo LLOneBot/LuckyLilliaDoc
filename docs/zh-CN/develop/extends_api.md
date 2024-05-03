@@ -42,7 +42,7 @@
 ```
 :::
 
-::: details 获取已过滤的加群通知
+::: details 获取已过滤的加群通知，暂不支持！
 
 `/get_group_ignore_add_request`
 
