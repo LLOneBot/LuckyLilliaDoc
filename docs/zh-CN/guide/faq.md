@@ -25,3 +25,10 @@
 ::: details 无法发送语音或视频
 需要在 LLOneBot 配置 ffmpeg 路径, [ffmpeg 下载地址](/zh-CN/guide/ffmpeg)
 ::: 
+
+::: details 配置无法保存
+
+更改了配置设置后，重新打开设置页面依然是默认配置？
+
+可能是配置文件目录没有写入权限，尝试用管理员身份运行 NTQQ，或者将 NTQQ 装到非系统盘
+:::
