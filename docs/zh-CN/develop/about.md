@@ -1,3 +1,3 @@
 # 关于
 
-正在施工...
+[QQ群 545402644](https://qm.qq.com/q/t6dnMipw6O)
