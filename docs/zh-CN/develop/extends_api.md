@@ -134,3 +134,60 @@ return
 emoji_id 参考 <https://bot.q.qq.com/wiki/develop/api-v2/openapi/emoji/model.html#EmojiType>
 :::
 
+::: details 获取带分组信息好友列表 /get_friends_with_category
+
+return:
+```json5
+{
+  "status": "ok",
+  "retcode": 0,
+  "data": [
+    {
+      "categoryId": 0,
+      "categroyName": "",
+      "categroyMbCount": 5,
+      "buddyList": [
+        {
+          "uid": "u__xxxx",
+          "qid": "",
+          "uin": "123123123",
+          "nick": "林雨辰的那只猫不见了",
+          "remark": "",
+          "longNick": "",
+          "avatarUrl": "",
+          "birthday_year": 2000,
+          "birthday_month": 3,
+          "birthday_day": 7,
+          "sex": 1,
+          "topTime": "0",
+          "isBlock": false,
+          "isMsgDisturb": false,
+          "isSpecialCareOpen": false,
+          "isSpecialCareZone": false,
+          "ringId": "",
+          "status": 10,
+          "qidianMasterFlag": 0,
+          "qidianCrewFlag": 0,
+          "qidianCrewFlag2": 0,
+          "extStatus": 0,
+          "categoryId": 0,
+          "onlyChat": false,
+          "qzoneNotWatch": false,
+          "qzoneNotWatched": false,
+          "vipFlag": false,
+          "yearVipFlag": false,
+          "svipFlag": false,
+          "vipLevel": 1,
+          "isZPlanCoupleOpen": false,
+          "zplanCoupleSceneId": 0,
+          "teenagerFlag": 0,
+          "studyFlag": 0,
+          "pendantId": "0",
+          "vipNameColorId": "0"
+        }
+      ]
+    }
+  ]
+}
+```
+:::
