@@ -1,6 +1,4 @@
-# Api List
-
-## api 详细说明
+## API 详细说明
 
 [onebot v11](https://11.onebot.dev/)
 

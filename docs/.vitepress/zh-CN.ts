@@ -50,7 +50,7 @@ export const zhCN = defineConfig({
 function nav() {
     return [
         { text: '指南', link: '/zh-CN/guide/getting-started' },
-        { text: '开发', link: '/zh-CN/develop/api' }
+        { text: '开发', link: '/zh-CN/develop/quick-start' }
     ];
 }
 function sidebarGuide() {
@@ -78,10 +78,11 @@ function sidebarDevelop() {
             text: '开发信息',
             collapsed: false,
             items: [
-                { text: 'Api List', link: 'develop/api', activeMatch: '/zh-CN/develop/' },
+                { text: '快速开始', link: 'develop/quick-start', activeMatch: '/zh-CN/develop/' },
+                { text: 'API列表', link: 'develop/api', activeMatch: '/zh-CN/develop/api' },
                 { text: '上报事件', link: 'develop/event', activeMatch: '/zh-CN/develop/event' },
                 { text: '消息类型', link: 'develop/msg', activeMatch: '/zh-CN/develop/msg' },
-                { text: '扩展api', link: 'develop/extends_api', activeMatch: '/zh-CN/develop/extends_api' },
+                { text: '扩展API', link: 'develop/extends_api', activeMatch: '/zh-CN/develop/extends_api' },
             ]
         }
     ];

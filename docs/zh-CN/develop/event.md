@@ -1,3 +1,7 @@
+## 事件详细说明
+
+见 <https://docs.go-cqhttp.org/event>
+
 ## 上报事件支持情况
 
 | 事件类型    | 可用 | 备注 |
