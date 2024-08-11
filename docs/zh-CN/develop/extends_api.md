@@ -1,5 +1,4 @@
-
-### 扩展api
+# 扩展 API
 
 ::: details 发送文件名自定义
 发送文件时支持参数 `name` 用于自定义显示的文件名
@@ -33,7 +32,7 @@
 ```
 :::
 
-::: details 设置头像api
+::: details 设置头像
 `/set_qq_avatar`
 ```json5
 {

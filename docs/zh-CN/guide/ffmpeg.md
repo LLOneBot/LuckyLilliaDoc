@@ -1,10 +1,10 @@
 # 配置 FFmpeg
 
-## FFmpeg 是什么？
+## FFmpeg 是什么
 
 [FFmpeg](https://ffmpeg.org/) 是知名的开源音视频处理库，被用于许多音视频编解码相关的项目中。
 
-## 为什么要使用 FFmpeg？
+## 为什么要使用 FFmpeg
 
 本项目使用 FFmpeg 是为了编解码语音和视频，以使 LLOneBot 以 QQ 支持的格式处理语音和视频文件。
 
