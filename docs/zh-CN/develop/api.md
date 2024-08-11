@@ -1,3 +1,5 @@
+# API 列表
+
 ## API 详细说明
 
 接口详细示例: [点击跳转](https://api.napneko.com)
@@ -8,14 +10,14 @@
 | HTTP 接口调用      | ✔ |
 | HTTP 事件上报      | ✔ |
 | HTTP POST 快速操作 | ✔ |
-| 正向WS连接         | ✔ |
-| 反向WS连接         | ✔ |
+| 正向 WS 连接       | ✔ |
+| 反向 WS 连接       | ✔ |
 
 
 
-## Api 支持情况
-::: details OneBot V11
-| 功能 |     Api    |可用| 备注 |
+## API 支持情况
+::: details OneBot 11
+| 功能 |     API    |可用| 备注 |
 | --- | -------------  |:--:| -------------- | 
 | 获取 bot 账号信息 |   get_login_info | ✔ | |
 | 发送消息 |   send_msg | ✔ |
@@ -42,7 +44,7 @@
 | 设置管理员 |   set_group_admin | ✔ |
 | 设置群名片 |   set_group_card | ✔ |
 | 设置群名 |   set_group_name | ✔ |
-| 获取陌生人信息 |   get_stranger_info | ✔ | 实际上只能获取群员信息 |
+| 获取陌生人信息 |   get_stranger_info | ✔ | |
 | 获取版本信息 |   get_version_info | ✔ |
 | 获取状态 |   get_status | ✔ |
 | 检查能否发送图片 |   can_send_image | ✔ |
@@ -57,7 +59,7 @@
 | 清理缓存 | clean_cache | ✔ |
 ::: 
 
-::: details Go-CQHTTP Api 支持情况
+::: details Go-CQHTTP
 |     Api    |可用|
 | -------------  |:--:|
 |   send_forward_msg | ✔ |

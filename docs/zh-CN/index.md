@@ -15,10 +15,10 @@ hero:
 
 features:
   - title: 开箱即用
-    details: 多种部署方式，快捷部署 Win/Linux Docker/Termux 等多种平台，无需虚拟化，内存轻量。
+    details: 多种部署方式，快捷部署 Windows 等多种平台，无需虚拟化，内存轻量。
   - title: 安全稳定
-    details: 通过Electron本身机制实现，采用NTQQ自身代码实现消息收发，可与手机QQ同步登录。
+    details: 通过 Electron 本身机制实现，采用 NTQQ 自身代码实现消息收发，可与手机 QQ 同步登录。
   - title: 适配快速
-    details: 基于OneBotV11协议实现，可快速迁移插件到LLOneBot平台，而无需花费精力适配。
+    details: 基于 OneBot 11 协议实现，可快速迁移插件到 LLOneBot 平台，而无需花费精力适配。
 ---
 
