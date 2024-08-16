@@ -32,7 +32,7 @@
 | 获取群信息 |   get_group_info | ✔ |
 | 获取群成员列表 |   get_group_member_list | ✔ |
 | 获取群成员信息 |   get_group_member_info | ✔ |
-| 获取群荣誉信息 | get_group_honor_info | ❌ |
+| 获取群荣誉信息 | get_group_honor_info | ✔ |
 | 设置群组专属头衔 |   set_group_special_title | ❌ |
 | 群匿名禁言 |   set_group_anonymous_ban | ❌ |
 | 开关群匿名 |   set_group_anonymous | ❌ |
@@ -60,7 +60,7 @@
 ::: 
 
 ::: details Go-CQHTTP
-|     Api    |可用|
+|     API    |可用|
 | -------------  |:--:|
 |   send_forward_msg | ✔ |
 |   send_private_forward_msg | ✔ |
@@ -68,5 +68,9 @@
 |   get_group_msg_history | ✔ |
 |   get_forward_msg | ✔ |
 |   upload_group_file | ✔ |
+|   upload_private_file | ✔ |
 |   download_file | ✔ |
+|   set_essence_msg | ✔ |
+|   delete_essence_msg | ✔ |
+|   delete_group_file | ✔ |
 :::
