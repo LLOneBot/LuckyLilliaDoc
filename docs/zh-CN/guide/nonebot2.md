@@ -4,7 +4,7 @@
 
 ## 1. 环境
 
-​**Python 版本 >= 3.10**
+​**Python 版本 >= 3.9**
 
 [Python 官网](https://www.python.org/)，如果有小白打不开或者找不到下载位置，这里提供一个 [Python 3.9.10](https://syykln.lanzoul.com/iZegc1rwtm1i)。
 
