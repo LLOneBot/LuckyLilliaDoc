@@ -73,4 +73,7 @@
 |   set_essence_msg | ✔ |
 |   delete_essence_msg | ✔ |
 |   delete_group_file | ✔ |
+|   create_group_file_folder | ✔ |
+|   delete_group_folder | ✔ |
+|   get_group_system_msg | ✔ |
 :::
