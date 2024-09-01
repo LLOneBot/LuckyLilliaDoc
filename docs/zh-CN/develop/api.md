@@ -16,7 +16,8 @@
 
 
 ## API 支持情况
-::: details OneBot 11
+
+### OneBot 11
 | 功能 |     API    |可用| 备注 |
 | --- | -------------  |:--:| -------------- | 
 | 获取 bot 账号信息 |   get_login_info | ✔ | |
@@ -57,9 +58,8 @@
 | 获取 QQ 相关接口凭证 |  get_credentials | ❌ |
 | 重启 OneBot 实现 | set_restart | ❌ |
 | 清理缓存 | clean_cache | ✔ |
-::: 
 
-::: details Go-CQHTTP
+### Go-CQHTTP
 |     API    |可用|
 | -------------  |:--:|
 |   send_forward_msg | ✔ |
@@ -76,4 +76,4 @@
 |   create_group_file_folder | ✔ |
 |   delete_group_folder | ✔ |
 |   get_group_system_msg | ✔ |
-:::
+|   get_group_at_all_remain | ✔ |
