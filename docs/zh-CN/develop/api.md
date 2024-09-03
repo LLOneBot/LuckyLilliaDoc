@@ -62,18 +62,19 @@
 ### Go-CQHTTP
 |     API    |可用|
 | -------------  |:--:|
-|   send_forward_msg | ✔ |
-|   send_private_forward_msg | ✔ |
-|   send_group_forward_msg | ✔ |
-|   get_group_msg_history | ✔ |
-|   get_forward_msg | ✔ |
-|   upload_group_file | ✔ |
-|   upload_private_file | ✔ |
-|   download_file | ✔ |
-|   set_essence_msg | ✔ |
-|   delete_essence_msg | ✔ |
-|   delete_group_file | ✔ |
-|   create_group_file_folder | ✔ |
-|   delete_group_folder | ✔ |
-|   get_group_system_msg | ✔ |
-|   get_group_at_all_remain | ✔ |
+| send_forward_msg | ✔ |
+| send_private_forward_msg | ✔ |
+| send_group_forward_msg | ✔ |
+| get_group_msg_history | ✔ |
+| get_forward_msg | ✔ |
+| upload_group_file | ✔ |
+| upload_private_file | ✔ |
+| download_file | ✔ |
+| set_essence_msg | ✔ |
+| delete_essence_msg | ✔ |
+| delete_group_file | ✔ |
+| create_group_file_folder | ✔ |
+| delete_group_folder | ✔ |
+| get_group_system_msg | ✔ |
+| get_group_at_all_remain | ✔ |
+| get_group_root_files | ✔ |
