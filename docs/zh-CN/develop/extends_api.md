@@ -191,26 +191,26 @@ return:
 
 在线:
 ```json
-{ status: 10, extStatus: 0, batteryStatus: 0 }
+{ "status": 10, "extStatus": 0, "batteryStatus": 0 }
 ```
 离开:
 ```json
-{ status: 30, extStatus: 0, batteryStatus: 0 }
+{ "status": 30, "extStatus": 0, "batteryStatus": 0 }
 ```
 隐身:
 ```json
-{ status: 40, extStatus: 0, batteryStatus: 0 }
+{ "status": 40, "extStatus": 0, "batteryStatus": 0 }
 ```
 忙碌:
 ```json
-{ status: 50, extStatus: 0, batteryStatus: 0 }
+{ "status": 50, "extStatus": 0, "batteryStatus": 0 }
 ```
 Q我吧:
 ```json
-{ status: 60, extStatus: 0, batteryStatus: 0 }
+{ "status": 60, "extStatus": 0, "batteryStatus": 0 }
 ```
 请勿打扰:
 ```json
-{ status: 70, extStatus: 0, batteryStatus: 0 }
+{ "status": 70, "extStatus": 0, "batteryStatus": 0 }
 ```
 :::
