@@ -78,3 +78,4 @@
 | get_group_system_msg | ✔ |
 | get_group_at_all_remain | ✔ |
 | get_group_root_files | ✔ |
+| _send_group_notice | ✔ |
