@@ -214,3 +214,8 @@ Q我吧:
 { "status": 70, "ext_status": 0, "battery_status": 0 }
 ```
 :::
+
+::: details 获取自身点赞列表 `/get_profile_like`
+
+请求时无需参数
+:::
