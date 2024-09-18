@@ -21,7 +21,7 @@
 | 获取 bot 账号信息 |   get_login_info | ✔ | |
 | 发送消息 |   send_msg | ✔ |
 | 发送群聊消息 |   send_group_msg | ✔ |
-| 发送好友消息 |   send_private_msg | ✔ | 不支持临时消息 |
+| 发送好友消息 |   send_private_msg | ✔ | 不支持主动临时消息 |
 | 获取消息详情 |   get_msg | ✔ |
 | 撤回消息 |   delete_msg | ✔ |
 | 点赞 |   send_like | ✔ | 支持给群员点赞 |
