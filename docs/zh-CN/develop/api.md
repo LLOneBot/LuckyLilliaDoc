@@ -24,7 +24,7 @@
 | 发送好友消息 |   send_private_msg | ✔ | 不支持主动临时消息 |
 | 获取消息详情 |   get_msg | ✔ |
 | 撤回消息 |   delete_msg | ✔ |
-| 点赞 |   send_like | ✔ | 支持给群员点赞 |
+| 发送好友赞 |   send_like | ✔ | |
 | 获取好友列表 |   get_friend_list | ✔ |
 | 处理好友请求 |   set_friend_add_request | ✔ |
 | 获取群列表 |   get_group_list | ✔ |
