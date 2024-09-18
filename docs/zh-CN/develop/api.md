@@ -13,8 +13,6 @@
 | 正向 WS 连接       | ✔ |
 | 反向 WS 连接       | ✔ |
 
-
-
 ## API 支持情况
 
 ### OneBot 11
@@ -60,36 +58,36 @@
 | 清理缓存 | clean_cache | ✔ |
 
 ### Go-CQHTTP
-|     API    |可用|
-| -------------  |:--:|
-| send_forward_msg | ✔ |
-| send_private_forward_msg | ✔ |
-| send_group_forward_msg | ✔ |
-| get_group_msg_history | ✔ |
-| get_forward_msg | ✔ |
-| upload_group_file | ✔ |
-| upload_private_file | ✔ |
-| download_file | ✔ |
-| set_essence_msg | ✔ |
-| delete_essence_msg | ✔ |
-| delete_group_file | ✔ |
-| create_group_file_folder | ✔ |
-| delete_group_folder | ✔ |
-| get_group_system_msg | ✔ |
-| get_group_at_all_remain | ✔ |
-| get_group_root_files | ✔ |
-| _send_group_notice | ✔ |
-| mark_msg_as_read | ✔ |
+| 功能 |     API    |可用|
+| --- | -------------  |:--:|
+| 发送合并转发 ( 好友 ) | send_private_forward_msg | ✔ |
+| 发送合并转发 ( 群聊 ) | send_group_forward_msg | ✔ |
+| 获取群消息历史记录 | get_group_msg_history | ✔ |
+| 获取合并转发内容 | get_forward_msg | ✔ |
+| 上传群文件 | upload_group_file | ✔ |
+| 上传私聊文件 | upload_private_file | ✔ |
+| 下载文件到缓存目录 | download_file | ✔ |
+| 设置精华消息 | set_essence_msg | ✔ |
+| 移出精华消息 | delete_essence_msg | ✔ |
+| 删除群文件 | delete_group_file | ✔ |
+| 创建群文件文件夹 | create_group_file_folder | ✔ |
+| 删除群文件文件夹 | delete_group_folder | ✔ |
+| 获取群系统消息 | get_group_system_msg | ✔ |
+| 获取群 @全体成员 剩余次数 | get_group_at_all_remain | ✔ |
+| 获取群根目录文件列表 | get_group_root_files | ✔ |
+| 发送群公告 | _send_group_notice | ✔ |
+| 标记消息已读 | mark_msg_as_read | ✔ |
 
 ### LLOneBot
 | 功能 |     API    |可用|
 | --- | -------------  |:--:|
 | 设置头像 | set_qq_avatar | ✔ |
-| 获取已过滤的加群通知 | get_group_ignore_add_request | ✔ |
 | 获取文件信息 | get_file | ✔ |
+| 获取已过滤的加群通知 | get_group_ignore_add_request | ✔ |
 | 转发单条信息到私聊 | forward_friend_single_msg | ✔ |
 | 转发单条信息到群聊 | forward_group_single_msg | ✔ |
 | 设置消息的表情回应 | set_msg_emoji_like | ✔ |
 | 获取好友分类列表 | get_friends_with_category | ✔ |
 | 设置自身在线状态 | set_online_status | ✔ |
 | 获取自身点赞列表 | get_profile_like | ✔ |
+| 发送合并转发消息 | send_forward_msg | ✔ |
