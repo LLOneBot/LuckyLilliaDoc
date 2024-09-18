@@ -77,6 +77,7 @@
 | 获取群根目录文件列表 | get_group_root_files | ✔ |
 | 发送群公告 | _send_group_notice | ✔ |
 | 标记消息已读 | mark_msg_as_read | ✔ |
+| 获取群子目录文件列表 | get_group_files_by_folder | ✔ |
 
 ### LLOneBot
 | 功能 |     API    |可用|
@@ -91,3 +92,6 @@
 | 设置自身在线状态 | set_online_status | ✔ |
 | 获取自身点赞列表 | get_profile_like | ✔ |
 | 发送合并转发消息 | send_forward_msg | ✔ |
+| 获取收藏表情 | fetch_custom_face | ✔ |
+| 获取好友历史消息记录 | get_friend_msg_history | ✔ |
+| 获取表情回应列表 | fetch_emoji_like | ✔ |
