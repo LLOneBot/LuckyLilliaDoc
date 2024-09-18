@@ -80,3 +80,16 @@
 | get_group_root_files | ✔ |
 | _send_group_notice | ✔ |
 | mark_msg_as_read | ✔ |
+
+### LLOneBot
+| 功能 |     API    |可用|
+| --- | -------------  |:--:|
+| 设置头像 | set_qq_avatar | ✔ |
+| 获取已过滤的加群通知 | get_group_ignore_add_request | ✔ |
+| 获取文件信息 | get_file | ✔ |
+| 转发单条信息到私聊 | forward_friend_single_msg | ✔ |
+| 转发单条信息到群聊 | forward_group_single_msg | ✔ |
+| 设置消息的表情回应 | set_msg_emoji_like | ✔ |
+| 获取好友分类列表 | get_friends_with_category | ✔ |
+| 设置自身在线状态 | set_online_status | ✔ |
+| 获取自身点赞列表 | get_profile_like | ✔ |
