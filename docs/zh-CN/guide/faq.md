@@ -1,5 +1,9 @@
 # FAQ
 ## 常见问题
+::: details 版本 28060+ 的 QQ 不显示插件
+使用 NapCat 的 LL 启动器启动即可，https://github.com/NapNeko/NapCat-Windows-Boot/releases
+:::
+
 ::: details 下载了插件但是没有看到在 NTQQ 中生效
 检查是否下载的是插件 release 的版本，如果是源码的话需要自行编译。依然不生效请查阅 LiteLoaderQQNT 的文档。
 ::: 
