@@ -78,6 +78,8 @@
 | 发送群公告 | _send_group_notice | ✔ |
 | 标记消息已读 | mark_msg_as_read | ✔ |
 | 获取群子目录文件列表 | get_group_files_by_folder | ✔ |
+| 获取精华消息列表 | get_essence_msg_list | ✔ |
+| 获取群文件资源链接 | get_group_file_url | ✔ |
 
 ### LLOneBot
 | 功能 |     API    |可用|
