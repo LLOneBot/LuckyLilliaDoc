@@ -4,11 +4,11 @@
 
 ::: details 配置 Koishi
 
-### 1. 在 Koishi 插件市场搜索并安装 adapter-onebot
+#### 1. 在 Koishi 插件市场搜索并安装 adapter-onebot
 
 ![](../../asset/img/configuration/koishi-install-onebot.png)
 
-### 2. 配置 adapter-onebot
+#### 2. 配置 adapter-onebot
 
 这里以 WS 反向连接为例
 
@@ -22,7 +22,7 @@ protocol 选择 `ws-reverse`
 
 ![](../../asset/img/configuration/koishi-onebot-setting.png)
 
-### 3. 配置完成后，LLOneBot 添加 WS 反向地址
+#### 3. 配置完成后，LLOneBot 添加 WS 反向地址
 
 adapter-onebot 的 WS 反向地址为 `ws://127.0.0.1:5140/onebot`
 
@@ -35,17 +35,15 @@ adapter-onebot 的 WS 反向地址为 `ws://127.0.0.1:5140/onebot`
 
 ::: details 配置 NoneBot
 
-### 1. 配置 NoneBot
+#### 1. 配置 NoneBot
 
 这里假设你已经安装了 Onebot 适配器
 
-默认情况 NoneBot 是启用了反向 ws 的，可能是默认配置问题，需要配置 token 才能正常连接
-
-修改 NoneBot 配置文件 `.env`，添加 `ONEBOT_ACCESS_TOKEN=你的token`，token 需要和 LLOneBot 配置的 token 一致
+默认情况 NoneBot 是启用了反向 ws 的，如果出现 403，可能是默认配置问题，需要配置 token 才能正常连接。这时需修改 NoneBot 配置文件 `.env`，添加 `ONEBOT_ACCESS_TOKEN=你在 LLOneBot 配置的 token`
 
 然后启用 NoneBot，可以看到 NoneBot 输出的端口号，如 `8080`
 
-### 2. 配置 LLOneBot
+#### 2. 配置 LLOneBot
 
 ![](../../asset/img/configuration/llonebot-nonebot-rws-setting.png)
 
