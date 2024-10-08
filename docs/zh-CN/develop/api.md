@@ -81,6 +81,7 @@
 | 获取精华消息列表 | get_essence_msg_list | ✔ |
 | 获取群文件资源链接 | get_group_file_url | ✔ |
 | 获取群公告 | _get_group_notice | ✔ |
+| 删除好友 | delete_friend | ✔ |
 
 ### LLOneBot
 | 功能 |     API    |可用|
