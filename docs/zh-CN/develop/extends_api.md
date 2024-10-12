@@ -220,3 +220,24 @@ Q我吧:
 请求时无需参数
 
 :::
+
+::: details 好友戳一戳 `/friend_poke`
+
+```json
+{
+    "user_id": 123456
+}
+```
+
+:::
+
+::: details 群组戳一戳 `/group_poke`
+
+```json
+{
+    "group_id": 123456,
+    "user_id": 123456
+}
+```
+
+:::
