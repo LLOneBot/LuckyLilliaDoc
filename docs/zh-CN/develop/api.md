@@ -101,3 +101,5 @@
 | 获取好友历史消息记录 | get_friend_msg_history | ✔ |
 | 获取表情回应列表 | fetch_emoji_like | ✔ |
 | 获取官方机器人 QQ 号区间 | get_robot_uin_range | ✔ |
+| 好友戳一戳 | friend_poke | ✔ |
+| 群组戳一戳 | group_poke | ✔ |
