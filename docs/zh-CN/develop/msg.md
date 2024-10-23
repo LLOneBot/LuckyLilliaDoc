@@ -9,7 +9,7 @@
 | 文字        | ✔ | ✔ |                                                      |
 | 表情        | ✔ | ✔ |                                                      |
 | 商城表情    | ✔ | ✔ |                  见下方详细说明                        |
-| markdown   | ✔ | ❌ | {type: "markdown", data: {data: "`**markdown内容**`"}} |
+| markdown   | ✔ | ❌ | {type: "markdown", data: {content: "`**markdown内容**`"}} |
 | 图片        | ✔ | ✔ |                                                      |
 | 引用消息    | ✔ | ✔ |                                                      |
 | @群成员     | ✔ | ✔ |                                                      |
