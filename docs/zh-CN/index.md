@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "LLOneBot"
   text: "基于 NTQQ 实现的 QQ BOT"
-  tagline: "~"
+  tagline: ""
   actions:
     - theme: brand
       text: 快速开始

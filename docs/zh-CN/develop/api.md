@@ -1,8 +1,6 @@
 ## API 详细说明
 
-[onebot v11](https://11.onebot.dev/)
-
-[go-cqhttp](https://docs.go-cqhttp.org/api)
+接口详细示例: [点击跳转](https://api.napneko.com)
 
 ## 连接方式支持情况
 | 连接方式           |可用|
