@@ -53,7 +53,7 @@
 | 获取文件详情 |   get_file | ✔ |
 | 获取 Cookies |  get_cookies | ✔ |
 | 获取 CSRF Token |  get_csrf_token | ❌ |
-| 获取 QQ 相关接口凭证 |  get_credentials | ❌ |
+| 获取 QQ 相关接口凭证 |  get_credentials | ✔ |
 | 重启 OneBot 实现 | set_restart | ❌ |
 | 清理缓存 | clean_cache | ✔ |
 
@@ -83,6 +83,7 @@
 | 获取群公告 | _get_group_notice | ✔ |
 | 删除好友 | delete_friend | ✔ |
 | 图片 OCR | ocr_image | ✔ |
+| 获取群文件系统信息 | get_group_file_system_info | ✔ |
 
 ### LLOneBot
 | 功能 |     API    |可用|
