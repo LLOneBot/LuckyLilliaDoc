@@ -1,8 +1,6 @@
 # 配置
 
-## 对接其他框架
-
-::: details 配置 Koishi
+## 接入 Koishi 的 adapter-onebot
 
 #### 1. 在 Koishi 插件市场搜索并安装 adapter-onebot
 
@@ -31,9 +29,7 @@ adapter-onebot 的 WS 反向地址为 `ws://127.0.0.1:5140/onebot`
 
 点击保存即可
 
-:::
-
-::: details 配置 NoneBot
+## 接入 NoneBot 的 adapter-onebot
 
 #### 1. 配置 NoneBot
 
