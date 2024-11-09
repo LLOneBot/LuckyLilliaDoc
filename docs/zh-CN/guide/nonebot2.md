@@ -1,7 +1,5 @@
 # Windows 下使用 LLOneBot 链接 NoneBot2
 
-推荐使用 [nonebot-plugin-llob-master](https://github.com/kanbereina/nonebot-plugin-llob-master) 插件自动管理安装 LLOneBot
-
 ## 1. 环境
 
 ​**Python 版本 >= 3.9**
