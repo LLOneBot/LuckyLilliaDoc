@@ -2,7 +2,7 @@
 
 ## API 详细说明
 
-接口详细示例: [点击跳转](https://api.napneko.com)
+接口详细示例: [点击跳转](https://llonebot.apifox.cn)
 
 ## 连接方式支持情况
 | 连接方式           |可用|
