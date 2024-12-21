@@ -35,8 +35,6 @@ adapter-onebot 的 WS 反向地址为 `ws://127.0.0.1:5140/onebot`
 
 这里假设你已经安装了 Onebot 适配器
 
-默认情况 NoneBot 是启用了反向 ws 的，如果出现 403，可能是默认配置问题，需要配置 token 才能正常连接。这时可修改 NoneBot 配置文件 `.env`，添加 `ONEBOT_ACCESS_TOKEN=你在 LLOneBot 配置的 token`
-
 然后启用 NoneBot，可以看到 NoneBot 输出的端口号，如 `8080`
 
 #### 2. 配置 LLOneBot
