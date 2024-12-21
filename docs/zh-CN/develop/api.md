@@ -84,6 +84,7 @@
 | 删除好友 | delete_friend | ✔ |
 | 图片 OCR | ocr_image | ✔ |
 | 获取群文件系统信息 | get_group_file_system_info | ✔ |
+| 设置登录号资料 | set_qq_profile | ✔ |
 
 ### LLOneBot
 | 功能 |     API    |可用|
