@@ -24,10 +24,9 @@ protocol 选择 `ws-reverse`
 
 adapter-onebot 的 WS 反向地址为 `ws://127.0.0.1:5140/onebot`
 
+将 llonebot 的 `data/config_<qq>.json` 中的 `wsReverseUrls` 配置为 `["ws://127.0.0.1:5140/onebot"]`
 
-![](../../asset/img/configuration/llonebot-koishi-rws-setting.png)
-
-点击保存即可
+保存即可
 
 ## 接入 NoneBot 的 adapter-onebot
 
@@ -39,9 +38,9 @@ adapter-onebot 的 WS 反向地址为 `ws://127.0.0.1:5140/onebot`
 
 #### 2. 配置 LLOneBot
 
-![](../../asset/img/configuration/llonebot-nonebot-rws-setting.png)
+在 LLOneBot 配置文件添加反向 WS 地址，地址为 `ws://127.0.0.1:8080/onebot/v11/ws`, 这里的 `8080` 是 NoneBot 输出的端口号，`/onebot/v11/ws` 是 NoneBot onebot 适配器默认的路径
 
-在 LLOneBot 配置页面添加反向 WS 地址，地址为 `ws://127.0.0.1:8080/onebot/v11/ws`, 这里的 `8080` 是 NoneBot 输出的端口号，`/onebot/v11/ws` 是 NoneBot onebot 适配器默认的路径
+具体为： `data/config_<qq>.json` 中的 `wsReverseUrls` 配置为 `["ws://127.0.0.1:5140/onebot"]`
 
 ::: tip
 记得 LLOneBot 配置的 token 需要和 NoneBot 配置的 一致

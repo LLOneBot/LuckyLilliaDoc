@@ -1,3 +1,14 @@
+<script setup>
+import { onMounted } from 'vue';
+import { useRouter } from 'vitepress';
+
+const router = useRouter();
+
+onMounted(() => {
+ router.go('/zh-CN/guide/getting-started')
+})
+</script>
+
 ---
 layout: home
 
@@ -21,4 +32,5 @@ features:
   - title: 适配快速
     details: 基于 OneBot 11 协议实现，可快速迁移插件到 LLOneBot 平台，而无需花费精力适配。
 ---
+
 
