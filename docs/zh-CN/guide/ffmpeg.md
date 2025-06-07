@@ -15,32 +15,7 @@
 ### Windows 系统
 
 1. 在 [此处](https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-essentials.7z) 下载官方许可的 FFmpeg；
-2. 将其中的文件夹解压至一个你知道的地方（例如 `C:\Program Files`），然后重命名为 `ffmpeg`；
-3. 你的 `ffmpeg` 文件夹的结构看起来应该是这样的：
-    ```
-    ffmpeg
-    |___bin
-    |___|___ffmpeg.exe
-    |___|___ffplay.exe
-    |___\___ffprobe.exe
-    |___doc
-    |___\ ...
-    |___LICENSE
-    \___README.txt
-    ```
-    ::: danger 注意
-    **请一定要保证 `bin` 文件夹内同时包含 `ffmpeg.exe`、`ffplay.exe` 以及 `ffprobe.exe`！** 否则会产生意想不到的错误。
-    :::
-4. 启动 QQNT，前往 LLOneBot 设置页，选择 FFmpeg 为刚才解压的 `ffmpeg.exe`（在本例中，FFmpeg 主程序位于 `C:\Program Files\ffmpeg\bin\ffmpeg.exe`）， 然后点击「保存」按钮；
-5. 如果没有任何错误出现，说明 FFmpeg 已经配置成功了。恭喜你！
-
-::: tip 如果有其他程序也需要使用 FFmpeg
-如果其他程序支持手动选择 FFmpeg 位置，只需选择为 LLOneBot 所使用的 FFmpeg 即可。
-
-如果其他程序不支持手动选择 FFmpeg 位置，只需将 FFmpeg 的 `bin` 目录注册到系统的 `PATH` 变量中（可参考 [此教程](https://zhuanlan.zhihu.com/p/595750538#:~:text=Step%203%3A%20%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%20Path%20%E7%9A%84%E6%B7%BB%E5%8A%A0)）即可。
-
-如果你将 FFmpeg 安装到了系统变量中，那么无论有没有在 LLOneBot 中配置 FFmpeg 路径也可以正常使用 FFmpeg。
-:::
+2. 将解压后的 `ffmpeg.exe` 和 `ffprobe.exe` 放到 llonebot.js 旁；
 
 ### Linux 系统
 
