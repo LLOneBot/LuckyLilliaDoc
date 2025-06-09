@@ -40,7 +40,7 @@ adapter-onebot 的 WS 反向地址为 `ws://127.0.0.1:5140/onebot`
 
 在 LLOneBot 配置文件添加反向 WS 地址，地址为 `ws://127.0.0.1:8080/onebot/v11/ws`, 这里的 `8080` 是 NoneBot 输出的端口号，`/onebot/v11/ws` 是 NoneBot onebot 适配器默认的路径
 
-具体为： `data/config_<qq>.json` 中的 `wsReverseUrls` 配置为 `["ws://127.0.0.1:5140/onebot"]`
+具体为： `data/config_<qq>.json` 中的 `wsReverseUrls` 配置为 `["ws://127.0.0.1:8080/onebot/v11/ws"]`
 
 ::: tip
 记得 LLOneBot 配置的 token 需要和 NoneBot 配置的 一致
