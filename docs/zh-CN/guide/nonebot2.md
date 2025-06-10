@@ -119,25 +119,19 @@ COMMAND_SEP=["."]  # 配置命令分割字符
 
 ## 5. 连接 NoneBot
 
-​	打开NTQQ的设置界面。找到llonebot。启用反向websocket服务。填入。(如果你自己修改了端口就自行修改地址默认是127.0.0.1:8080)。然后保存
+​	打开 llonebot 配置文件 data/config_qq.json 启用反向websocket服务。填入。(如果你自己修改了端口就自行修改地址默认是127.0.0.1:8080)。然后保存
 
 ​	
 
+```json5
+{
+    "enableWsReverse": true,
+    "wsReverseUrls": [
+      "ws://126.0.0.1:8080/onebot/v11/ws/"
+    ],
+}
 ```
-ws://127.0.0.1:8080/onebot/v11/ws/
-```
-
-![image](../../asset/img/configuration/nonebot10.png)
 
 ​	显示一个bot QQ 链接说明成功！
-
-## 6. 配置 FFmpeg
-
-​	[FFmpeg官网](https://ffmpeg.org/),这里也准备了一个给那些找不到下载地方的宝贝。[ffmpeg5.0.1](https://syykln.lanzoul.com/ieVuJ1rx5fsf)
-
-​	下载完成之后解压。选择你刚刚解压出来文件夹里面bin文件夹里面的ffmpeg.exe
-
-![image](../../asset/img/configuration/nonebot11.png)
-![image](../../asset/img/configuration/nonebot12.png)
 
 **到此完成！鼓掌祝贺**
