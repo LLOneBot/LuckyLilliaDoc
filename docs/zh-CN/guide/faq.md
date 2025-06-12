@@ -1,16 +1,8 @@
 # FAQ
 ## 常见问题
-::: details 版本 28060+ 的 QQ 不显示插件
-请确保 LiteLoaderQQNT 版本大于或等于 [1.2.2](https://github.com/LiteLoaderQQNT/LiteLoaderQQNT/releases/tag/1.2.2)
+::: details LLOneBot 卡主了，没反应
+请检查 LLOneBot 控制台是不是被你点击了，按下回车即可恢复，为了避免这种情况发生可以在标题栏 右键->属性->快速编辑模式 关闭
 :::
-
-::: details 下载了插件但是没有看到在 NTQQ 中生效
-检查是否下载的是插件 release 的版本，如果是源码的话需要自行编译。依然不生效请查阅 LiteLoaderQQNT 的文档。
-::: 
-
-::: details 调用接口报 404
-目前没有支持全部的 OneBot 规范接口，请检查是否调用了不支持的接口。
-::: 
 
 ::: details 发送不了图片和语音
 检查当前操作用户是否有 `data/` 的写入权限。
