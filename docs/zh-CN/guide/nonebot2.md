@@ -127,7 +127,7 @@ COMMAND_SEP=["."]  # 配置命令分割字符
 {
     "enableWsReverse": true,
     "wsReverseUrls": [
-      "ws://126.0.0.1:8080/onebot/v11/ws/"
+      "ws://127.0.0.1:8080/onebot/v11/ws/"
     ],
 }
 ```
