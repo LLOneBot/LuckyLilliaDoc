@@ -9,9 +9,9 @@
   },
   "author": "",
   "devDependencies": {
-    "@types/node": "^24.0.15",
+    "@types/node": "^24.1.0",
     "vitepress": "^1.6.3",
-    "vue": "^3.5.17"
+    "vue": "^3.5.18"
   },
   "packageManager": "yarn@4.9.2"
 }
