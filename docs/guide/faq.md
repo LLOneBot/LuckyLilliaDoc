@@ -13,6 +13,6 @@
 ::: 
 
 ::: details 无法发送语音或视频
-需要在 LLOneBot 配置 FFmpeg 路径，[FFmpeg 下载地址](/zh-CN/guide/ffmpeg)。
+需要在 LLOneBot 配置 FFmpeg 路径，[FFmpeg 下载地址](/guide/ffmpeg)。
 ::: 
 
