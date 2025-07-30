@@ -4,7 +4,7 @@
 
 #### 1. 在 Koishi 插件市场搜索并安装 adapter-onebot
 
-![](../../asset/img/configuration/koishi-install-onebot.png)
+![](../asset/img/configuration/koishi-install-onebot.png)
 
 #### 2. 配置 adapter-onebot
 
@@ -18,7 +18,7 @@ protocol 选择 `ws-reverse`
 
 其他配置保持默认即可，保存配置然后启用插件
 
-![](../../asset/img/configuration/koishi-onebot-setting.png)
+![](../asset/img/configuration/koishi-onebot-setting.png)
 
 #### 3. 配置完成后，LLOneBot 添加 WS 反向地址
 
