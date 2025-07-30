@@ -1,14 +1,10 @@
----
-title: 'Vuetom Theme'
-lang: en-US
-page: true
----
-
 <script setup>
+import { onMounted } from 'vue';
+import { useRouter } from 'vitepress';
 
-if (typeof window !== 'undefined') {
-  const preferredLang = 'zh-CN'
-  window.location.pathname =`/${preferredLang}/`
-}
+const router = useRouter();
 
+onMounted(() => {
+ router.go('/guide/getting-started')
+})
 </script>
