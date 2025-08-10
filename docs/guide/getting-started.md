@@ -46,7 +46,7 @@ curl -fsSL https://raw.githubusercontent.com/linyuchen/PMHQ/refs/heads/main/dock
 
 下载 [pmhq](https://github.com/linyuchen/PMHQ/releases)
 
-运行 pmhq 后会启动 QQ 并生成配置文件 `pmhq_config.json`
+运行 pmhq 后会启动 QQ 登录后生成配置文件 `pmhq_config.json`
 
 `pmhq_config.json` 的 `default_host` 和 `default_port` 是用来和 LLOneBot 通信的，我们需要记下两个参数
 
