@@ -71,16 +71,17 @@ node llonebot.js --pmhq-host=127.0.0.1 --pmhq-port=13000
 
 ## LLOneBot 配置文件
 
-配置文件是自动生成的
+配置文件是自动生成的，位于 data/config_<qq号>.json
 
 修改后会自动重载，无需重启 QQ 和 LLOneBot
+
+config_<qq号>.json 示例：
 
 ```json5
 {
    "webui": {
     "enable": true,  // 是否启用 WebUI
-    "port": 3080, // WebUI 监听端口
-    "token": "", // WebUI 的访问 密码，留空时首次访问会要求设置密码
+    "port": 3080 // WebUI 监听端口
   }, 
   "satori": {
     "enable": true,  // 是否启用 Satori 协议
@@ -116,6 +117,16 @@ node llonebot.js --pmhq-host=127.0.0.1 --pmhq-port=13000
   "receiveOfflineMsg": false,  // 下次登录时是否接受离线期间产生的消息
 }
 ```
+
+## 启用无头模式
+
+修改 `pmhq_config.json`，把 `headless` 设置为 `true`
+
+如果没有 `pmhq_config.json` 运行一下 llonebot.exe 即可
+
+二维码的网址和文件路径会打印在终端上，也可以访问 WebUI 进行登录, WebUI 默认地址为 `http://localhost:3080`
+
+如果是 Docker 部署，进入容器日志会看到二维码会打印在终端上
 
 ## 下一步
 
