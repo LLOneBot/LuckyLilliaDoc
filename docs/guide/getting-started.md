@@ -128,6 +128,20 @@ config_<qq号>.json 示例：
 
 如果是 Docker 部署，进入容器日志会看到二维码会打印在终端上
 
+## 启用快速登录自动登录
+
+修改 `pmhq_config.json` 的 `quick_login_qq` 为你要自动登录的 QQ 号
+
+如：
+
+```json
+{
+  "quick_login_qq": 123456789
+}
+```
+
+如果你手动登录过这个 QQ 号，下次启动会自动登录
+
 ## 下一步
 
 参阅 [对接其他框架](./configuration.md#对接其他框架)
