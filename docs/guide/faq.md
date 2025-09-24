@@ -1,6 +1,6 @@
 # FAQ
 ## 常见问题
-::: details 已经登录过了 QQ 无头模式快速登录依然要扫码
+::: details 已经登录过了 QQ，无头模式快速登录依然要扫码
 请检查是否有 QQ 进程残留，如果是 `pmhq_config.json` 的 `"enable_gui": false`，关闭控制台是不会关掉 QQ 的！
 :::
 
