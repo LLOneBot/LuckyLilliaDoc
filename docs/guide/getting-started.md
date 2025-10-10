@@ -97,23 +97,53 @@ config_<qq号>.json 示例：
   },
   "ob11": {
     "enable": true, // 是否启用 OneBot 11 协议
-    "token": "", // OneBot 11 协议的 token
-    "httpPort": 3000, // HTTP 监听端口
-    "httpPostUrls": [],  // HTTP 上报地址，如 ["http://localhost:8080/onebot/v11"]
-    "httpSecret": "",  // HTTP 上报密钥
-    "wsPort": 3001, // 正向 WebSocket 监听端口
-    "wsReverseUrls": [], // 反向 WebSocket 地址，如 ["ws://localhost:8080/onebot/v11/ws"]
-    "enableHttp": true, // 是否启用 HTTP 服务
-    "enableHttpPost": true, // 是否启用 HTTP 上报
-    "enableWs": true, // 是否启用正向 WebSocket 服务
-    "enableWsReverse": false, // 是否启用反向 WebSocket 服务
-    "messagePostFormat": "array", // 消息上报格式，支持 "array" 或 "string"
-    "enableHttpHeart": false, // 是否启用 HTTP 心跳
-    "reportSelfMessage": true, // 是否上报自己的消息
+    "connect": [
+      {
+        "type": "ws",  // 正向 WS
+        "enable": true,
+        "port": 3001,
+        "heartInterval": 60000,
+        "token": "",
+        "reportSelfMessage": false,
+        "reportOfflineMessage": false,
+        "messageFormat": "array",
+        "debug": false
+      },
+      {
+        "type": "ws-reverse",  // 反向 WS
+        "enable": false,
+        "url": "",
+        "heartInterval": 60000,
+        "token": "",
+        "reportSelfMessage": false,
+        "reportOfflineMessage": false,
+        "messageFormat": "array",
+        "debug": false
+      },
+      {
+        "type": "http",  // HTTP 服务端
+        "enable": true,
+        "port": 3000,
+        "token": "",
+        "reportSelfMessage": false,
+        "reportOfflineMessage": false,
+        "messageFormat": "array",
+        "debug": false
+      },
+      {
+        "type": "http-post",  // HTTP 上报
+        "enable": false,
+        "url": "",
+        "enableHeart": false,
+        "heartInterval": 60000,
+        "token": "",
+        "reportSelfMessage": false,
+        "reportOfflineMessage": false,
+        "messageFormat": "array",
+        "debug": false
+      }
+    ] 
   },
-  "heartInterval": 60000, // 心跳间隔，单位毫秒
-  "enableLocalFile2Url": false, // 是否启用本地文件转 URL 功能
-  "debug": false, // 是否启用调试模式
   "log": true, // 是否启用日志
   "autoDeleteFile": false, // 是否自动删除收到的文件
   "autoDeleteFileSecond": 60, // 自动删除收到的文件的时间，单位秒
@@ -121,7 +151,6 @@ config_<qq号>.json 示例：
   "msgCacheExpire": 120, // 消息缓存过期时间，单位秒
   "onlyLocalhost": true, // 是否只监听本地地址，否则监听公网地址，暴露在公网请务必设置 token
   "ffmpeg": "/tmp/ffmpeg", // FFmpeg 路径
-  "receiveOfflineMsg": false,  // 下次登录时是否接受离线期间产生的消息
 }
 ```
 

@@ -4,6 +4,9 @@
 请检查是否有 QQ 进程残留，如果是 `pmhq_config.json` 的 `"enable_gui": false`，关闭控制台是不会关掉 QQ 的！
 :::
 
+::: details 忘记了 WebUI 密码
+密码位于 `data/webui_token.txt`
+::: 
 
 ::: details 发送不了图片和语音
 检查当前操作用户是否有 `data/` 的写入权限。
@@ -14,6 +17,6 @@
 ::: 
 
 ::: details 无法发送语音或视频
-需要在 LLOneBot 配置 FFmpeg 路径，[FFmpeg 下载地址](/guide/ffmpeg)。
+需要在配置文件配置 FFmpeg 路径，[FFmpeg 下载地址](/guide/ffmpeg)。
 ::: 
 
