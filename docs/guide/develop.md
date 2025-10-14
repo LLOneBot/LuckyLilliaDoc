@@ -1,3 +1,3 @@
 # 开发对接
 
-见 <https://llonebot.apifox.cn/>
+见 <https://doc.llonebot.com>
