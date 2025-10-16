@@ -124,12 +124,17 @@ COMMAND_SEP=["."]  # 配置命令分割字符
 ​	
 
 ```json5
-{
-    "enableWsReverse": true,
-    "wsReverseUrls": [
-      "ws://127.0.0.1:8080/onebot/v11/ws/"
-    ],
-}
+  {
+    "type": "ws-reverse",
+    "enable": true,  // 这里改为 true
+    "url": "ws://127.0.0.1:8080/onebot/v11/ws",  // 填入反向的 ws 地址
+    "heartInterval": 60000,
+    "token": "",  
+    "messageFormat": "array",
+    "reportSelfMessage": true,
+    "reportOfflineMessage": true,
+    "debug": true
+  }
 ```
 
 ​	显示一个bot QQ 链接说明成功！

@@ -24,7 +24,21 @@ protocol 选择 `ws-reverse`
 
 adapter-onebot 的 WS 反向地址为 `ws://127.0.0.1:5140/onebot`
 
-将 llonebot 的 `data/config_<qq>.json` 中的 `wsReverseUrls` 配置为 `["ws://127.0.0.1:5140/onebot"]`
+将 llonebot 的 `data/config_<qq>.json` 中的反向 ws url 配置为 `"ws://127.0.0.1:5140/onebot"`
+
+```json5
+  {
+    "type": "ws-reverse",
+    "enable": true,  // 这里改为 true
+    "url": "ws://127.0.0.1:5140/onebot",  // 填入反向的 ws 地址
+    "heartInterval": 60000,
+    "token": "",  
+    "messageFormat": "array",
+    "reportSelfMessage": true,
+    "reportOfflineMessage": true,
+    "debug": true
+  }
+```
 
 保存即可
 
