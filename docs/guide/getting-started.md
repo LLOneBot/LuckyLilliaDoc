@@ -13,10 +13,6 @@ LLOneBot 支持最新版本的 QQ。注意要用原版的 QQ ，不要安装任�
 ---
 到 [release 页面](https://github.com/LLOneBot/LLOneBot/releases) 下载 LLOneBot-win-x64.zip 或 LLOneBot-win-x64-ffmpeg.zip
 
-如果你嫌 GitHub 下载慢，可以使用微云下载: 
-<https://share.weiyun.com/dnOysKL8>
-*注：微云上的版本都是带 ffmpeg 的*
-
 其中 `LLOneBot-win-x64.zip` 是不包含 FFmpeg 的版本，`LLOneBot-win-x64-ffmpeg.zip` 是包含 FFmpeg 的版本
 
 推荐使用包含 FFmpeg 的版本
