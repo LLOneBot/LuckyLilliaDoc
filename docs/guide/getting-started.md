@@ -32,6 +32,14 @@ Desktop 版本：`bin/llonebot/data/config_<qq号>.json`
 
 配置文件具体内容往下翻
 
+## Linux 本地一键安装方案
+
+**目前只支持 Debian 或 Ubuntu 系列的系统**
+
+到 [release 页面](https://github.com/LLOneBot/LLOneBot/releases) 下载 `LLBot-CLI-linux-x64.zip` 或者 `LLBot-CLI-linux-arm64.zip`
+
+解压后运行 `start.sh` 即可
+
 ## Linux 一键 Docker 安装方案
 
 ```shell
