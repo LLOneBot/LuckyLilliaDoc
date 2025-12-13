@@ -1,10 +1,10 @@
 cd ..
 mkdir temp
-GITHUB_URL=https://oauth:${LLOneBot_GH_TOKEN}@github.com/LLOneBot/llonebot.github.io
+GITHUB_URL=https://oauth:${LLBot_GH_TOKEN}@github.com/LLOneBot/lucklillia-pages
 git clone ${GITHUB_URL} temp
 
 rm -rf temp/*
-mv ./LLOneBotDoc/docs/.vitepress/dist/* temp
+mv ./LuckyLilliaDoc/docs/.vitepress/dist/* temp
 
 cd ./temp
 
