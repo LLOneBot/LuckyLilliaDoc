@@ -32,6 +32,6 @@ jobs:
 
       - name: deploy
         env:
-          LLOneBot_GH_TOKEN: ${{ secrets.LLOneBot_GH_TOKEN }}
+          LLBot_GH_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         run: |
              bash ./script/deploy.sh
