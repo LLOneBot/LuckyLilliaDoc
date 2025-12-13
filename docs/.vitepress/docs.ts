@@ -2,7 +2,7 @@ import {defineConfig} from 'vitepress'
 
 export const docs = defineConfig({
   lang: 'zh-CN',
-  description: 'LLTwoBot',
+  description: 'LLBot',
 
   themeConfig: {
     nav: nav(),
