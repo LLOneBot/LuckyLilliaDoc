@@ -2,8 +2,6 @@
 
 LLBot 支持最新版本的 QQ。注意要用原版的 QQ ，不要安装任何插件！
 
-如果以前装过 LLBot5.0 以下版本，请卸载 QQ 并删干净 QQ 安装目录！
-
 ## Windows 一键安装方案
 
 **Windows Desktop 版本只支持 Windows Server 2016 / Windows 10 及以上版本**
@@ -28,7 +26,7 @@ Desktop 版本可在 Bot 设置栏进行配置连接
 
 CLI 版本:`data/config_<qq号>.json`
 
-Desktop 版本：`bin/llonebot/data/config_<qq号>.json`
+Desktop 版本：`bin/llbot/data/config_<qq号>.json`
 
 配置文件具体内容往下翻
 
@@ -64,18 +62,18 @@ curl -fsSL https://gh-proxy.com/https://raw.githubusercontent.com/LLOneBot/Lucky
 
 *如果你是 Linux 上运行，要安装一些必需库，然后用 xvfb-run 运行 pmhq，详情见 pmhq 的 [Docker](https://github.com/linyuchen/PMHQ/blob/main/docker/pmhq/Dockerfile)*
 
-`pmhq_config.json` 的 `default_host` 和 `default_port` 是用来和 LLOneBot 通信的，我们需要记下两个参数
+`pmhq_config.json` 的 `default_host` 和 `default_port` 是用来和 LLBot 通信的，我们需要记下两个参数
 
 ---
 
-再下载 [LLOneBot.zip](https://github.com/LLOneBot/LLOneBot/releases)
+再下载 [LLBot.zip](https://github.com/LLOneBot/LLOneBot/releases)
 
-解压后可以看到它是一个 nodejs 包，使用 node 运行 `llonebot.js`，并把刚刚的 pmhq host 和 port 传进去
+解压后可以看到它是一个 nodejs 包，使用 node 运行 `llbot.js`，并把刚刚的 pmhq host 和 port 传进去
 
 *注意需要 node22 及以上版本*
 
 ```shell
-node llonebot.js --pmhq-host=127.0.0.1 --pmhq-port=13000
+node llbot.js --pmhq-host=127.0.0.1 --pmhq-port=13000
 ```
 
 ---
