@@ -22,7 +22,7 @@ LLBot 作为中间层，负责与 QQ 客户端通信，并将消息转换为标�
 
 LLBot 目前支持 OneBot11/GoCQ, Milky, Satori 协议。
 
-直接对接协议从零开发参考[对接协议开发]()
+直接对接协议从零开发参考[对接协议开发](./develop.md)
 
 ## 支持的框架
 
@@ -33,9 +33,9 @@ LLBot 目前支持 OneBot11/GoCQ, Milky, Satori 协议。
 - [NoneBot2](https://nonebot.dev/docs/) 基于 Python 的聊天机器人框架，该框架偏向于有基础的开发者
 - [Koishi](https://koishi.chat/zh-CN/) 基于 NodeJS 的跨平台聊天机器人框架，自带 UI 交互和插件市场
 
-框架对接参考[框架对接配置]()
+框架对接参考[框架对接配置](./config_framework.md)
 
-如果你有发现更多好用的框架或者成品 Bot，欢迎提交(PR 或 Issue)[https://github.com/LLOneBot/LuckyLilliaDoc]
+如果你有发现更多好用的框架或者成品 Bot，欢迎提交[PR 或 Issue](https://github.com/LLOneBot/LuckyLilliaDoc)
 
 ## LLBot 系统要求
 
@@ -49,4 +49,4 @@ LLBot 目前支持 OneBot11/GoCQ, Milky, Satori 协议。
 
 ## 开始使用
 
-准备好了吗？前往 [快速开始](./getting-started.md) 了解如何安装和配置 LLBot。
+准备好了吗？前往 [安装](./getting-started.md) 了解如何安装 LLBot。

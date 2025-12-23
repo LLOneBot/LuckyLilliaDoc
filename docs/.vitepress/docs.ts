@@ -56,17 +56,23 @@ function sidebarGuide() {
       collapsed: false,
       items: [
         {text: '介绍', link: 'guide/introduction', activeMatch: '/guide/'},
-        {text: '快速开始', link: 'guide/getting-started', activeMatch: '/guide/'},
-        {text: '对接配置', link: 'guide/configuration', activeMatch: '/guide/'},
-        {text: '常见问题', link: 'guide/faq', activeMatch: '/guide/'},
-        {text: '配置 FFmpeg', link: 'guide/ffmpeg', activeMatch: '/guide/'},
-        {text: '从零安装 NoneBot2', link: 'guide/nonebot2', activeMatch: '/guide/'},
+        {text: '安装', link: 'guide/install', activeMatch: '/guide/'},
+        {text: '配置', link: 'guide/config', activeMatch: '/guide/'},
       ]
     }, {
-      text: '进阶配置',
+      text: '进阶',
       collapsed: false,
       items: [
+        {text: '框架对接', link: 'guide/config_framework', activeMatch: '/guide/'},
         {text: '开发对接', link: 'guide/develop', activeMatch: '/guide/develop'},
+      ]
+    },
+    {
+      text: '其他',
+      collapsed: false,
+      items: [
+        {text: '常见问题', link: 'guide/faq', activeMatch: '/guide/'},
+        {text: '配置 FFmpeg', link: 'guide/ffmpeg', activeMatch: '/guide/'},
       ]
     }
   ];
