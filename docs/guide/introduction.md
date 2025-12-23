@@ -37,15 +37,7 @@ LLBot 目前支持 OneBot11/GoCQ, Milky, Satori 协议。
 
 如果你有发现更多好用的框架或者成品 Bot，欢迎提交[PR 或 Issue](https://github.com/LLOneBot/LuckyLilliaDoc)
 
-## LLBot 系统要求
 
-### Windows
-- Desktop 版本：Windows Server 2016 / Windows 10 及以上
-- CLI 版本：Windows Server 2012 R2 / Windows 8.1 及以上
-
-### Linux
-- Debian / Ubuntu 系列系统（一键安装）
-- 其他发行版可使用 Docker 或手动安装
 
 ## 开始使用
 
