@@ -28,6 +28,8 @@ OneBot11 支持四种连接方式，分别是：正向 WS、反向 WS，HTTP、H
 
 比如浏览器打开 <http://localhost:3000/get_group_list> 就能看到群列表
 
+---
+
 使用 HTTP 客户端发送 POST JSON 请求则可以传入 API 所需的参数，比如
 
 API: <http://localhost:3000/get_group_member_list>
@@ -40,7 +42,9 @@ POST JSON:
 }
 ```
 
-访问 <http://localhost:3000/_events> 这个 SSE 接口， 就能一直看到 LLBot 推送的事件
+---
+
+也可以访问 <http://localhost:3000/_events> 这个 SSE 接口，就能一直看到 LLBot 推送的事件
 
 
 ### OneBot11 HTTP POST(Webhook) 连接示例
@@ -55,7 +59,9 @@ POST JSON:
 
 使用 WebSocket 客户端连接 <ws://localhost:3001>，这时候就能一直看到 LLBot 推送的事件
 
-在 WebSocket 客户端发送 JSON 请求则可以传入 API 所需的参数
+---
+
+在 WebSocket 客户端发送 JSON 请求则可以调用并传入 API 所需的参数
 
 比如：
 ```json5
@@ -96,6 +102,8 @@ Milky 支持 HTTP 调用，HTTP Webhook，WS 三种连接方式
 使用 HTTP 客户端 POST 访问 <http://localhost:3010/api/> 即可调用 Milky API
 
 比如 POST 访问 <http://localhost:3010/api/get_login_info> 就能看到自己登录的账号信息
+
+---
 
 使用 GET 访问 <http://localhost:3010/event> 这个 SSE 接口就能一直获取 LLBot 推送的事件
 
