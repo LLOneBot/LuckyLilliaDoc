@@ -55,6 +55,7 @@ function sidebarGuide() {
       text: '基础配置',
       collapsed: false,
       items: [
+        {text: '介绍', link: 'guide/introduction', activeMatch: '/guide/'},
         {text: '快速开始', link: 'guide/getting-started', activeMatch: '/guide/'},
         {text: '对接配置', link: 'guide/configuration', activeMatch: '/guide/'},
         {text: '常见问题', link: 'guide/faq', activeMatch: '/guide/'},

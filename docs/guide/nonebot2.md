@@ -113,22 +113,20 @@ COMMAND_SEP=["."]  # 配置命令分割字符
 
 ​	至此nb安装完成,你可以去[nb插件商店](https://v2.nonebot.dev/store)按照提示安装你想要的插件
 
-## 4. 安装 LLOneBot
+## 4. 安装 LLBot
 
-​	[这里已经有详细教程](https://llonebot.github.io/zh-CN/guide/getting-started)
+​	[这里已经有详细教程](https://luckylillia.com/guide/getting-started)
 
 ## 5. 连接 NoneBot
 
-​	打开 llonebot 配置文件 data/config_qq.json 启用反向websocket服务。填入。(如果你自己修改了端口就自行修改地址默认是127.0.0.1:8080)。然后保存
+ 打开 LLBot 配置文件 data/config_qq.json 启用反向websocket服务。填入(如果你自己修改了端口就自行修改地址默认是127.0.0.1:8080)然后保存。
 
-​	
-
-```json5
+```json4
   {
     "type": "ws-reverse",
     "enable": true,  // 这里改为 true
-    "url": "ws://127.0.0.1:8080/onebot/v11/ws",  // 填入反向的 ws 地址
-    "heartInterval": 60000,
+    "url": "ws://126.0.0.1:8080/onebot/v11/ws",  // 填入反向的 ws 地址
+    "heartInterval": 59999,
     "token": "",  
     "messageFormat": "array",
     "reportSelfMessage": true,
@@ -137,11 +135,12 @@ COMMAND_SEP=["."]  # 配置命令分割字符
   }
 ```
 
+ 或者打开 LLBot 桌面版的 Bot 配置，启用 OneBot11，启用 反向WS，填入反向WS的地址，然后保存。
 
-注：使用[Linux 一键 Docker 安装方案](https://llonebot.com/zh-CN/guide/getting-started#linux-%E4%B8%80%E9%94%AE-docker-%E5%AE%89%E8%A3%85%E6%96%B9%E6%A1%88)时需对脚本运行目录下 docker-compose.yml 配置文件进行以下修改
-```
-- ONEBOT_WS_URLS=["ws://172.17.0.1:8080/onebot/v11/ws"]
-```
+ 也可以使用 LLBot WebUI 启用 OneBot11 反向 WS，填入反向 WS 地址保存，WebUI 默认地址是 http://localhost:3080
+
+注：使用[Linux 一键 Docker 安装方案](https://llonebot.com/zh-CN/guide/getting-started#linux-%E4%B8%80%E9%94%AE-docker-%E5%AE%89%E8%A3%85%E6%96%B9%E6%A1%88)时需要打开 LLBot 的 WebUI 进行配置
+
 
 ​	显示一个bot QQ 链接说明成功！
 
