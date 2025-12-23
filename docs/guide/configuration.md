@@ -12,7 +12,7 @@
 
 填写 selfId 为你的机器人的 QQ 号
 
-token 可以为空，需与 LLOneBot 配置的 token 一致
+token 可以为空，需与 LLBot 配置的 token 一致
 
 protocol 选择 `ws-reverse`
 
@@ -20,11 +20,11 @@ protocol 选择 `ws-reverse`
 
 ![](../asset/img/configuration/koishi-onebot-setting.png)
 
-#### 3. 配置完成后，LLOneBot 添加 WS 反向地址
+#### 3. 配置完成后，LLBot 添加 WS 反向地址
 
 adapter-onebot 的 WS 反向地址为 `ws://127.0.0.1:5140/onebot`
 
-将 llonebot 的 `data/config_<qq>.json` 中的反向 ws url 配置为 `"ws://127.0.0.1:5140/onebot"`
+将 LLBot 的 `data/config_<qq>.json` 中的反向 ws url 配置为 `"ws://127.0.0.1:5140/onebot"`
 
 ```json5
   {
@@ -41,6 +41,10 @@ adapter-onebot 的 WS 反向地址为 `ws://127.0.0.1:5140/onebot`
 ```
 
 保存即可
+
+或者使用 LLBot 桌面版在 Bot 配置中启用 OneBot11，启用反向 WS，填入反向 WS 地址保存
+
+也可以使用 LLBot WebUI 启用 OneBot11 反向 WS，填入反向 WS 地址保存，WebUI 默认地址是 http://localhost:3080
 
 ## 接入 NoneBot 的 adapter-onebot
 
