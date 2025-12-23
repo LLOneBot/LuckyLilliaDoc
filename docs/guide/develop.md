@@ -83,11 +83,11 @@ POST JSON:
 
 Milky 支持 HTTP 调用，HTTP Webhook，WS 三种连接方式
 
-- HTTP：Milky 当做 HTTP 服务端，你通过 HTTP 请求来连接 Milky
+- HTTP：Milky 当做 HTTP 服务端，你通过 HTTP 请求来连接 Milky 调用 API
 
 - HTTP Webhook：Milky 当做 HTTP 客户端，Milky 通过 HTTP 请求来连接你，前提是你得先建立一个 HTTP 服务端，这个主要是用来推送消息/事件，不是很推荐单独使用这种方式
 
-- WS：Milky 当做 WebSocket 服务端，通过 WebSocket 客户端来连接 Milky 调用 API 和接受消息
+- WS：Milky 当做 WebSocket 服务端，通过 WebSocket 客户端来连接 Milky 接受消息
 
 ### Milky HTTP 连接示例
 
@@ -118,3 +118,46 @@ Milky 的 WS 和 HTTP 实际上是共用一个端口的，比如设置 Milky HTT
 更多 Milky 细节可参考 (Milky 官方文档)[https://milky.ntqqrev.org/]
 
 更多 Milky API 用法可参考<https://api.luckylillia.com/api-391181715>
+
+
+## Satori 协议
+
+Satori 支持 HTTP 调用，WS 接收
+
+- HTTP：Satori 当做 HTTP 服务端，你通过 HTTP 请求来连接 Satori 调用 API
+
+- WS：Satori 当做 WebSocket 服务端，通过 WebSocket 客户端来连接 Satori 接受消息/事件
+
+
+### Satori HTTP 连接示例
+
+在 LLBot 配置中启用 Satori，设置好 HTTP 端口，比如端口是 5600
+
+使用 HTTP 客户端 POST 访问 <http://localhost:5600/v1/friend.list> 获取好友列表
+
+注意 Satori 必须要在 Header 里面添加 `Satori-Platform` 和 `Satori-User-ID`，`Satori-User-ID` 是你机器人的 QQ 号
+
+```text
+POST /v1/friend.list
+Content-Type: application/json
+Satori-Platform: LLBot
+Satori-User-ID: 1234567890  // 这里替换成你机器人的 QQ 号
+```
+
+### Satori WS 连接示例
+
+使用 WS 客户端连接 <ws://localhost:5600/v1/events> 
+
+连接之后，发送一个鉴权包
+```json
+{
+    "op": 3
+}
+```
+
+之后便一直开始推送事件
+
+
+### Satori 文档
+
+Satori 的更多详情见 <https://satori.chat/zh-CN/>
