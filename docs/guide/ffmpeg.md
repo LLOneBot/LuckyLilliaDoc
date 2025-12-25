@@ -15,7 +15,7 @@
 ### Windows 系统
 
 1. 在 [此处](https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-essentials.7z) 下载官方许可的 FFmpeg；
-2. 将解压后的 `ffmpeg.exe` 和 `ffprobe.exe` 放到 llonebot.js 旁；
+2. 将解压后的 `ffmpeg.exe` 和 `ffprobe.exe` 放到 llbot.js 旁；
 
 ### Linux 系统
 
