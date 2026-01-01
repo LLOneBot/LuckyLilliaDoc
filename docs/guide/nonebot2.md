@@ -1,4 +1,4 @@
-# Windows 下使用 LLOneBot 链接 NoneBot2
+# Windows 下使用 LLBot 链接 NoneBot2
 
 ## 1. 环境
 
@@ -139,7 +139,7 @@ COMMAND_SEP=["."]  # 配置命令分割字符
 
  也可以使用 LLBot WebUI 启用 OneBot11 反向 WS，填入反向 WS 地址保存，WebUI 默认地址是 http://localhost:3080
 
-注：使用[Linux 一键 Docker 安装方案](https://llonebot.com/zh-CN/guide/getting-started#linux-%E4%B8%80%E9%94%AE-docker-%E5%AE%89%E8%A3%85%E6%96%B9%E6%A1%88)时需要打开 LLBot 的 WebUI 进行配置
+注：使用[Linux 一键 Docker 安装方案](https://luckylillia.com/guide/install#linux-%E4%B8%80%E9%94%AE-docker-%E5%AE%89%E8%A3%85%E6%96%B9%E6%A1%88)时需要打开 LLBot 的 WebUI 进行配置
 
 
 ​	显示一个bot QQ 链接说明成功！
