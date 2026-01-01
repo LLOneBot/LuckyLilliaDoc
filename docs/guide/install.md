@@ -21,7 +21,7 @@ LLBot 支持最新版本的 QQ。注意要用原版的 QQ ，不要安装任何�
 首先确认你已经安装了 [64 位的 NTQQ](https://im.qq.com)
 
 ---
-到 [release 页面](https://github.com/LLOneBot/LLOneBot/releases) 下载 LLBot-Desktop-win-x64 或者 LLBot-CLI-win-x64
+到 [release 页面](https://github.com/LLOneBot/LuckyLilliaBot/releases) 下载 LLBot-Desktop-win-x64 或者 LLBot-CLI-win-x64
 
 ---
 解压后双击 `llbot.exe` 后点击启动，会启动QQ
@@ -31,7 +31,7 @@ LLBot 支持最新版本的 QQ。注意要用原版的 QQ ，不要安装任何�
 
 **目前只支持 Debian 或 Ubuntu 系列的系统**
 
-到 [release 页面](https://github.com/LLOneBot/LLOneBot/releases) 下载 `LLBot-CLI-linux-x64.zip` 或者 `LLBot-CLI-linux-arm64.zip`
+到 [release 页面](https://github.com/LLOneBot/LuckyLilliaBot/releases) 下载 `LLBot-CLI-linux-x64.zip` 或者 `LLBot-CLI-linux-arm64.zip`
 
 解压后运行 `start.sh` 即可
 
@@ -63,7 +63,7 @@ curl -fsSL https://gh-proxy.com/https://raw.githubusercontent.com/LLOneBot/Lucky
 
 ---
 
-再下载 [LLBot.zip](https://github.com/LLOneBot/LLOneBot/releases)
+再下载 [LLBot.zip](https://github.com/LLOneBot/LuckyLilliaBot/releases)
 
 解压后可以看到它是一个 nodejs 包，使用 node 运行 `llbot.js`，并把刚刚的 pmhq host 和 port 传进去
 
