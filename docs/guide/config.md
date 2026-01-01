@@ -12,8 +12,7 @@ LLBot Desktop 可在左边 `Bot 配置`进行配置
 
 也可以直接修改配置文件进行配置
 
-- Desktop 版本的配置文件位于 `bin/llbot/data/config_<你的QQ>号.json`
-- CLI 版本的配置文件位于 `data/config_<你的QQ>号.json`
+- 配置文件位于 `bin/llbot/data/config_<你的QQ>号.json`
 - Docker 版本的配置文件位置有点特殊，Compose 版本的 Docker 是挂载到 Volume 的，请自行寻找 data/config_xxxx.json
 
 如果你想在登录之前进行配置，可修改 `default_config.json`，登录后会使用 `config_<你的QQ>号.json` 作为配置文件，如果从未登录过，`config_xxx.json` 会继承 `default_config.json`
@@ -156,8 +155,7 @@ Satori 协议的配置主要是配置 HTTP 端口和 Token，其中端口是可�
 
 如果没有 `pmhq_config.json` 运行一下 llbot.exe 即可
 
-- Desktop 版本的配置文件位于 `bin/pmhq/pmhq_config.json`，既然使用了 Desktop GUI 了，直接在 GUI 界面系统配置进行配置即可
-- CLI 版本的配置文件位于 `pmhq_config.json`
+- 配置文件位于 `bin/pmhq/pmhq_config.json`，如果使用了 Desktop GUI，直接在 GUI 界面系统配置进行配置即可
 - Docker 版本的配置文件位置有点特殊，Compose 版本的 Docker 是挂载到 Volume 的，请自行寻找 pmhq_config.json
 
 二维码的网址和文件路径会打印在终端上，也可以访问 WebUI 进行登录, WebUI 默认地址为 `http://localhost:3080`
