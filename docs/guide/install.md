@@ -53,9 +53,9 @@ curl -fsSL https://gh-proxy.com/https://raw.githubusercontent.com/LLOneBot/Lucky
 
 下载 [pmhq](https://github.com/linyuchen/PMHQ/releases)
 
-运行 pmhq 后会启动 QQ 登录后生成配置文件 `pmhq_config.json`
+运行 pmhq 后会启动 QQ 登录后生成配置文件 `pmhq_config.json`，如果没有生成就手动创建，参考[config.md](https://github.com/linyuchen/PMHQ/blob/main/doc/config.md)
 
-*如果你是 Linux 上运行，要安装一些必需库，然后用 xvfb-run 运行 pmhq，详情见 pmhq 的 [Docker](https://github.com/linyuchen/PMHQ/blob/main/docker/pmhq/Dockerfile)*
+*如果你是 Linux 上运行，要安装一些必需库，然后用 xvfb-run 运行 pmhq，详情见 [start.sh](https://github.com/LLOneBot/LuckyLilliaBot/blob/main/script/start-linux.sh)*
 
 `pmhq_config.json` 的 `default_host` 和 `default_port` 是用来和 LLBot 通信的，我们需要记下两个参数
 
