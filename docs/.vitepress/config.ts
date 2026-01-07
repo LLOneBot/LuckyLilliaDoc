@@ -7,9 +7,17 @@ export default withMermaid(defineConfig({
   ...shared,
   ...docs,
   mermaid: {
-    // mermaid 配置
+    startOnLoad: false
   },
   mermaidPlugin: {
     class: 'mermaid'
+  },
+  vite: {
+    optimizeDeps: {
+      include: ['mermaid']
+    },
+    ssr: {
+      noExternal: ['mermaid']
+    }
   }
 }))
