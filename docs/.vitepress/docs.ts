@@ -8,8 +8,8 @@ export const docs = defineConfig({
     nav: nav(),
 
     sidebar: {
-      '/guide/': {base: '/', items: sidebarGuide()},
-      '/zh-CN/guide/': {base: '/zh-CN/', items: sidebarGuide()},
+      '/guide/': {base: '/guide/', items: sidebarGuide()},
+      '/zh-CN/guide/': {base: '/zh-CN/guide/', items: sidebarGuide()},
     },
 
     editLink: {
@@ -55,24 +55,24 @@ function sidebarGuide() {
       text: '基础配置',
       collapsed: false,
       items: [
-        {text: '介绍', link: 'guide/introduction', activeMatch: '/guide/'},
-        {text: '安装', link: 'guide/install', activeMatch: '/guide/'},
-        {text: '配置', link: 'guide/config', activeMatch: '/guide/'},
+        {text: '介绍', link: 'introduction'},
+        {text: '安装', link: 'install'},
+        {text: '配置', link: 'config'},
       ]
     }, {
       text: '进阶',
       collapsed: false,
       items: [
-        {text: '框架对接', link: 'guide/config_framework', activeMatch: '/guide/'},
-        {text: '开发对接', link: 'guide/develop', activeMatch: '/guide/develop'},
+        {text: '框架对接', link: 'config_framework'},
+        {text: '开发对接', link: 'develop'},
       ]
     },
     {
       text: '其他',
       collapsed: false,
       items: [
-        {text: '常见问题', link: 'guide/faq', activeMatch: '/guide/'},
-        {text: '配置 FFmpeg', link: 'guide/ffmpeg', activeMatch: '/guide/'},
+        {text: '常见问题', link: 'faq'},
+        {text: '配置 FFmpeg', link: 'ffmpeg'},
       ]
     }
   ];

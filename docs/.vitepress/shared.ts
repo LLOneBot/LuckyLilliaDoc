@@ -8,5 +8,10 @@ export const shared = defineConfig({
   ignoreDeadLinks: [
     /^https?:\/\/localhost/,
     /^ws:\/\/localhost/
-  ]
+  ],
+  vite: {
+    ssr: {
+      noExternal: ['mermaid']
+    }
+  }
 })
