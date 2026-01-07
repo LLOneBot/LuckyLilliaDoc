@@ -8,8 +8,8 @@ export const docs = defineConfig({
     nav: nav(),
 
     sidebar: {
-      '/guide/': {base: '/guide/', items: sidebarGuide()},
-      '/zh-CN/guide/': {base: '/zh-CN/guide/', items: sidebarGuide()},
+      '/guide/': sidebarGuide('/guide/'),
+      '/zh-CN/guide/': sidebarGuide('/zh-CN/guide/'),
     },
 
     editLink: {
@@ -49,30 +49,30 @@ function nav() {
   ];
 }
 
-function sidebarGuide() {
+function sidebarGuide(base: string) {
   return [
     {
       text: '基础配置',
       collapsed: false,
       items: [
-        {text: '介绍', link: 'introduction'},
-        {text: '安装', link: 'install'},
-        {text: '配置', link: 'config'},
+        {text: '介绍', link: `${base}introduction`},
+        {text: '安装', link: `${base}install`},
+        {text: '配置', link: `${base}config`},
       ]
     }, {
       text: '进阶',
       collapsed: false,
       items: [
-        {text: '框架对接', link: 'config_framework'},
-        {text: '开发对接', link: 'develop'},
+        {text: '框架对接', link: `${base}config_framework`},
+        {text: '开发对接', link: `${base}develop`},
       ]
     },
     {
       text: '其他',
       collapsed: false,
       items: [
-        {text: '常见问题', link: 'faq'},
-        {text: '配置 FFmpeg', link: 'ffmpeg'},
+        {text: '常见问题', link: `${base}faq`},
+        {text: '配置 FFmpeg', link: `${base}ffmpeg`},
       ]
     }
   ];
