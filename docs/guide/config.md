@@ -153,7 +153,7 @@ Satori 协议的配置主要是配置 HTTP 端口和 Token，其中端口是可�
 
 修改 `pmhq_config.json`，把 `headless` 设置为 `true`
 
-如果没有 `pmhq_config.json` 运行一下 llbot.exe 即可
+如果没有 `pmhq_config.json`，手动创建参考[pmhq config 介绍](https://github.com/linyuchen/PMHQ/blob/main/doc/config.md)
 
 - 配置文件位于 `bin/pmhq/pmhq_config.json`，如果使用了 Desktop GUI，直接在 GUI 界面系统配置进行配置即可
 - Docker 版本的配置文件位置有点特殊，Compose 版本的 Docker 是挂载到 Volume 的，请自行寻找 pmhq_config.json
