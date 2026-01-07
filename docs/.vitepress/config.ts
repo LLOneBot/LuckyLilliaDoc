@@ -5,5 +5,11 @@ import { docs } from './docs'
 
 export default withMermaid(defineConfig({
   ...shared,
-  ...docs
+  ...docs,
+  mermaid: {
+    // mermaid 配置
+  },
+  mermaidPlugin: {
+    class: 'mermaid'
+  }
 }))
