@@ -14,8 +14,6 @@ LLBot 支持最新版本的 QQ。注意要用原版的 QQ ，不要安装任何�
 
 ## Windows 一键安装方案
 
-**Windows Desktop 版本只支持 Windows Server 2016 / Windows 10 及以上版本**
-
 首先确认你已经安装了 [64 位的 NTQQ](https://im.qq.com)
 
 ---
