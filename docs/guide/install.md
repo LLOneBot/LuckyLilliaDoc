@@ -5,8 +5,8 @@ LLBot 支持最新版本的 QQ。注意要用原版的 QQ ，不要安装任何�
 ## LLBot 系统要求
 
 ### Windows
-- Desktop 版本（带界面程序）：Windows Server 2016 / Windows 10 及以上
-- CLI 版本（命令行版本）：Windows Server 2012 R2 / Windows 8.1 及以上
+- Desktop 版本（带界面程序）：Windows Server 2012 / Windows 10 及以上
+- CLI 版本（命令行版本）：应该没有特殊要求
 
 ### Linux
 - Debian / Ubuntu 系列系统（一键安装）
