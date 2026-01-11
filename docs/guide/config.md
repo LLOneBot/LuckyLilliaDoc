@@ -19,7 +19,6 @@ LLBot Desktop 可在左边 `Bot 配置`进行配置
 
 配置示例：
 ```json5
-```json5
 {
    "webui": {
     "enable": true,  // 是否启用 WebUI

@@ -46,6 +46,37 @@ adapter-onebot 的 WS 反向地址为 `ws://127.0.0.1:5140/onebot`
 
 保存即可
 
+## 接入 Koishi 的 adapter-satori
+
+#### 1. 在 LLBot 启用 Satori 协议
+
+使用 LLBot Desktop 在 Satori 配置中启用 Satori 协议
+
+也可以使用 LLBot WebUI 在 Satori 配置中启用 Satori 协议，WebUI 默认地址是 http://localhost:3080
+
+#### 2. 配置 adapter-satori
+
+![](../asset/img/configuration/koishi-satori-setting.png)
+
+`endpoint` 填写 LLBot 的 Satori 服务的地址（如 http://127.0.0.1:5600），`token` 填写 Satori 服务的 token（没有则不填写），点击右上角的「启用插件」，即可连接到 LLBot
+
+## 接入 Koishi 的 adapter-milky
+
+#### 1. 在 LLBot 启用 Milky 协议
+
+使用 LLBot Desktop 在 Milky 配置中启用 Milky 协议
+
+也可以使用 LLBot WebUI 在 Milky 配置中启用 Milky 协议，WebUI 默认地址是 http://localhost:3080
+
+#### 1. 在 Koishi 插件市场搜索并安装 adapter-milky
+
+![](../asset/img/configuration/koishi-install-milky.png)
+
+#### 2. 配置 adapter-milky
+
+![](../asset/img/configuration/koishi-milky-setting.png)
+
+`endpoint` 填写 LLBot 的 Milky 服务的地址（如 http://127.0.0.1:3010），`token` 填写 Milky 服务的 access token（没有则不填写），点击右上角的「启用插件」，即可连接到 LLBot
 
 ## 接入 NoneBot 的 adapter-onebot
 
