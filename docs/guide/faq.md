@@ -9,7 +9,7 @@
 :::
 
 ::: details 忘记了 WebUI 密码
-密码位于 `data/webui_token.txt`
+密码位于 `./bin/llbot/data/webui_token.txt`
 ::: 
 
 ::: details 发送不了图片和语音
