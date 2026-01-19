@@ -25,7 +25,7 @@ LLBot 支持最新版本的 QQ。注意要用原版的 QQ ，不要安装任何�
 
 ## Linux 本地一键安装方案
 
-**目前只支持 Debian 或 Ubuntu 系列的系统**
+**目前只支持 Debian/Ubuntu/Arch 系列的系统**
 
 到 [release 页面](https://github.com/LLOneBot/LuckyLilliaBot/releases) 下载 `LLBot-CLI-linux-x64.zip` 或者 `LLBot-CLI-linux-arm64.zip`
 
@@ -33,7 +33,7 @@ LLBot 支持最新版本的 QQ。注意要用原版的 QQ ，不要安装任何�
 
 ## Linux 一键 Docker 安装方案
 
-此方案采用的是 Docker Compose, 会生成`docker-compose.yml` 和相关配置文件
+此方案采用的是 Docker Compose, 会生成`docker-compose.yml` 和相关配置文件，运行下面命令会引导你进行部署
 
 ```shell
 curl -fsSL https://raw.githubusercontent.com/LLOneBot/LuckyLilliaBot/refs/heads/main/script/install-llbot-docker.sh -o llbot-docker.sh && chmod u+x ./llbot-docker.sh && ./llbot-docker.sh
