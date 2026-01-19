@@ -9,7 +9,7 @@ LLBot 支持最新版本的 QQ。注意要用原版的 QQ ，不要安装任何�
 - CLI 版本（命令行版本）：应该没有特殊要求
 
 ### Linux
-- Debian / Ubuntu 系列系统（一键安装）
+- Debian / Ubuntu / Arch 系列系统（一键安装）
 - 其他发行版可使用 Docker 或手动安装
 
 ## Windows 一键安装方案
@@ -25,7 +25,7 @@ LLBot 支持最新版本的 QQ。注意要用原版的 QQ ，不要安装任何�
 
 ## Linux 本地一键安装方案
 
-**目前只支持 Debian/Ubuntu/Arch 系列的系统**
+**目前只支持 Debian / Ubuntu / Arch 系列的系统**
 
 到 [release 页面](https://github.com/LLOneBot/LuckyLilliaBot/releases) 下载 `LLBot-CLI-linux-x64.zip` 或者 `LLBot-CLI-linux-arm64.zip`
 
