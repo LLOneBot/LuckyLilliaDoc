@@ -33,6 +33,8 @@ LLBot 支持最新版本的 QQ。注意要用原版的 QQ ，不要安装任何�
 
 ## Linux 一键 Docker 安装方案
 
+此方案采用的是 Docker Compose, 会生成`docker-compose.yml` 和相关配置文件
+
 ```shell
 curl -fsSL https://raw.githubusercontent.com/LLOneBot/LuckyLilliaBot/refs/heads/main/script/install-llbot-docker.sh -o llbot-docker.sh && chmod u+x ./llbot-docker.sh && ./llbot-docker.sh
 ```
@@ -45,7 +47,14 @@ curl -fsSL https://gh-proxy.com/https://raw.githubusercontent.com/LLOneBot/Lucky
 
 ## Linux 使用 NixOS/Docker 安装
 
-见 <https://github.com/llonebot/llonebot.nix>
+此方案采用的是非 Docker Compose，单独镜像，直接 `docker pull initialencounter/llonebot:latest`即可食用
+
+运行之后终端扫码或者 WebUI http://<宿主机IP>:3080 扫码
+
+设置环境变量 `QUICK_LOGIN_QQ` 可以自动登录 QQ，前提是扫码登录过一次
+
+
+更多详情见 <https://github.com/llonebot/llonebot.nix>
 
 ## 通用手动安装方法
 
