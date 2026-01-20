@@ -73,6 +73,7 @@ function sidebarGuide(base: string) {
       items: [
         {text: '常见问题', link: `${base}faq`},
         {text: '配置 FFmpeg', link: `${base}ffmpeg`},
+        {text: '配置邮箱通知', link: `${base}config_email`},
       ]
     }
   ];
