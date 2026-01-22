@@ -52,18 +52,48 @@ function nav() {
 function sidebarGuide(base: string) {
   return [
     {
-      text: '基础配置',
+      text: '开始',
       collapsed: false,
       items: [
+        {text: '欢迎', link: `${base}index`},
         {text: '介绍', link: `${base}introduction`},
-        {text: '安装', link: `${base}install`},
-        {text: '配置', link: `${base}config`},
       ]
-    }, {
+    },
+    {
+      text: '安装',
+      collapsed: false,
+      items: [
+        {text: '选择版本', link: `${base}choice_install`},
+        {text: '快速安装', link: `${base}install`},
+        {
+          text: 'Windows 版本',
+          items: [
+            {text: 'Desktop 版本', link: `${base}install-windows-desktop`},
+            {text: 'CLI 版本', link: `${base}install-windows-cli`},
+          ]
+        },
+        {
+          text: 'Linux 版本',
+          items: [
+            {text: 'CLI 版本', link: `${base}install-linux-cli`},
+            {text: 'Docker Compose', link: `${base}install-linux-docker`},
+            {text: 'Docker 镜像', link: `${base}install-linux-docker-nix`},
+          ]
+        },
+      ]
+    },
+    {
+      text: '配置',
+      collapsed: false,
+      items: [
+        {text: '基础配置', link: `${base}config`},
+        {text: '框架对接', link: `${base}config_framework`},
+      ]
+    },
+    {
       text: '进阶',
       collapsed: false,
       items: [
-        {text: '框架对接', link: `${base}config_framework`},
         {text: '开发对接', link: `${base}develop`},
       ]
     },
