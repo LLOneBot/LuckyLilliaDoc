@@ -5,6 +5,6 @@ import { useRouter } from 'vitepress';
 const router = useRouter();
 
 onMounted(() => {
- router.go('/guide/introduction')
+ router.go('/guide/index')
 })
 </script>
