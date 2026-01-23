@@ -121,7 +121,7 @@ COMMAND_SEP=["."]  # 配置命令分割字符
 
  打开 LLBot 配置文件 data/config_qq.json 启用反向websocket服务。填入(如果你自己修改了端口就自行修改地址默认是127.0.0.1:8080)然后保存。
 
-```json4
+```json5
   {
     "type": "ws-reverse",
     "enable": true,  // 这里改为 true
