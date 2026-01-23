@@ -54,7 +54,7 @@ onMounted(() => {
 
 .selector-group label {
   display: block;
-  color: #1f2937;
+  color: var(--vp-c-text-1);
   font-weight: 600;
   margin-bottom: 0.75rem;
   font-size: 1.1rem;
@@ -66,8 +66,8 @@ onMounted(() => {
   font-size: 1.05rem;
   border: 2px solid rgba(236, 72, 153, 0.3);
   border-radius: 12px;
-  background: white;
-  color: #1f2937;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
   cursor: pointer;
   transition: all 0.3s ease;
   appearance: none;
@@ -81,7 +81,6 @@ onMounted(() => {
 }
 
 .select-box:hover:not(:disabled) {
-  background: white;
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(236, 72, 153, 0.15);
   border-color: rgba(236, 72, 153, 0.5);
@@ -89,7 +88,6 @@ onMounted(() => {
 
 .select-box:focus {
   outline: none;
-  background: white;
   box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.15);
   transform: translateY(-2px);
   border-color: #ec4899;
@@ -98,7 +96,6 @@ onMounted(() => {
 .select-box:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-  background: rgba(255, 255, 255, 0.5);
   transform: none;
 }
 
@@ -107,10 +104,10 @@ onMounted(() => {
 }
 
 :deep(.preview-card) {
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--vp-c-bg-soft);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--vp-c-divider);
   border-radius: 24px;
   padding: 2.5rem;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
@@ -139,7 +136,7 @@ onMounted(() => {
 }
 
 :deep(.preview-desc) {
-  color: #4b5563;
+  color: var(--vp-c-text-2);
   font-size: 1.05rem;
   margin: 0;
   line-height: 1.6;
@@ -150,13 +147,13 @@ onMounted(() => {
 :deep(.preview-steps) {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid var(--vp-c-divider);
 }
 
 :deep(.preview-features h4),
 :deep(.preview-requirements h4),
 :deep(.preview-steps h4) {
-  color: #1f2937;
+  color: var(--vp-c-text-1);
   margin: 0 0 1rem 0;
   font-size: 1.1rem;
   font-weight: 600;
@@ -175,7 +172,7 @@ onMounted(() => {
 :deep(.preview-requirements li) {
   padding-left: 1.75rem;
   position: relative;
-  color: #4b5563;
+  color: var(--vp-c-text-2);
   line-height: 1.6;
 }
 
@@ -202,7 +199,7 @@ onMounted(() => {
   gap: 1rem;
   margin-bottom: 1.5rem;
   padding: 1.5rem;
-  background: linear-gradient(135deg, rgba(236, 72, 153, 0.05) 0%, rgba(244, 114, 182, 0.05) 100%);
+  background: var(--vp-c-bg-alt);
   border-radius: 16px;
   border-left: 4px solid #ec4899;
   transition: all 0.3s ease;
@@ -211,7 +208,6 @@ onMounted(() => {
 :deep(.install-step:hover) {
   transform: translateX(4px);
   box-shadow: 0 4px 12px rgba(236, 72, 153, 0.15);
-  background: linear-gradient(135deg, rgba(236, 72, 153, 0.08) 0%, rgba(244, 114, 182, 0.08) 100%);
 }
 
 :deep(.step-number) {
@@ -235,13 +231,13 @@ onMounted(() => {
 
 :deep(.step-content h5) {
   margin: 0 0 0.5rem 0;
-  color: #1f2937;
+  color: var(--vp-c-text-1);
   font-size: 1.1rem;
   font-weight: 600;
 }
 
 :deep(.step-detail) {
-  color: #4b5563;
+  color: var(--vp-c-text-2);
   line-height: 1.7;
   font-size: 0.95rem;
 }
@@ -257,8 +253,8 @@ onMounted(() => {
 }
 
 :deep(.step-detail pre) {
-  background: #1f2937;
-  color: #e5e7eb;
+  background: var(--vp-code-block-bg);
+  color: var(--vp-code-block-color);
   padding: 1rem;
   border-radius: 12px;
   overflow-x: auto;
@@ -278,15 +274,15 @@ onMounted(() => {
   top: 0.5rem;
   right: 0.5rem;
   padding: 0.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #e5e7eb;
+  color: var(--vp-c-text-2);
   opacity: 0;
 }
 
@@ -295,8 +291,8 @@ onMounted(() => {
 }
 
 :deep(.step-detail pre .copy-button:hover) {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: var(--vp-c-bg-alt);
+  border-color: var(--vp-c-brand);
 }
 
 :deep(.step-detail pre .copy-button.copied) {
@@ -326,10 +322,10 @@ onMounted(() => {
 :deep(.step-note) {
   margin-top: 0.75rem;
   padding: 0.75rem 1rem;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.1) 100%);
+  background: var(--vp-c-bg-alt);
   border-left: 3px solid #3b82f6;
   border-radius: 6px;
-  color: #1e40af;
+  color: var(--vp-c-text-2);
   font-size: 0.9rem;
   line-height: 1.6;
 }
@@ -337,30 +333,29 @@ onMounted(() => {
 :deep(.next-steps) {
   margin-top: 1.5rem;
   padding: 1.5rem;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(5, 150, 105, 0.1) 100%);
+  background: var(--vp-c-bg-alt);
   border-radius: 16px;
   border-left: 4px solid #10b981;
 }
 
 :deep(.next-steps p) {
   margin: 0;
-  color: #065f46;
+  color: var(--vp-c-text-1);
   font-size: 1rem;
   line-height: 1.6;
   font-weight: 500;
 }
 
 :deep(.next-steps a) {
-  color: #047857;
+  color: var(--vp-c-brand);
   font-weight: 600;
   text-decoration: none;
-  border-bottom: 2px solid #10b981;
+  border-bottom: 2px solid var(--vp-c-brand);
   transition: all 0.2s ease;
 }
 
 :deep(.next-steps a:hover) {
-  color: #10b981;
-  border-bottom-color: #047857;
+  opacity: 0.8;
 }
 
 @media (max-width: 768px) {
