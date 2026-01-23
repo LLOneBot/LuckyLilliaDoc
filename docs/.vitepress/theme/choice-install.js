@@ -269,7 +269,7 @@ export function initChoiceInstall() {
             </div>
 
             <div class="next-steps">
-              <p>✅ 安装完成后，请查看 <a href="./config.md">配置指南</a> 了解如何配置 LLBot 对接你的机器人框架。</p>
+              <p>✅ 安装完成后，请查看 <a href="./config">配置指南</a> 了解如何配置 LLBot 对接你的机器人框架。</p>
             </div>
           </div>
         `
