@@ -1,31 +1,6 @@
-/* 移除首页的默认 padding */
-.vp-doc.container {
-  padding: 0 !important;
-  max-width: 100% !important;
-}
-
-.VPContent.is-home {
-  padding: 0 !important;
-}
-
-.vp-doc {
-  padding: 0 !important;
-}
-
-/* 确保首页全宽 */
-.Layout[data-is-home="true"] .VPContent {
-  padding: 0 !important;
-}
-
-/* 隐藏首页的导航栏 - 多种选择器确保生效 */
-.Layout[data-is-home="true"] .VPNav,
-.Layout[data-is-home="true"] .VPNavBar,
-.Layout[data-is-home="true"] nav.VPNav,
-.Layout[data-is-home="true"] header.VPNav,
-body:has(.Layout[data-is-home="true"]) .VPNav,
-body:has(.Layout[data-is-home="true"]) .VPNavBar,
-.VPNav:has(+ .VPContent .hero-container),
-.VPNavBar:has(+ .VPContent .hero-container) {
+/* 只在有 hero-container 的页面（首页）隐藏导航栏 */
+body:has(.hero-container) .VPNav,
+body:has(.hero-container) .VPNavBar {
   display: none !important;
   visibility: hidden !important;
   opacity: 0 !important;
@@ -33,72 +8,30 @@ body:has(.Layout[data-is-home="true"]) .VPNavBar,
   pointer-events: none !important;
 }
 
-/* 更通用的首页导航栏隐藏 */
-body:has([data-is-home="true"]) > div > .VPNav,
-body:has([data-is-home="true"]) > div > header {
-  display: none !important;
-}
-
-/* 隐藏首页的侧边栏 */
-.Layout[data-is-home="true"] .VPSidebar {
-  display: none !important;
-}
-
-/* 隐藏首页的页脚 */
-.Layout[data-is-home="true"] .VPFooter {
-  display: none !important;
-}
-
-/* 移除顶部空白 - 关键！ */
-.Layout[data-is-home="true"] {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
-.Layout[data-is-home="true"] .VPContent {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
-.Layout[data-is-home="true"] .VPContent > div {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
-/* 移除 VitePress 默认的顶部间距 */
-.VPDoc.has-aside .content-container,
-.VPDoc .content-container {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
-
-/* 直接针对 VitePress 的导航栏结构 */
-.VPNav.has-sidebar {
-  display: none !important;
-}
-
-/* 如果以上都不行，使用最暴力的方式 */
-body > div > header,
-body > div > nav,
-#app > div > header,
-#app > div > nav {
-  display: none !important;
-}
-
-/* 移除所有可能的顶部间距 */
+/* 只在首页移除顶部空白 */
 body:has(.hero-container) {
   padding-top: 0 !important;
   margin-top: 0 !important;
 }
 
-#app {
+body:has(.hero-container) .Layout {
   padding-top: 0 !important;
   margin-top: 0 !important;
 }
 
-.Layout {
+body:has(.hero-container) .VPContent {
   padding-top: 0 !important;
   margin-top: 0 !important;
+}
+
+/* 确保首页全宽 */
+body:has(.hero-container) .vp-doc.container {
+  padding: 0 !important;
+  max-width: 100% !important;
+}
+
+body:has(.hero-container) .vp-doc {
+  padding: 0 !important;
 }
 
 /* 确保 hero 容器从顶部开始 */

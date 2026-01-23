@@ -11,6 +11,7 @@
       <!-- Hero Section -->
       <div class="hero-section">
         <div class="fade-in">
+          <img src="/asset/img/configuration/logo.jpg" alt="Lucky Lillia Bot Logo" class="hero-logo" />
           <h1 class="hero-title">Lucky Lillia Bot</h1>
           <p class="hero-subtitle">
             幸运莉莉娅
@@ -200,6 +201,23 @@ onMounted(() => {
   text-align: center;
 }
 
+.hero-logo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin: 0 auto 2rem;
+  display: block;
+  box-shadow: 0 8px 32px rgba(236, 72, 153, 0.3);
+  border: 4px solid rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  object-fit: cover;
+}
+
+.hero-logo:hover {
+  transform: scale(1.05) rotate(5deg);
+  box-shadow: 0 12px 48px rgba(236, 72, 153, 0.4);
+}
+
 .hero-title {
   font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: 700;
@@ -342,6 +360,12 @@ onMounted(() => {
 @media (max-width: 768px) {
   .hero-section {
     padding: 4rem 2rem 2rem;
+  }
+
+  .hero-logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1.5rem;
   }
   
   .hero-title {
