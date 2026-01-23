@@ -90,9 +90,9 @@
             <div class="feature-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/><path d="M14 8h7"/><path d="M14 12h7"/><path d="M14 16h7"/></svg>
             </div>
-            <h3 class="feature-title">漂亮的 Web / Gui 管理界面</h3>
+            <h3 class="feature-title">漂亮的 Web / GUI 管理界面</h3>
             <p class="feature-desc">
-              现代化 WebUI / Gui，可视化配置和管理，无需编辑配置文件
+              现代化 WebUI / GUI，可视化配置和管理，无需编辑配置文件
             </p>
           </div>
         </div>
