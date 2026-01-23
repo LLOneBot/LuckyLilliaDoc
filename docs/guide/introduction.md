@@ -40,4 +40,4 @@ LLBot 目前支持 OneBot11/GoCQ, Milky, Satori 协议。
 
 ## 开始使用
 
-准备好了吗？前往 [安装](./install.md) 了解如何安装 LLBot。
+准备好了吗？前往 [安装](./choice_install.md) 了解如何安装 LLBot。
