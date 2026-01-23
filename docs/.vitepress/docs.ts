@@ -55,31 +55,8 @@ function sidebarGuide(base: string) {
       text: '开始',
       collapsed: false,
       items: [
-        {text: '欢迎', link: `${base}index`},
         {text: '介绍', link: `${base}introduction`},
-      ]
-    },
-    {
-      text: '安装',
-      collapsed: false,
-      items: [
-        {text: '选择版本', link: `${base}choice_install`},
-        {text: '快速安装', link: `${base}install`},
-        {
-          text: 'Windows 版本',
-          items: [
-            {text: 'Desktop 版本', link: `${base}install-windows-desktop`},
-            {text: 'CLI 版本', link: `${base}install-windows-cli`},
-          ]
-        },
-        {
-          text: 'Linux 版本',
-          items: [
-            {text: 'CLI 版本', link: `${base}install-linux-cli`},
-            {text: 'Docker Compose', link: `${base}install-linux-docker`},
-            {text: 'Docker 镜像', link: `${base}install-linux-docker-nix`},
-          ]
-        },
+        {text: '快速安装', link: `${base}choice_install`},
       ]
     },
     {

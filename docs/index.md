@@ -1,10 +1,5 @@
-<script setup>
-import { onMounted } from 'vue';
-import { useRouter } from 'vitepress';
+---
+layout: page
+---
 
-const router = useRouter();
-
-onMounted(() => {
- router.go('/guide/index')
-})
-</script>
+<CustomHome />
