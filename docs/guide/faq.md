@@ -24,3 +24,7 @@
 需要在配置文件配置 FFmpeg 路径，[FFmpeg 下载地址](/guide/ffmpeg)。
 ::: 
 
+
+::: details Mac 电脑上使用 Docker
+请使用 OrbStack，不要使用 Docker Desktop，否则 QQ 无法启动
+:::
