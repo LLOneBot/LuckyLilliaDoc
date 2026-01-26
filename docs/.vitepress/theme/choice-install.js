@@ -10,7 +10,7 @@ export function initChoiceInstall() {
     const codeBlocks = versionPreview.querySelectorAll('pre code')
     codeBlocks.forEach((codeBlock) => {
       const pre = codeBlock.parentElement
-      if (pre.querySelector('.copy-button')) return // 避免重复添加
+      if (pre.querySelector('.copy-button')) return
 
       const button = document.createElement('button')
       button.className = 'copy-button'
@@ -50,6 +50,58 @@ export function initChoiceInstall() {
       pre.appendChild(button)
     })
   }
+
+  // 共享的安装步骤模板
+  const DOCKER_COMPOSE_SCRIPT = 'curl -fsSL https://gh-proxy.com/https://raw.githubusercontent.com/LLOneBot/LuckyLilliaBot/refs/heads/main/script/install-llbot-docker.sh -o llbot-docker.sh && chmod u+x ./llbot-docker.sh && ./llbot-docker.sh'
+  const DOCKER_COMPOSE_UP = 'docker-compose up -d'
+  const DOCKER_COMPOSE_LOGS = 'docker-compose logs -f'
+  const DOCKER_PULL = 'docker pull initialencounter/llonebot:latest'
+  const DOCKER_RUN = `docker run -d \\
+  --name llonebot \\
+  -p 3080:3080 \\
+  initialencounter/llonebot:latest`
+
+  const orbstackInstallStep = {
+    title: '安装 OrbStack',
+    content: '⚠️ <strong>重要提示：macOS 必须使用 OrbStack，不要使用 Docker Desktop</strong><br><br>前往 <a href="https://orbstack.dev" target="_blank">OrbStack 官网</a> 下载并安装，或使用 Homebrew：<pre><code>brew install orbstack</code></pre>',
+    note: 'OrbStack 比 Docker Desktop 更快、更轻量，且完全兼容 Docker 命令'
+  }
+
+  const dockerComposeSteps = [
+    {
+      title: '运行一键脚本',
+      content: `<pre><code>${DOCKER_COMPOSE_SCRIPT}</code></pre>`,
+      note: '脚本会自动配置生成 docker-compose.yaml'
+    },
+    {
+      title: '启动容器',
+      content: `<pre><code>${DOCKER_COMPOSE_UP}</code></pre>`
+    },
+    {
+      title: '查看日志',
+      content: `<pre><code>${DOCKER_COMPOSE_LOGS}</code></pre>`
+    },
+    {
+      title: '扫码登录',
+      content: '按照日志中的提示扫码登录 QQ 或者打开 WebUI http://localhost:3080 进行登录'
+    }
+  ]
+
+  const dockerImageSteps = [
+    {
+      title: '拉取镜像',
+      content: `<pre><code>${DOCKER_PULL}</code></pre>`
+    },
+    {
+      title: '运行容器',
+      content: `<pre><code>${DOCKER_RUN}</code></pre>`,
+      note: '可以根据需要添加 -p 参数映射你想暴露的端口\n设置环境变量 `QUICK_LOGIN_QQ` 可以自动登录 QQ，前提是扫码登录过一次'
+    },
+    {
+      title: '访问 Web UI',
+      content: '打开浏览器访问 <code>http://localhost:3080</code>'
+    }
+  ]
 
   const versions = {
     windows: [
@@ -144,25 +196,7 @@ export function initChoiceInstall() {
         desc: '使用 Docker Compose 一键部署',
         features: ['容器化部署', '环境隔离', '一键安装', '易于管理', '自动化配置'],
         requirements: ['已安装 Docker 和 Docker Compose', 'Linux 系统（推荐 Ubuntu 20.04+）'],
-        steps: [
-          {
-            title: '运行一键脚本',
-            content: '<pre><code>curl -fsSL https://gh-proxy.com/https://raw.githubusercontent.com/LLOneBot/LuckyLilliaBot/refs/heads/main/script/install-llbot-docker.sh -o llbot-docker.sh && chmod u+x ./llbot-docker.sh && ./llbot-docker.sh</code></pre>',
-            note: '脚本会自动配置生成 docker-compose.yaml'
-          },
-          {
-            title: '启动容器',
-            content: '<pre><code>docker-compose up -d</code></pre>'
-          },
-          {
-            title: '查看日志',
-            content: '<pre><code>docker-compose logs -f</code></pre>',
-          },
-          {
-            title: '扫码登录',
-            content: '按照日志中的提示扫码登录 QQ 或者打开 WebUI http://localhost:3080 进行登录'
-          }
-        ]
+        steps: dockerComposeSteps
       },
       { 
         value: 'docker-nix', 
@@ -170,21 +204,25 @@ export function initChoiceInstall() {
         desc: '单独镜像，支持 NixOS',
         features: ['单镜像部署', '不依赖 Compose'],
         requirements: ['已安装 Docker', '支持 x64 或 ARM64 架构'],
-        steps: [
-          {
-            title: '拉取镜像',
-            content: '<pre><code>docker pull initialencounter/llonebot:latest</code></pre>'
-          },
-          {
-            title: '运行容器',
-            content: '<pre><code>docker run -d \\\n  --name llonebot \\\n  -p 3080:3080 \\\n  initialencounter/llonebot:latest</code></pre>',
-            note: '可以根据需要添加 -p 参数映射你想暴露的端口\n设置环境变量 `QUICK_LOGIN_QQ` 可以自动登录 QQ，前提是扫码登录过一次'
-          },
-          {
-            title: '访问 Web UI',
-            content: '打开浏览器访问 <code>http://localhost:3080</code>',
-          }
-        ]
+        steps: dockerImageSteps
+      }
+    ],
+    mac: [
+      { 
+        value: 'docker', 
+        label: '🐳 Docker Compose 版本', 
+        desc: '使用 Docker Compose 一键部署，需要使用 OrbStack',
+        features: ['容器化部署', '环境隔离', '一键安装', '易于管理', '自动化配置'],
+        requirements: ['已安装 OrbStack（推荐）或 Docker Desktop', 'macOS 11 及以上版本'],
+        steps: [orbstackInstallStep, ...dockerComposeSteps]
+      },
+      { 
+        value: 'docker-nix', 
+        label: '📦 Docker 镜像版本', 
+        desc: '单独镜像部署，需要使用 OrbStack',
+        features: ['单镜像部署', '不依赖 Compose'],
+        requirements: ['已安装 OrbStack（推荐）或 Docker Desktop', 'macOS 11 及以上版本'],
+        steps: [orbstackInstallStep, ...dockerImageSteps]
       }
     ],
     manual: [
