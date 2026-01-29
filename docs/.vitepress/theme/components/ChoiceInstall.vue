@@ -6,7 +6,7 @@
         <select id="os-select" class="select-box">
           <option value="windows">🪟 Windows</option>
           <option value="linux">🐧 Linux</option>
-          <option value="mac">🍎 macOS</option>
+          <option value="docker">🐳 Docker</option>
           <option value="manual">🔧 手动安装</option>
         </select>
       </div>
