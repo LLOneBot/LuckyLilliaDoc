@@ -61,12 +61,6 @@ export function initChoiceInstall() {
   -p 3080:3080 \\
   initialencounter/llonebot:latest`
 
-  const orbstackInstallStep = {
-    title: '安装 OrbStack',
-    content: '⚠️ <strong>重要提示：macOS 必须使用 OrbStack，不要使用 Docker Desktop</strong><br><br>前往 <a href="https://orbstack.dev" target="_blank">OrbStack 官网</a> 下载并安装，或使用 Homebrew：<pre><code>brew install orbstack</code></pre>',
-    note: 'OrbStack 比 Docker Desktop 更快、更轻量，且完全兼容 Docker 命令'
-  }
-
   const dockerComposeSteps = [
     {
       title: '运行一键脚本',
@@ -109,7 +103,7 @@ export function initChoiceInstall() {
         value: 'desktop', 
         label: '🎨 Desktop 版本（带界面程序）', 
         desc: '新手友好，图形化界面，支持一键对接各种框架',
-        features: ['图形化界面', '一键启动 QQ', '可视化配置', '实时监控日志', '自动更新检查'],
+        features: ['图形化界面', '可视化配置', '实时监控日志', '自动更新检查'],
         requirements: ['Windows Server 2012 / Windows 10 及以上', '64 位的 NTQQ（官方下载）', '必须使用原版 QQ，不要安装任何插件'],
         steps: [
           {
@@ -189,40 +183,42 @@ export function initChoiceInstall() {
             content: '按照提示扫码登录 QQ，或者打开 WebUI http://localhost:3080 进行登录'
           }
         ]
-      },
-      { 
-        value: 'docker', 
-        label: '🐳 Docker Compose 版本', 
-        desc: '使用 Docker Compose 一键部署',
-        features: ['容器化部署', '环境隔离', '一键安装', '易于管理', '自动化配置'],
-        requirements: ['已安装 Docker 和 Docker Compose', 'Linux 系统（推荐 Ubuntu 20.04+）'],
-        steps: dockerComposeSteps
-      },
-      { 
-        value: 'docker-nix', 
-        label: '📦 Docker 镜像版本', 
-        desc: '单独镜像，支持 NixOS',
-        features: ['单镜像部署', '不依赖 Compose'],
-        requirements: ['已安装 Docker', '支持 x64 或 ARM64 架构'],
-        steps: dockerImageSteps
       }
     ],
-    mac: [
+    docker: [
       { 
-        value: 'docker', 
+        value: 'compose', 
         label: '🐳 Docker Compose 版本', 
-        desc: '使用 Docker Compose 一键部署，需要使用 OrbStack',
+        desc: '使用 Docker Compose 一键部署，支持 Linux 和 macOS',
         features: ['容器化部署', '环境隔离', '一键安装', '易于管理', '自动化配置'],
-        requirements: ['已安装 OrbStack（推荐）或 Docker Desktop', 'macOS 11 及以上版本'],
-        steps: [orbstackInstallStep, ...dockerComposeSteps]
+        requirements: [
+          '如果是 macOS 请安装 OrbStack 不要使用 Docker Desktop !!!',
+        ],
+        steps: [
+          {
+            title: '安装 Docker 环境',
+            content: '<strong>Linux 用户：</strong>确保已安装 Docker 和 Docker Compose<br><br><strong>macOS 用户：</strong>⚠️ 必须使用 OrbStack，不要使用 Docker Desktop<br>前往 <a href="https://orbstack.dev" target="_blank">OrbStack 官网</a> 下载并安装，或使用 Homebrew：<pre><code>brew install orbstack</code></pre>',
+            note: 'OrbStack 比 Docker Desktop 更快、更轻量，且完全兼容 Docker 命令'
+          },
+          ...dockerComposeSteps
+        ]
       },
       { 
-        value: 'docker-nix', 
-        label: '📦 Docker 镜像版本', 
-        desc: '单独镜像部署，需要使用 OrbStack',
-        features: ['单镜像部署', '不依赖 Compose'],
-        requirements: ['已安装 OrbStack（推荐）或 Docker Desktop', 'macOS 11 及以上版本'],
-        steps: [orbstackInstallStep, ...dockerImageSteps]
+        value: 'image', 
+        label: '📦 Docker 单镜像版本', 
+        desc: '单独镜像部署，支持 Linux、macOS 和 NixOS',
+        features: ['单镜像部署', '不依赖 Compose', '支持更多平台'],
+        requirements: [
+          '如果是 macOS 请安装 OrbStack 不要使用 Docker Desktop !!!',
+        ],
+        steps: [
+          {
+            title: '安装 Docker 环境',
+            content: '<strong>Linux 用户：</strong>确保已安装 Docker<br><br><strong>macOS 用户：</strong>⚠️ 必须使用 OrbStack，不要使用 Docker Desktop<br>前往 <a href="https://orbstack.dev" target="_blank">OrbStack 官网</a> 下载并安装，或使用 Homebrew：<pre><code>brew install orbstack</code></pre>',
+            note: 'OrbStack 比 Docker Desktop 更快、更轻量，且完全兼容 Docker 命令'
+          },
+          ...dockerImageSteps
+        ]
       }
     ],
     manual: [
@@ -294,6 +290,11 @@ export function initChoiceInstall() {
             <div class="preview-header">
               <h3>${version.label}</h3>
               <p class="preview-desc">${version.desc}</p>
+            </div>
+            
+            <div class="preview-features">
+              <h4>✨ 特性</h4>
+              <ul>${featuresHtml}</ul>
             </div>
             
             <div class="preview-requirements">
