@@ -28,7 +28,7 @@ jobs:
 
       - name: Build
         run: |
-              npm run docs:build
+              npm run build
 
       - name: deploy
         env:
