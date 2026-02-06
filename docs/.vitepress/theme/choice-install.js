@@ -57,7 +57,7 @@ export function initChoiceInstall() {
   const DOCKER_COMPOSE_LOGS = 'docker-compose logs -f'
   const DOCKER_PULL = 'docker pull initialencounter/llonebot:latest'
   const DOCKER_RUN = `docker run -d \\
-  --name llonebot \\
+  --name llbot \\
   -p 3080:3080 \\
   initialencounter/llonebot:latest`
 
