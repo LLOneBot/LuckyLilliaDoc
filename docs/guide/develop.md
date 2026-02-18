@@ -83,7 +83,7 @@ POST JSON:
 
 ### OneBot11 API 文档
 
-更多 API 用法参考<https://api.luckylillia.com/api-149035377>
+更多 API 用法参考<https://api.luckylillia.com/api-149035376>
 
 ## Milky 协议
 
