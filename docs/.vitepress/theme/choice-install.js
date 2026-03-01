@@ -101,7 +101,7 @@ export function initChoiceInstall() {
     windows: [
       { 
         value: 'desktop', 
-        label: '🎨 Desktop 版本（带界面程序）', 
+        label: 'Desktop 版本（带界面程序）', 
         desc: '新手友好，图形化界面，支持一键对接各种框架',
         features: ['图形化界面', '可视化配置', '实时监控日志', '自动更新检查'],
         requirements: ['Windows Server 2012 / Windows 10 及以上', '64 位的 NTQQ（官方下载）', '必须使用原版 QQ，不要安装任何插件'],
@@ -121,13 +121,13 @@ export function initChoiceInstall() {
           {
             title: '登录 QQ',
             content: '启动后会自动启动QQ，登录成功后 LLBot 会自动连接',
-            note: '⚠️ 必须是 LLBot 拉起的 QQ 才有效，自己手动打开 QQ 无效'
+            note: '注意：必须是 LLBot 拉起的 QQ 才有效，自己手动打开 QQ 无效'
           }
         ]
       },
       { 
         value: 'cli', 
-        label: '⚡ CLI 版本（命令行版本）', 
+        label: 'CLI 版本（命令行版本）', 
         desc: '轻量级命令行工具，适合服务器部署',
         features: ['资源占用更少', '命令行操作'],
         requirements: ['Windows Server 2012 / Windows 10 及以上', '64 位的 NTQQ（官方下载）'],
@@ -148,7 +148,7 @@ export function initChoiceInstall() {
           {
             title: '登录 QQ',
             content: '启动 LLBot 之后会自动启动 QQ',
-            note: '⚠️ 必须是 LLBot 拉起的 QQ 才有效'
+            note: '注意：必须是 LLBot 拉起的 QQ 才有效'
           },
           {
             title: '打开 WebUI 配置',
@@ -157,10 +157,67 @@ export function initChoiceInstall() {
         ]
       }
     ],
+    macos: [
+      {
+        value: 'desktop',
+        label: 'Desktop 版本（带界面程序）',
+        desc: '图形化界面，适合本地使用',
+        features: ['图形化界面', '可视化配置', '实时监控日志', '自动更新检查'],
+        requirements: ['macOS 12 及以上', 'Apple Silicon'],
+        steps: [
+          {
+            title: '下载安装包',
+            content: '前往 <a href="https://github.com/LLOneBot/LuckyLilliaBot/releases" target="_blank">GitHub Release 页面</a> 下载 <code>LLBot-Desktop-macos-arm64.tar.xz</code>',
+            note: '此文件适用于 Apple Silicon（arm64）'
+          },
+          {
+            title: '解压文件',
+            content: '<pre><code>tar -xf LLBot-Desktop-macos-arm64.tar.xz</code></pre>',
+            note: '解压后如果得到 .app，可拖入「应用程序」目录（或放到你习惯的位置）'
+          },
+          {
+            title: '启动程序',
+            content: '打开解压出的 Desktop 程序，按界面提示启动'
+          },
+          {
+            title: '完成登录',
+            content: '按界面提示完成 QQ 登录（可能需要扫码），登录成功后 LLBot 会自动连接',
+            note: '如果提示“无法打开”或“来自不明开发者”，请到「系统设置 → 隐私与安全性」允许打开'
+          }
+        ]
+      },
+      {
+        value: 'cli',
+        label: 'CLI 版本（命令行版本）',
+        desc: '命令行运行，适合本地或服务器环境',
+        features: ['资源占用更少', '命令行操作'],
+        requirements: ['macOS 12 及以上', 'Apple Silicon'],
+        steps: [
+          {
+            title: '下载安装包',
+            content: '前往 <a href="https://github.com/LLOneBot/LuckyLilliaBot/releases" target="_blank">GitHub Release 页面</a> 下载 <code>LLBot-CLI-macos-arm64.tar.xz</code>',
+            note: '此文件适用于 Apple Silicon（arm64）'
+          },
+          {
+            title: '解压并进入目录',
+            content: '<pre><code>tar -xf LLBot-CLI-macos-arm64.tar.xz\ncd LLBot-CLI-macos-arm64</code></pre>'
+          },
+          {
+            title: '运行启动脚本',
+            content: '<pre><code>chmod +x start.sh\n./start.sh</code></pre>',
+            note: './llbot --help 可查看更多使用技巧'
+          },
+          {
+            title: '完成登录',
+            content: '按照提示完成登录，或者打开 WebUI http://localhost:3080 进行登录'
+          }
+        ]
+      }
+    ],
     linux: [
       { 
         value: 'cli', 
-        label: '🐧 CLI 版本', 
+        label: 'CLI 版本', 
         desc: '原生 Linux 支持，一键安装脚本',
         features: ['支持 x64 和 ARM64', '一键安装，自动处理依赖', '无需 Docker 原生运行'],
         requirements: ['Debian/Ubuntu/Arch', '支持 x64 或 ARM64 架构'],
@@ -188,7 +245,7 @@ export function initChoiceInstall() {
     docker: [
       { 
         value: 'compose', 
-        label: '🐳 Docker Compose 版本', 
+        label: 'Docker Compose 版本', 
         desc: '使用 Docker Compose 一键部署，支持 Linux 和 macOS',
         features: ['容器化部署', '环境隔离', '一键安装', '易于管理', '自动化配置'],
         requirements: [
@@ -197,7 +254,7 @@ export function initChoiceInstall() {
         steps: [
           {
             title: '安装 Docker 环境',
-            content: '<strong>Linux 用户：</strong>确保已安装 Docker 和 Docker Compose<br><br><strong>macOS 用户：</strong>⚠️ 必须使用 OrbStack，不要使用 Docker Desktop<br>前往 <a href="https://orbstack.dev" target="_blank">OrbStack 官网</a> 下载并安装，或使用 Homebrew：<pre><code>brew install orbstack</code></pre>',
+            content: '<strong>Linux 用户：</strong>确保已安装 Docker 和 Docker Compose<br><br><strong>macOS 用户：</strong>必须使用 OrbStack，不要使用 Docker Desktop<br>前往 <a href="https://orbstack.dev" target="_blank">OrbStack 官网</a> 下载并安装，或使用 Homebrew：<pre><code>brew install orbstack</code></pre>',
             note: 'OrbStack 比 Docker Desktop 更快、更轻量，且完全兼容 Docker 命令'
           },
           ...dockerComposeSteps
@@ -205,7 +262,7 @@ export function initChoiceInstall() {
       },
       { 
         value: 'image', 
-        label: '📦 Docker 单镜像版本', 
+        label: 'Docker 单镜像版本', 
         desc: '单独镜像部署，支持 Linux、macOS 和 NixOS',
         features: ['单镜像部署', '不依赖 Compose', '支持更多平台'],
         requirements: [
@@ -214,7 +271,7 @@ export function initChoiceInstall() {
         steps: [
           {
             title: '安装 Docker 环境',
-            content: '<strong>Linux 用户：</strong>确保已安装 Docker<br><br><strong>macOS 用户：</strong>⚠️ 必须使用 OrbStack，不要使用 Docker Desktop<br>前往 <a href="https://orbstack.dev" target="_blank">OrbStack 官网</a> 下载并安装，或使用 Homebrew：<pre><code>brew install orbstack</code></pre>',
+            content: '<strong>Linux 用户：</strong>确保已安装 Docker<br><br><strong>macOS 用户：</strong>必须使用 OrbStack，不要使用 Docker Desktop<br>前往 <a href="https://orbstack.dev" target="_blank">OrbStack 官网</a> 下载并安装，或使用 Homebrew：<pre><code>brew install orbstack</code></pre>',
             note: 'OrbStack 比 Docker Desktop 更快、更轻量，且完全兼容 Docker 命令'
           },
           ...dockerImageSteps
@@ -224,7 +281,7 @@ export function initChoiceInstall() {
     manual: [
       {
         value: 'manual',
-        label: '🔧 通用手动安装',
+        label: '通用手动安装',
         desc: '适用于所有平台的手动安装方法，需要分别安装 PMHQ 和 LLBot',
         features: ['跨平台支持', '完全控制', '适合高级用户', '可自定义配置', '适合特殊环境'],
         requirements: ['Node.js 22 及以上版本', 'PMHQ 和 LLBot 安装包', 'Linux 需要额外的系统库'],
@@ -252,7 +309,7 @@ export function initChoiceInstall() {
           {
             title: '运行 LLBot',
             content: '解压后使用 Node.js 运行 <code>llbot.js</code>，并传入 PMHQ 的 host 和 port：<pre><code>node llbot.js --pmhq-host=127.0.0.1 --pmhq-port=13000</code></pre>',
-            note: '⚠️ 需要 Node.js 22 及以上版本'
+            note: '注意：需要 Node.js 22 及以上版本'
           },
           {
             title: '验证连接',
@@ -280,7 +337,7 @@ export function initChoiceInstall() {
             <div class="step-content">
               <h5>${step.title}</h5>
               <div class="step-detail">${step.content}</div>
-              ${step.note ? `<div class="step-note">💡 ${step.note}</div>` : ''}
+              ${step.note ? `<div class="step-note">提示：${step.note}</div>` : ''}
             </div>
           </div>
         `).join('')
@@ -293,22 +350,22 @@ export function initChoiceInstall() {
             </div>
             
             <div class="preview-features">
-              <h4>✨ 特性</h4>
+              <h4>特性</h4>
               <ul>${featuresHtml}</ul>
             </div>
             
             <div class="preview-requirements">
-              <h4>📋 系统要求</h4>
+              <h4>系统要求</h4>
               <ul>${requirementsHtml}</ul>
             </div>
 
             <div class="preview-steps">
-              <h4>🚀 安装步骤</h4>
+              <h4>安装步骤</h4>
               ${stepsHtml}
             </div>
 
             <div class="next-steps">
-              <p>✅ 安装完成后，请查看 <a href="./config">配置指南</a> 了解如何配置 LLBot 对接你的机器人框架。</p>
+              <p>安装完成后，请查看 <a href="./config">配置指南</a> 了解如何配置 LLBot 对接你的机器人框架。</p>
             </div>
           </div>
         `

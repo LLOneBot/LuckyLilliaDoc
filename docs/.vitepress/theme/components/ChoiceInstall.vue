@@ -4,10 +4,11 @@
       <div class="selector-group">
         <label for="os-select">选择操作系统</label>
         <select id="os-select" class="select-box">
-          <option value="windows">🪟 Windows</option>
-          <option value="linux">🐧 Linux</option>
-          <option value="docker">🐳 Docker</option>
-          <option value="manual">🔧 手动安装</option>
+          <option value="windows">Windows</option>
+          <option value="macos">macOS</option>
+          <option value="linux">Linux</option>
+          <option value="docker">Docker</option>
+          <option value="manual">手动安装</option>
         </select>
       </div>
 
