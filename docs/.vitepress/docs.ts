@@ -26,6 +26,10 @@ export const docs = defineConfig({
       label: '页面导航'
     },
 
+     search: {
+      provider: 'local'
+    },
+
     lastUpdated: {
       text: '最后更新于',
       formatOptions: {
