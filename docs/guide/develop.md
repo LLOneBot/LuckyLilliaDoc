@@ -2,11 +2,11 @@
 
 LLBot 目前支持 OneBot11/GoCQ, Milky, Satori 协议
 
-- [Onebot11/GoCQ](https://api.luckylillia.com/doc-7202281) 老牌 QQ 协议，支持的功能最多，但 LLBot 不是原版 OneBot11 的模样了，兼容绝大多数 GoCQ 接口
+- [Onebot11/GoCQ](https://api.luckylillia.com/doc-7202281) 老牌 QQ 协议，支持的功能最多，但 LLBot 不是原版 OneBot11 的模样了，兼容绝大多数 GoCQ 接口。API 列表和上报事件详细字段见 <https://api.luckylillia.com/doc-7202281>
 
-- [Milky](https://api.luckylillia.com/doc-7842052) 新牌 QQ 协议，开发起来比 OneBot11 友好很多，但目前发展中，功能没有 OneBot11 多
+- [Milky](https://api.luckylillia.com/doc-7842052) 新牌 QQ 协议，开发起来比 OneBot11 友好很多，但目前发展中，功能没有 OneBot11 多。API 列表和上报事件详细字段见 <https://api.luckylillia.com/doc-7842052>
 
-- [Satori](https://satori.chat) 跨平台的聊天协议，如果你有多平台（如 QQ TG 飞书）的需求可以考虑使用，避免接入不同聊天软件重新编写代码 
+- [Satori](https://satori.chat) 跨平台的聊天协议，如果你有多平台（如 QQ TG 飞书）的需求可以考虑使用，避免接入不同聊天软件重新编写代码。API 列表和上报事件详细字段见 <https://satori.chat>
 
 ## OneBot11 协议
 
