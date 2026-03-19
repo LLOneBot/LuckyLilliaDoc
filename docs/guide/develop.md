@@ -123,10 +123,7 @@ Milky 的 WS 和 HTTP 实际上是共用一个端口的，比如设置 Milky HTT
 
 ### Milky API 文档
 
-更多 Milky 细节可参考 (Milky 官方文档)[https://milky.ntqqrev.org/]
-
 更多 Milky API 用法可参考<https://api.luckylillia.com/api-391181715>
-
 
 ## Satori 协议
 
