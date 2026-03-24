@@ -1,15 +1,38 @@
 node_modules
+
+# Next.js
+.next
+out
+
+# Fumadocs
+.source
+
+# VitePress (legacy)
 docs/.vitepress/cache
 docs/.vitepress/dist
+
+# Package managers
 .yarn
 package-lock.json
 yarn.lock
 
+# Lint / Build
 .eslintcache
+*.tsbuildinfo
+
+# OS
 .DS_Store
+Thumbs.db
+
+# IDE
 .idea
 .vscode
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
+
+# Env
+.env
+.env.local
+.env.*.local
