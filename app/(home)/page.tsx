@@ -91,12 +91,12 @@ export default function HomePage() {
               LLBot，强大的 QQ 机器人框架，部署机器人更简单、更高效
             </p>
             <div className="cta-buttons">
-              <Link href="/docs/installation" className="cta-button">
+              <Link href="/guide/choice_install" className="cta-button">
                 <Download size={20} />
                 谁看破文档，立即安装!
               </Link>
               <Link
-                href="/docs/guide/introduction"
+                href="/guide/introduction"
                 className="cta-button cta-secondary"
               >
                 <svg

@@ -1,8 +1,17 @@
 {
+  "title": "指南",
   "pages": [
-    "index",
-    "installation",
-    "---Guide---",
-    "guide"
+    "---开始---",
+    "introduction",
+    "choice_install",
+    "---配置---",
+    "config",
+    "config_framework",
+    "---进阶---",
+    "develop",
+    "---其他---",
+    "faq",
+    "ffmpeg",
+    "config_email"
   ]
 }
