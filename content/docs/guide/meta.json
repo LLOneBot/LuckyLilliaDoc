@@ -1,0 +1,12 @@
+{
+  "title": "指南",
+  "pages": [
+    "introduction",
+    "config",
+    "config_framework",
+    "develop",
+    "faq",
+    "ffmpeg",
+    "config_email"
+  ]
+}

@@ -7,6 +7,7 @@ const config = {
   serverExternalPackages: ['@takumi-rs/image-response'],
   output: 'export',
   reactStrictMode: true,
+  images: { unoptimized: true },
 };
 
 export default withMDX(config);

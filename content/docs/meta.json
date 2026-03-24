@@ -1,6 +1,8 @@
 {
-    "pages": [
-        "index",
-        "installation"
-    ]
+  "pages": [
+    "index",
+    "installation",
+    "---Guide---",
+    "guide"
+  ]
 }

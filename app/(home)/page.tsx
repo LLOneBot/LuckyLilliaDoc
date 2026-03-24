@@ -1,13 +1,16 @@
+'use client';
+
 import Link from 'next/link';
-import { Card, Cards } from 'fumadocs-ui/components/card';
+import { useEffect, useRef } from 'react';
 import {
   AppWindow,
   Boxes,
   Download,
   MonitorCog,
   ShieldCheck,
-  SquareDashedKanban,
+  Settings,
 } from 'lucide-react';
+import './home.css';
 
 const features = [
   {
@@ -30,7 +33,7 @@ const features = [
   {
     title: '功能丰富',
     description: '完善的 API，内置 WebQQ，一键安装和对接各种框架',
-    icon: SquareDashedKanban,
+    icon: Settings,
   },
   {
     title: '开源免费',
@@ -45,54 +48,96 @@ const features = [
 ] as const;
 
 export default function HomePage() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+
+    const els = containerRef.current?.querySelectorAll('.fade-in');
+    els?.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 py-10 sm:px-6 sm:py-14">
-      <section className="relative overflow-hidden rounded-2xl border bg-fd-card p-6 sm:p-10">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,hsl(var(--fd-primary)/0.15),transparent_45%),radial-gradient(circle_at_80%_30%,hsl(var(--fd-secondary)/0.12),transparent_40%)]"
-        />
+    <main ref={containerRef} className="home-container">
+      <div className="gradient-bg" />
+      <div className="gradient-orbs">
+        <div className="orb orb-1" />
+        <div className="orb orb-2" />
+        <div className="orb orb-3" />
+      </div>
 
-        <div className="relative z-10 mx-auto max-w-3xl text-center">
-          <p className="text-sm font-medium text-fd-muted-foreground">
-            幸运莉莉娅
-          </p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-5xl">
-            LuckyLilliaBot
-          </h1>
-          <p className="mt-4 text-base text-fd-muted-foreground sm:text-lg">
-            LLBot，强大的 QQ 机器人框架，部署机器人更简单、更高效
-          </p>
-
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-            <Link
-              href="/docs"
-              className="inline-flex items-center justify-center rounded-lg bg-fd-primary px-5 py-2.5 text-sm font-medium text-fd-primary-foreground transition-colors hover:bg-fd-primary/90"
-            >
-              阅读文档
-            </Link>
+      <div className="content-wrapper">
+        <section className="hero-section">
+          <div className="fade-in">
+            <img
+              src="/logo.jpg"
+              alt="Lucky Lillia Bot Logo"
+              className="hero-logo"
+            />
+            <h1 className="hero-title">Lucky Lillia Bot</h1>
+            <p className="hero-subtitle">幸运莉莉娅</p>
+            <p className="hero-subtitle">
+              LLBot，强大的 QQ 机器人框架，部署机器人更简单、更高效
+            </p>
+            <div className="cta-buttons">
+              <Link href="/docs/installation" className="cta-button">
+                <Download size={20} />
+                谁看破文档，立即安装!
+              </Link>
+              <Link
+                href="/docs/guide/introduction"
+                className="cta-button cta-secondary"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 16v-4" />
+                  <path d="M12 8h.01" />
+                </svg>
+                了解什么是 LLBot
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="mt-12 sm:mt-16">
-        <h2 className="text-center text-2xl font-semibold tracking-tight sm:text-3xl">
-          为什么选择 LLBot？
-        </h2>
-        <Cards className="mt-6">
-          {features.map((feature) => {
-            const Icon = feature.icon;
-            return (
-              <Card
-                key={feature.title}
-                title={feature.title}
-                description={feature.description}
-                icon={<Icon />}
-              />
-            );
-          })}
-        </Cards>
-      </section>
+        <section className="features-section">
+          <h2 className="features-title fade-in">为什么选择 LLBot？</h2>
+          <div className="features-grid">
+            {features.map((feature) => {
+              const Icon = feature.icon;
+              return (
+                <div key={feature.title} className="feature-card fade-in">
+                  <div className="feature-icon">
+                    <Icon size={32} color="white" />
+                  </div>
+                  <h3 className="feature-card-title">{feature.title}</h3>
+                  <p className="feature-desc">{feature.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      </div>
     </main>
   );
 }
