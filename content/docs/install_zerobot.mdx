@@ -1,0 +1,58 @@
+---
+title: 对接 ZeroBot-Plugin
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+import { Step, Steps } from 'fumadocs-ui/components/steps'
+
+[ZeroBot-Plugin](https://github.com/FloatTech/ZeroBot-Plugin) 是基于 Go 的聊天机器人插件集合。
+
+<Callout type="info">
+如果你使用 LLBot Desktop 版，可以在「对接框架」页面一键安装 ZeroBot-Plugin，无需手动操作。
+</Callout>
+
+<Callout type="warn">
+ZeroBot-Plugin 不支持 macOS。
+</Callout>
+
+<Steps>
+<Step>
+### 下载
+
+前往 [ZeroBot-Plugin 发布页](https://github.com/FloatTech/ZeroBot-Plugin/releases/latest) 下载对应平台的文件：
+
+- Windows: `zbp_windows_amd64.zip`
+- Linux: `zbp_linux_amd64.zip`
+
+解压到安装目录（如 `bin/ZeroBot-Plugin`）。
+</Step>
+
+<Step>
+### 配置 LLBot
+
+在 LLBot 中启用 OneBot11，添加**正向 WS** 连接（LLBot 作为服务端，ZeroBot 连接过来）：
+
+```json5
+{
+  "type": "ws",
+  "enable": true,
+  "host": "127.0.0.1",
+  "port": 6700,
+  "heartInterval": 60000,
+  "token": "",
+  "messageFormat": "array",
+  "reportSelfMessage": false
+}
+```
+
+<Callout type="info">
+注意 ZeroBot-Plugin 使用的是**正向 WebSocket**（`ws` 类型），与其他框架的反向 WS 不同。
+</Callout>
+</Step>
+
+<Step>
+### 启动
+
+直接运行 `zbp` 可执行文件。
+</Step>
+</Steps>

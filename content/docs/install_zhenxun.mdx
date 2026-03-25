@@ -1,0 +1,97 @@
+---
+title: 对接真寻Bot
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+import { Step, Steps } from 'fumadocs-ui/components/steps'
+
+[真寻Bot](https://zhenxun-org.github.io/zhenxun_bot/) 是基于 NoneBot2 的功能丰富的 QQ 机器人。
+
+<Callout type="info">
+如果你使用 LLBot Desktop 版，可以在「对接框架」页面一键安装真寻Bot，无需手动操作。
+</Callout>
+
+### 前置依赖
+
+- Python 3.11+
+- [uv](https://github.com/astral-sh/uv)
+- Poetry（通过 uv 安装：`uv tool install poetry`）
+
+<Steps>
+<Step>
+### 下载源码
+
+```bash
+git clone https://github.com/zhenxun-org/zhenxun_bot.git
+cd zhenxun_bot
+```
+
+或下载 ZIP：https://github.com/zhenxun-org/zhenxun_bot/archive/refs/heads/main.zip
+</Step>
+
+<Step>
+### 安装依赖
+
+```bash
+# 安装 Poetry
+uv tool install poetry
+
+# 锁定并安装依赖
+uv tool run poetry lock
+uv tool run poetry install
+```
+</Step>
+
+<Step>
+### 配置环境变量
+
+在项目根目录创建 `.env.dev` 文件：
+
+```ini
+ENVIRONMENT=dev
+SUPERUSERS=["你的QQ号"]
+COMMAND_START=[""]
+SESSION_RUNNING_EXPRESSION="别急呀,小真寻要宕机了!QAQ"
+NICKNAME=["真寻", "小真寻", "绪山真寻", "小寻子"]
+SESSION_EXPIRE_TIMEOUT=00:00:30
+ALCONNA_USE_COMMAND_START=True
+IMAGE_TO_BYTES=True
+SELF_NICKNAME="小真寻"
+DB_URL="sqlite:data/db/zhenxun.db"
+CACHE_MODE=NONE
+DRIVER=~fastapi+~httpx+~websockets
+HOST=127.0.0.1
+PORT=8080
+```
+
+<Callout type="info">
+`PORT` 填写一个未被占用的端口，如 `8080`。`SUPERUSERS` 填写你的 QQ 号作为管理员。
+</Callout>
+</Step>
+
+<Step>
+### 配置 LLBot
+
+在 LLBot 中启用 OneBot11，添加反向 WS 连接：
+
+```json5
+{
+  "type": "ws-reverse",
+  "enable": true,
+  "url": "ws://127.0.0.1:8080/onebot/v11/ws",  // 端口与 .env.dev 中的 PORT 一致
+  "heartInterval": 60000,
+  "token": "",
+  "messageFormat": "array",
+  "reportSelfMessage": false
+}
+```
+</Step>
+
+<Step>
+### 启动
+
+```bash
+uv tool run poetry run python bot.py
+```
+</Step>
+</Steps>

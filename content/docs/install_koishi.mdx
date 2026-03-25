@@ -1,16 +1,51 @@
 ---
-title: 框架对接
+title: 对接 Koishi
 ---
 
 import { Callout } from 'fumadocs-ui/components/callout'
+import { Step, Steps } from 'fumadocs-ui/components/steps'
 
-## 接入 Koishi 的 adapter-onebot
+[Koishi](https://koishi.chat/) 是基于 NodeJS 的跨平台聊天机器人框架，自带 UI 交互和插件市场。
 
-#### 1. 在 Koishi 插件市场搜索并安装 adapter-onebot
+<Callout type="info">
+如果你使用 LLBot Desktop 版，可以在「对接框架」页面一键安装 Koishi，无需手动操作。
+</Callout>
+
+## 安装 Koishi
+
+<Steps>
+<Step>
+### 下载 Koishi Desktop
+
+前往 [Koishi Desktop 发布页](https://github.com/koishijs/koishi-desktop/releases/latest) 下载对应平台的压缩包：
+
+- Windows: `koishi-desktop-win-x64-{版本}.zip`
+- macOS: `koishi-desktop-osx-x64-{版本}.zip`
+- Linux: `koishi-desktop-linux-x64-{版本}.zip`
+
+解压到你想安装的目录（如 `bin/koishi`）。
+</Step>
+
+<Step>
+### 启动 Koishi
+
+启动 Koishi Desktop，进入 Koishi 控制台。
+</Step>
+</Steps>
+
+## 下面举例三种协议的对接方式，选择其中一种使用即可
+
+## 接入 adapter-onebot
+
+<Steps>
+<Step>
+### 在 Koishi 插件市场搜索并安装 adapter-onebot
 
 ![](/docs/asset/img/configuration/koishi-install-onebot.png)
+</Step>
 
-#### 2. 配置 adapter-onebot
+<Step>
+### 配置 adapter-onebot
 
 这里以 WS 反向连接为例
 
@@ -23,8 +58,10 @@ protocol 选择 `ws-reverse`
 其他配置保持默认即可，保存配置然后启用插件
 
 ![](/docs/asset/img/configuration/koishi-onebot-setting.png)
+</Step>
 
-#### 3. 配置完成后，LLBot 添加 WS 反向地址
+<Step>
+### 配置 LLBot
 
 adapter-onebot 的 WS 反向地址为 `ws://127.0.0.1:5140/onebot`
 
@@ -49,71 +86,51 @@ adapter-onebot 的 WS 反向地址为 `ws://127.0.0.1:5140/onebot`
 ```
 
 保存即可
+</Step>
+</Steps>
 
-## 接入 Koishi 的 adapter-satori
+## 接入 adapter-satori
 
-#### 1. 在 LLBot 启用 Satori 协议
+<Steps>
+<Step>
+### 在 LLBot 启用 Satori 协议
 
 使用 LLBot Desktop 在 Satori 配置中启用 Satori 协议
 
 也可以使用 LLBot WebUI 在 Satori 配置中启用 Satori 协议，WebUI 默认地址是 http://localhost:3080
+</Step>
 
-#### 2. 配置 adapter-satori
+<Step>
+### 配置 adapter-satori
 
 ![](/docs/asset/img/configuration/koishi-satori-setting.png)
 
 `endpoint` 填写 LLBot 的 Satori 服务的地址（如 http://127.0.0.1:5600），`token` 填写 Satori 服务的 token（没有则不填写），点击右上角的「启用插件」，即可连接到 LLBot
+</Step>
+</Steps>
 
-## 接入 Koishi 的 adapter-milky
+## 接入 adapter-milky
 
-#### 1. 在 LLBot 启用 Milky 协议
+<Steps>
+<Step>
+### 在 LLBot 启用 Milky 协议
 
 使用 LLBot Desktop 在 Milky 配置中启用 Milky 协议
 
 也可以使用 LLBot WebUI 在 Milky 配置中启用 Milky 协议，WebUI 默认地址是 http://localhost:3080
+</Step>
 
-#### 1. 在 Koishi 插件市场搜索并安装 adapter-milky
+<Step>
+### 在 Koishi 插件市场搜索并安装 adapter-milky
 
 ![](/docs/asset/img/configuration/koishi-install-milky.png)
+</Step>
 
-#### 2. 配置 adapter-milky
+<Step>
+### 配置 adapter-milky
 
 ![](/docs/asset/img/configuration/koishi-milky-setting.png)
 
 `endpoint` 填写 LLBot 的 Milky 服务的地址（如 http://127.0.0.1:3010），`token` 填写 Milky 服务的 access token（没有则不填写），点击右上角的「启用插件」，即可连接到 LLBot
-
-## 接入 NoneBot 的 adapter-onebot
-
-#### 1. 配置 NoneBot
-
-这里假设你已经安装了 Onebot 适配器
-
-然后启用 NoneBot，可以看到 NoneBot 输出的端口号，如 `8080`
-
-#### 2. 配置 LLBot
-
-在 LLBot 配置添加反向 WS 地址，地址为 `ws://127.0.0.1:8080/onebot/v11/ws`, 这里的 `8080` 是 NoneBot 输出的端口号，`/onebot/v11/ws` 是 NoneBot onebot 适配器默认的路径
-
-使用 LLBot 桌面版在 Bot 配置中启用 OneBot11，启用反向 WS，填入反向 WS 地址保存
-
-也可以使用 LLBot WebUI 启用 OneBot11 反向 WS，填入反向 WS 地址保存，WebUI 默认地址是 http://localhost:3080
-
-也可直接修改配置文件 `data/config_<qq>.json` 中的 反向 ws url 配置为 `"ws://127.0.0.1:8080/onebot/v11/ws"`
-
-```json5
-  {
-    "type": "ws-reverse",
-    "enable": true,  // 这里改为 true
-    "url": "ws://127.0.0.1:8080/onebot/v11/ws",  // 填入反向的 ws 地址
-    "heartInterval": 60000,
-    "token": "",
-    "messageFormat": "array",
-    "reportSelfMessage": true,
-    "reportOfflineMessage": true,
-    "debug": true
-  }
-```
-
-<Callout type="info">
-记得 LLBot 配置的 token 需要和 NoneBot 配置的一致
-</Callout>
+</Step>
+</Steps>

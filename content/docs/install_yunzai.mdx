@@ -1,0 +1,123 @@
+---
+title: 对接云崽
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs'
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion'
+import { Step, Steps } from 'fumadocs-ui/components/steps'
+
+[云崽](https://yunzai-bot.com/) 是基于 Node.js 的机器人框架，插件生态丰富。
+
+<Callout type="info">
+如果你使用 LLBot Desktop 版，可以在「对接框架」页面一键安装云崽，无需手动操作。
+</Callout>
+
+### 前置依赖
+
+- [Node.js 24](https://nodejs.org/)
+- [Redis](https://redis.io/)
+- [pnpm](https://pnpm.io/)
+
+<Accordions>
+<Accordion title="安装 Redis">
+
+<Tabs items={["Windows", "macOS", "Linux"]}>
+<Tab value="Windows">
+
+下载 [Redis for Windows](https://github.com/redis-windows/redis-windows/releases)（推荐 `Redis-7.4.7-Windows-x64-msys2.zip`），解压后运行 `redis-server.exe`。
+
+</Tab>
+<Tab value="macOS">
+
+```bash
+brew install redis
+brew services start redis
+```
+
+</Tab>
+<Tab value="Linux">
+
+```bash
+# Ubuntu / Debian
+sudo apt install redis-server
+sudo systemctl start redis
+
+# 或从源码编译
+wget https://github.com/redis/redis/archive/refs/tags/7.4.7.tar.gz
+tar xzf 7.4.7.tar.gz
+cd redis-7.4.7
+make
+```
+
+</Tab>
+</Tabs>
+
+</Accordion>
+</Accordions>
+
+<Steps>
+<Step>
+### 下载云崽
+
+```bash
+git clone --depth 1 https://github.com/TimeRainStarSky/Yunzai.git
+cd Yunzai
+```
+
+或下载 ZIP：https://github.com/TimeRainStarSky/Yunzai/archive/refs/heads/main.zip
+</Step>
+
+<Step>
+### 安装 pnpm 和依赖
+
+```bash
+npm install -g pnpm --registry=https://registry.npmmirror.com
+pnpm install --registry=https://registry.npmmirror.com
+```
+</Step>
+
+<Step>
+### 安装插件（可选）
+
+```bash
+# TRSS-Plugin
+git clone --depth 1 https://github.com/TimeRainStarSky/TRSS-Plugin.git plugins/TRSS-Plugin
+cd plugins/TRSS-Plugin && npm install --registry=https://registry.npmmirror.com && cd ../..
+
+# neko-status-plugin
+git clone --depth 1 https://github.com/erzaozi/neko-status-plugin.git plugins/neko-status-plugin
+
+# miao-plugin
+git clone --depth 1 -b master https://github.com/yoimiya-kokomi/miao-plugin.git plugins/miao-plugin
+```
+</Step>
+
+<Step>
+### 配置 LLBot
+
+在 LLBot 中启用 OneBot11，添加反向 WS 连接：
+
+```json5
+{
+  "type": "ws-reverse",
+  "enable": true,
+  "url": "ws://127.0.0.1:2536/OneBotv11",
+  "heartInterval": 60000,
+  "token": "",
+  "messageFormat": "array",
+  "reportSelfMessage": false
+}
+```
+</Step>
+
+<Step>
+### 启动
+
+确保 Redis 已启动，然后：
+
+```bash
+node .
+```
+</Step>
+</Steps>

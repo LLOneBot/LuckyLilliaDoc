@@ -1,0 +1,99 @@
+---
+title: 对接 AstrBot
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs'
+import { Step, Steps } from 'fumadocs-ui/components/steps'
+
+[AstrBot](https://astrbot.app/) 是一个多平台聊天机器人框架，自带 WebUI 管理界面。
+
+<Callout type="info">
+如果你使用 LLBot Desktop 版，可以在「对接框架」页面一键安装 AstrBot，无需手动操作。
+</Callout>
+
+### 前置依赖
+
+- Python 3.11+
+- [uv](https://github.com/astral-sh/uv)（Python 包管理器）
+
+<Tabs items={["Windows", "macOS / Linux"]}>
+<Tab value="Windows">
+```bash
+pip install uv -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+</Tab>
+<Tab value="macOS / Linux">
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+</Tab>
+</Tabs>
+
+<Steps>
+<Step>
+### 下载源码
+
+```bash
+git clone https://github.com/AstrBotDevs/AstrBot.git
+cd AstrBot
+```
+
+或者直接下载 ZIP：https://github.com/AstrBotDevs/AstrBot/archive/refs/heads/master.zip，解压后进入目录。
+</Step>
+
+<Step>
+### 安装依赖
+
+```bash
+# 创建虚拟环境
+uv venv --python 3.11
+
+# 安装依赖
+uv pip install -r requirements.txt
+```
+</Step>
+
+<Step>
+### 启动 AstrBot
+
+```bash
+uv run main.py
+```
+
+启动后，AstrBot 会输出 WebUI 地址（默认 `http://localhost:6185`）。
+</Step>
+
+<Step>
+### 在 AstrBot WebUI 中配置平台
+
+1. 打开 AstrBot WebUI
+2. 进入「平台管理」或「消息平台」页面
+3. 添加一个新的平台，类型选择 `aiocqhttp`（OneBot11 反向 WS）
+4. 配置以下参数：
+   - 主机：`0.0.0.0`
+   - 端口：`6199`
+   - Token：留空（或与 LLBot 一致）
+5. 启用该平台并保存
+</Step>
+
+<Step>
+### 配置 LLBot
+
+在 LLBot 中启用 OneBot11，添加反向 WS 连接：
+
+```json5
+{
+  "type": "ws-reverse",
+  "enable": true,
+  "url": "ws://127.0.0.1:6199/ws",
+  "heartInterval": 60000,
+  "token": "",
+  "messageFormat": "array",
+  "reportSelfMessage": false
+}
+```
+
+也可以通过 LLBot WebUI 或 Desktop 的 Bot 配置页面添加反向 WS 地址 `ws://127.0.0.1:6199/ws`。
+</Step>
+</Steps>

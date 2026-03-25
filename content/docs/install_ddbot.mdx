@@ -1,0 +1,57 @@
+---
+title: 对接 DDBot
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+import { Step, Steps } from 'fumadocs-ui/components/steps'
+
+[DDBot](https://ddbot.songlist.icu/) 是一个开箱即用的 QQ 机器人。
+
+<Callout type="info">
+如果你使用 LLBot Desktop 版，可以在「对接框架」页面一键安装 DDBot，无需手动操作。
+</Callout>
+
+<Steps>
+<Step>
+### 下载
+
+前往 [DDBot-WSa 发布页](https://github.com/cnxysoft/DDBOT-WSa/releases) 下载对应平台的文件：
+
+- Windows: `DDBOT-WSa-{版本}-windows-amd64.zip`
+- macOS (Apple Silicon): `DDBOT-WSa-{版本}-darwin-arm64.tar.gz`
+- macOS (Intel): `DDBOT-WSa-{版本}-darwin-amd64.tar.gz`
+- Linux: `DDBOT-WSa-{版本}-linux-amd64.zip`
+
+解压到安装目录（如 `bin/ddbot`）。
+
+macOS / Linux 需要赋予执行权限：
+
+```bash
+chmod +x DDBOT-WSa
+```
+</Step>
+
+<Step>
+### 配置 LLBot
+
+在 LLBot 中启用 OneBot11，添加反向 WS 连接：
+
+```json5
+{
+  "type": "ws-reverse",
+  "enable": true,
+  "url": "ws://127.0.0.1:15630/ws",
+  "heartInterval": 60000,
+  "token": "",
+  "messageFormat": "array",
+  "reportSelfMessage": false
+}
+```
+</Step>
+
+<Step>
+### 启动
+
+直接运行 `DDBOT-WSa` 可执行文件即可。
+</Step>
+</Steps>

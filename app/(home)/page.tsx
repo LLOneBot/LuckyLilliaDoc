@@ -16,7 +16,7 @@ const features = [
   {
     title: '多平台支持',
     description:
-      '支持 Windows、Linux 多平台部署，无论是桌面版还是服务器环境都能轻松运行',
+      '支持 Windows、Linux、macOS 多平台部署，无论是桌面版还是服务器环境都能轻松运行',
     icon: MonitorCog,
   },
   {

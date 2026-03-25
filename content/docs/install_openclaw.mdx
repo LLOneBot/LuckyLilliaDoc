@@ -1,0 +1,103 @@
+---
+title: 对接 OpenClaw
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+import { Step, Steps } from 'fumadocs-ui/components/steps'
+
+龙虾，基于大模型的个人助理
+
+<Callout type="info">
+如果你使用 LLBot Desktop 版，可以在「对接框架」页面一键安装 OpenClaw，无需手动操作。
+</Callout>
+
+### 前置依赖
+
+- [Node.js 24](https://nodejs.org/)
+- [Git](https://git-scm.com/)
+
+<Steps>
+<Step>
+### 安装 OpenClaw CLI
+
+```bash
+npm install -g openclaw@latest --registry=https://registry.npmmirror.com
+```
+</Step>
+
+<Step>
+### 安装 OpenClaw QQ 扩展
+
+```bash
+git clone https://github.com/constansino/openclaw_qq.git ~/.openclaw/extensions/openclaw_qq
+cd ~/.openclaw/extensions/openclaw_qq
+npm install --registry=https://registry.npmmirror.com
+```
+</Step>
+
+<Step>
+### 运行初始化向导
+
+```bash
+openclaw onboard --install-daemon
+```
+
+按照提示完成初始化配置。
+</Step>
+
+<Step>
+### 配置 LLBot
+
+在 LLBot 中启用 OneBot11，添加**正向 WS** 连接：
+
+```json5
+{
+  "type": "ws",
+  "enable": true,
+  "host": "127.0.0.1",
+  "port": 3001,  // 使用未被占用的端口
+  "heartInterval": 60000,
+  "token": "",
+  "messageFormat": "array",
+  "reportSelfMessage": false
+}
+```
+
+<Callout type="info">
+OpenClaw 使用**正向 WebSocket**（`ws` 类型），LLBot 作为服务端。
+</Callout>
+</Step>
+
+<Step>
+### 配置 OpenClaw
+
+编辑 `~/.openclaw/openclaw.json`：
+
+```json
+{
+  "channels": {
+    "qq": {
+      "wsUrl": "ws://127.0.0.1:3001",
+      "accessToken": "",
+      "requireMention": true,
+      "enableEmptyReplyFallback": false,
+      "admins": "你的QQ号"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "qq": { "enabled": true }
+    }
+  }
+}
+```
+</Step>
+
+<Step>
+### 启动
+
+```bash
+openclaw gateway run
+```
+</Step>
+</Steps>

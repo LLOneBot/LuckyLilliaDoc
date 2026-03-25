@@ -1,0 +1,167 @@
+---
+title: 对接 NoneBot2
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+import { Step, Steps } from 'fumadocs-ui/components/steps'
+
+[NoneBot2](https://nonebot.dev/) 是基于 Python 的聊天机器人框架，偏向于有基础的开发者。
+
+本教程以 Windows 环境为例，介绍从零开始安装 NoneBot2 并对接 LLBot 的完整流程。
+
+## 前置依赖
+
+**Python >= 3.9**
+
+[Python 官网](https://www.python.org/) 下载安装。
+
+## 安装 Python
+
+<Callout type="info">
+已有 Python 环境的可跳过此步骤。
+</Callout>
+
+<Steps>
+<Step>
+### 安装 Python
+
+打开安装包，注意勾选 **Add Python to PATH**（加入环境变量）。
+
+![](/docs/asset/img/configuration/nonebot1.png)
+</Step>
+
+<Step>
+### 配置 pip 源
+
+安装完成后，`Win+R` 输入 `cmd` 打开命令行，执行以下命令配置国内镜像源：
+
+```bash
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+pip config set install.trusted-host pypi.tuna.tsinghua.edu.cn
+```
+
+再升级一下 pip：
+
+```bash
+pip install --upgrade pip
+```
+
+![](/docs/asset/img/configuration/nonebot2.png)
+</Step>
+</Steps>
+
+## 安装 NoneBot
+
+<Steps>
+<Step>
+### 安装 pipx 和脚手架
+
+```bash
+python -m pip install --user pipx
+python -m pipx ensurepath
+```
+
+<Callout type="warn">
+如果输出中出现 "open a new terminal" 或 "re-login" 字样，请关闭当前终端并重新打开。
+</Callout>
+
+安装 NoneBot 脚手架：
+
+```bash
+pipx install nb-cli
+```
+
+安装完成后可以在命令行使用 `nb` 命令。如果提示找不到命令，请重启终端或参考 [pipx 文档](https://pypa.github.io/pipx/) 检查环境变量。
+</Step>
+
+<Step>
+### 创建项目
+
+在你想要创建项目的文件夹地址栏中输入 `cmd` 回车打开命令行：
+
+![](/docs/asset/img/configuration/nonebot3.png)
+
+执行：
+
+```bash
+nb create
+```
+
+选择模板 **bootstrap**（初学者或用户），回车。
+
+![](/docs/asset/img/configuration/nonebot4.png)
+</Step>
+
+<Step>
+### 配置项目
+
+项目名称随意填写（如 `llonebot_nb`），回车。空格选择第一个适配器（变绿后回车）。
+
+![](/docs/asset/img/configuration/nonebot5.png)
+
+驱动选择 **fastapi**：
+
+![](/docs/asset/img/configuration/nonebot6.png)
+
+立即安装依赖选 **Y**，创建虚拟环境选 **Y**，等待安装完成。
+
+![](/docs/asset/img/configuration/nonebot7.png)
+
+内置插件直接回车跳过，然后进入项目文件夹：
+
+![](/docs/asset/img/configuration/nonebot8.png)
+</Step>
+
+<Step>
+### 启动 NoneBot
+
+```bash
+nb run
+```
+
+![](/docs/asset/img/configuration/nonebot9.png)
+
+出现上图界面说明 NoneBot 启动成功。
+
+如需修改端口或 host 地址，在项目文件夹中创建 `.env` 文件：
+
+```bash
+HOST=0.0.0.0  # 配置 NoneBot 监听的 IP / 主机名
+PORT=8080  # 配置 NoneBot 监听的端口
+COMMAND_START=["/"]  # 配置命令起始字符
+COMMAND_SEP=["."]  # 配置命令分割字符
+```
+
+更多配置项参考 [NoneBot 配置文档](https://nonebot.dev/docs/appendices/config#内置配置项)。
+
+安装插件可前往 [NoneBot 插件商店](https://v2.nonebot.dev/store)。
+</Step>
+</Steps>
+
+## 连接 LLBot
+
+在 LLBot 中启用 OneBot11，添加反向 WS 连接，地址为 `ws://127.0.0.1:8080/onebot/v11/ws`（`8080` 是 NoneBot 监听的端口，如果你修改过请对应调整）。
+
+可以通过以下任一方式配置：
+
+- **LLBot Desktop**：Bot 配置 → 启用 OneBot11 → 启用反向 WS → 填入地址保存
+- **LLBot WebUI**（默认 http://localhost:3080）：启用 OneBot11 反向 WS → 填入地址保存
+- **直接修改配置文件** `data/config_<qq>.json`：
+
+```json5
+{
+  "type": "ws-reverse",
+  "enable": true,
+  "url": "ws://127.0.0.1:8080/onebot/v11/ws",
+  "heartInterval": 60000,
+  "token": "",
+  "messageFormat": "array",
+  "reportSelfMessage": false
+}
+```
+
+<Callout type="info">
+LLBot 配置的 token 需要和 NoneBot 配置的一致。
+</Callout>
+
+连接成功后，NoneBot 日志会显示 Bot 已连接。
