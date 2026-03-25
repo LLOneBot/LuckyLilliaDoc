@@ -36,27 +36,27 @@
 }
 
 .dark {
-  --color-fd-background: hsl(280, 15%, 8%);
-  --color-fd-foreground: hsl(300, 10%, 93%);
-  --color-fd-muted: hsl(280, 12%, 14%);
-  --color-fd-muted-foreground: hsla(300, 10%, 72%, 0.8);
-  --color-fd-popover: hsl(280, 12%, 12%);
-  --color-fd-popover-foreground: hsl(300, 10%, 88%);
-  --color-fd-card: hsl(280, 12%, 11%);
-  --color-fd-card-foreground: hsl(300, 10%, 98%);
-  --color-fd-border: hsla(300, 15%, 35%, 25%);
-  --color-fd-primary: hsl(330, 75%, 60%);
+  --color-fd-background: hsl(220, 10%, 8%);
+  --color-fd-foreground: hsl(220, 8%, 93%);
+  --color-fd-muted: hsl(220, 8%, 14%);
+  --color-fd-muted-foreground: hsla(220, 6%, 62%, 0.9);
+  --color-fd-popover: hsl(220, 8%, 12%);
+  --color-fd-popover-foreground: hsl(220, 8%, 88%);
+  --color-fd-card: hsl(220, 8%, 11%);
+  --color-fd-card-foreground: hsl(220, 8%, 98%);
+  --color-fd-border: hsla(220, 10%, 30%, 30%);
+  --color-fd-primary: hsl(330, 70%, 62%);
   --color-fd-primary-foreground: hsl(0, 0%, 100%);
-  --color-fd-secondary: hsl(280, 12%, 14%);
-  --color-fd-secondary-foreground: hsl(300, 10%, 93%);
-  --color-fd-accent: hsla(300, 20%, 35%, 35%);
-  --color-fd-accent-foreground: hsl(300, 10%, 92%);
+  --color-fd-secondary: hsl(220, 8%, 15%);
+  --color-fd-secondary-foreground: hsl(220, 8%, 93%);
+  --color-fd-accent: hsla(220, 10%, 30%, 35%);
+  --color-fd-accent-foreground: hsl(220, 8%, 92%);
   --color-fd-ring: hsl(330, 60%, 55%);
-  --color-fd-overlay: hsla(280, 30%, 0%, 0.3);
+  --color-fd-overlay: hsla(220, 15%, 0%, 0.4);
 }
 
 .dark #nd-sidebar {
-  --color-fd-muted: hsl(280, 12%, 14%);
-  --color-fd-secondary: hsl(280, 12%, 16%);
-  --color-fd-muted-foreground: hsl(300, 10%, 72%);
+  --color-fd-muted: hsl(220, 8%, 14%);
+  --color-fd-secondary: hsl(220, 8%, 16%);
+  --color-fd-muted-foreground: hsl(220, 6%, 62%);
 }

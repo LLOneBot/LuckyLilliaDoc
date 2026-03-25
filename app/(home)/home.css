@@ -25,11 +25,11 @@
 .dark .gradient-bg {
   background: linear-gradient(
     135deg,
-    rgba(30, 27, 75, 1) 0%,
-    rgba(46, 16, 71, 1) 25%,
-    rgba(55, 20, 48, 1) 50%,
-    rgba(45, 30, 15, 1) 75%,
-    rgba(15, 35, 30, 1) 100%
+    rgba(18, 18, 24, 1) 0%,
+    rgba(28, 20, 30, 1) 25%,
+    rgba(32, 18, 26, 1) 50%,
+    rgba(24, 22, 18, 1) 75%,
+    rgba(16, 22, 22, 1) 100%
   );
 }
 
@@ -77,13 +77,13 @@
 }
 
 .dark .orb-1 {
-  background: rgba(67, 56, 202, 0.3);
+  background: rgba(236, 72, 153, 0.12);
 }
 .dark .orb-2 {
-  background: rgba(168, 85, 247, 0.3);
+  background: rgba(244, 114, 182, 0.1);
 }
 .dark .orb-3 {
-  background: rgba(251, 146, 60, 0.2);
+  background: rgba(251, 191, 146, 0.08);
 }
 
 @keyframes float {
