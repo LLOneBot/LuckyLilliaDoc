@@ -21,9 +21,6 @@
   --color-fd-accent-foreground: hsl(330, 10%, 15%);
   --color-fd-ring: hsl(330, 60%, 65%);
   --color-fd-overlay: hsla(330, 20%, 0%, 0.15);
-}
-
-@theme static {
   --color-fd-info: oklch(62.3% 0.214 259.815);
   --color-fd-warning: oklch(76.9% 0.188 70.08);
   --color-fd-error: oklch(63.7% 0.237 25.331);

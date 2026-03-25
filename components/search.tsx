@@ -13,12 +13,14 @@ import {
 import { useDocsSearch } from 'fumadocs-core/search/client';
 import { create } from '@orama/orama';
 import { useI18n } from 'fumadocs-ui/contexts/i18n';
+import { createCJKTokenizer } from '@/lib/cjk-tokenizer';
 
 function initOrama() {
   return create({
     schema: { _: 'string' },
-    // https://docs.orama.com/docs/orama-js/supported-languages
-    language: 'english',
+    components: {
+      tokenizer: createCJKTokenizer(),
+    },
   });
 }
 
