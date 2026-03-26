@@ -308,7 +308,7 @@ const methodsByOS: Record<OSKey, Method[]> = {
           title: '运行容器',
           detail: '启动容器并映射端口。',
           code: 'docker run -d \\\n  --name llbot \\\n  -p 3080:3080 \\\n  initialencounter/llonebot:latest',
-          note: '可按需增加环境变量，例如 QUICK_LOGIN_QQ。',
+          note: '可增加环境变量 QUICK_LOGIN_QQ 让容器下次启动自动登录QQ',
         },
         {
           title: '访问 WebUI',
