@@ -40,4 +40,10 @@ import { Accordions, Accordion } from 'fumadocs-ui/components/accordion'
 
 3. Docker 内访问访问宿主机请勿使用 127.0.0.1，请使用 host.docker.internal
 </Accordion>
+
+<Accordion title="Docker 自动登录QQ">
+1.如果使用的是 Compose 版本，在运行一键脚本时选择马上配置会提示输入自动登录的 QQ
+
+2.如果使用的是单镜像版本，Docker 部署时可增加环境变量 `QUICK_LOGIN_QQ`,如`QUICK_LOGIN_QQ=123123` 让容器下次启动自动登录 QQ
+</Accordion>
 </Accordions>
