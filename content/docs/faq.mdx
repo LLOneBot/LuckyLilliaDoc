@@ -17,8 +17,10 @@ import { Accordions, Accordion } from 'fumadocs-ui/components/accordion'
 密码位于 `./bin/llbot/data/webui_token.txt`
 </Accordion>
 
-<Accordion title="发送不了图片和语音">
+<Accordion title="发送不了图片和语音等文件">
 检查当前操作用户是否有 `data/` 的写入权限。
+
+如果是 Docker 部署，检查是否把你的文件目录挂载进了两个容器内
 </Accordion>
 
 <Accordion title="如何使用CQ码">
