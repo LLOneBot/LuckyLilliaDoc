@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import {
   AppWindow,
   Boxes,
@@ -49,6 +49,21 @@ const features = [
 
 export default function HomePage() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLAnchorElement>(null);
+
+  const runAway = useCallback(() => {
+    const btn = ctaRef.current;
+    if (!btn) return;
+    const maxX = window.innerWidth - btn.offsetWidth - 20;
+    const maxY = window.innerHeight - btn.offsetHeight - 20;
+    const randX = Math.floor(Math.random() * maxX);
+    const randY = Math.floor(Math.random() * maxY);
+    btn.style.position = 'fixed';
+    btn.style.left = `${randX}px`;
+    btn.style.top = `${randY}px`;
+    btn.style.zIndex = '9999';
+    btn.style.transition = 'left 0.3s ease, top 0.3s ease';
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -91,7 +106,12 @@ export default function HomePage() {
               LLBot，强大的 QQ 机器人框架，部署机器人更简单、更高效
             </p>
             <div className="cta-buttons">
-              <Link href="/guide/choice_install" className="cta-button">
+              <Link
+                href="/guide/choice_install"
+                className="cta-button"
+                ref={ctaRef}
+                onMouseEnter={runAway}
+              >
                 <Download size={20} />
                 谁看破文档，立即安装!
               </Link>
