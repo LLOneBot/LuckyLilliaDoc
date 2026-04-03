@@ -289,6 +289,7 @@ const methodsByOS: Record<OSKey, Method[]> = {
           title: '登录',
           detail: '按日志提示扫码，或打开 WebUI 登录。',
           code: 'http://localhost:3080',
+          note: '如果要启动 Docker 自动登录QQ，修改 docker-compose.yml 的 pmhq 的 environment，添加 AUTO_LOGIN_QQ=你的 QQ 号，首次扫码登录后下次生效'
         },
       ],
     },
