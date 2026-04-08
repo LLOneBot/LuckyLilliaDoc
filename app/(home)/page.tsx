@@ -50,10 +50,12 @@ const features = [
 export default function HomePage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLAnchorElement>(null);
+  const runCountRef = useRef(0);
 
   const runAway = useCallback(() => {
     const btn = ctaRef.current;
-    if (!btn) return;
+    if (!btn || runCountRef.current >= 3) return;
+    runCountRef.current += 1;
     const maxX = window.innerWidth - btn.offsetWidth - 20;
     const maxY = window.innerHeight - btn.offsetHeight - 20;
     const randX = Math.floor(Math.random() * maxX);
