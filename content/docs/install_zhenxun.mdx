@@ -15,7 +15,6 @@ import { Step, Steps } from 'fumadocs-ui/components/steps'
 
 - Python 3.11+
 - [uv](https://github.com/astral-sh/uv)
-- Poetry（通过 uv 安装：`uv tool install poetry`）
 
 <Steps>
 <Step>
@@ -33,41 +32,53 @@ cd zhenxun_bot
 ### 安装依赖
 
 ```bash
-# 安装 Poetry
-uv tool install poetry
+# 安装依赖
+uv sync
 
-# 锁定并安装依赖
-uv tool run poetry lock
-uv tool run poetry install
 ```
 </Step>
 
 <Step>
-### 配置环境变量
+### 启动
 
-在项目根目录创建 `.env.dev` 文件：
-
-```ini
-ENVIRONMENT=dev
-SUPERUSERS=["你的QQ号"]
-COMMAND_START=[""]
-SESSION_RUNNING_EXPRESSION="别急呀,小真寻要宕机了!QAQ"
-NICKNAME=["真寻", "小真寻", "绪山真寻", "小寻子"]
-SESSION_EXPIRE_TIMEOUT=00:00:30
-ALCONNA_USE_COMMAND_START=True
-IMAGE_TO_BYTES=True
-SELF_NICKNAME="小真寻"
-DB_URL="sqlite:data/db/zhenxun.db"
-CACHE_MODE=NONE
-DRIVER=~fastapi+~httpx+~websockets
-HOST=127.0.0.1
-PORT=8080
+```bash
+uv run zx
 ```
-
-<Callout type="info">
-`PORT` 填写一个未被占用的端口，如 `8080`。`SUPERUSERS` 填写你的 QQ 号作为管理员。
-</Callout>
 </Step>
+
+<Step>
+### 打开浏览器进行配置
+根据提示打开`http://127.0.0.1:8080/#/configure`，会进入以下页面：
+
+![_](/docs/asset/img/configuration/zhenxun-install-configure.png)
+
+</Step>
+
+<Step>
+### 配置
+
+* 在`超级用户ID`中填入你的QQ号或其他平台的ID。
+* 如果你有其他数据库地址，可以在`数据库地址`中填入，否则保持默认即可。
+* 登录用户名和登录密码是真寻前端的登录密码，必须填写，否则无法登录。
+* 运行地址和运行端口（除非端口占用）一般默认即可。
+</Step>
+
+<Step>
+### 完成配置
+配置完成后点击 **提交** 出现弹框（直接选择确定）：
+![_](/docs/asset/img/configuration/zhenxun-install-configure2.png)
+
+选择 **确定** 之后页面将进行跳转到登录页：
+
+同时后台将会开始重启并下载资源，等待资源下载完毕（总量大概在150mb左右）
+
+</Step>
+<Step>
+至此真寻部分已经完全安装完成 
+
+你可以接着进行配置LLBot
+</Step>
+
 
 <Step>
 ### 配置 LLBot
@@ -87,11 +98,5 @@ PORT=8080
 ```
 </Step>
 
-<Step>
-### 启动
 
-```bash
-uv tool run poetry run python bot.py
-```
-</Step>
 </Steps>
