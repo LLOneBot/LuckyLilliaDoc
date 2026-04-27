@@ -237,8 +237,8 @@ const methodsByOS: Record<OSKey, Method[]> = {
         },
         {
           title: '解压并进入目录',
-          detail: '解压后进入目录。',
-          code: 'unzip LLBot-CLI-linux-*.zip\ncd LLBot-CLI-linux-*',
+          detail: '先创建目录，再将压缩包解压到该目录后进入。',
+          code: 'mkdir LLBot-CLI-linux\nunzip LLBot-CLI-linux-*.zip -d LLBot-CLI-linux\ncd LLBot-CLI-linux',
         },
         {
           title: '启动',
