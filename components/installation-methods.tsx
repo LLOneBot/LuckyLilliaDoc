@@ -22,7 +22,7 @@ type Method = {
   label: string;
   desc: ReactNode;
   features: string[];
-  requirements: string[];
+  requirements: ReactNode[];
   steps: Step[];
 };
 
@@ -261,20 +261,9 @@ const methodsByOS: Record<OSKey, Method[]> = {
       features: ['容器化部署', '自动化配置', '易于管理'],
       requirements: [
         'Linux: 已安装 Docker + Docker Compose',
-        'macOS: 推荐 OrbStack，避免 Docker Desktop',
+        <>macOS: 推荐 <ExternalLink href="https://orbstack.dev">OrbStack</ExternalLink>，避免 Docker Desktop</>,
       ],
       steps: [
-        {
-          title: '安装环境',
-          detail: (
-            <>
-              macOS 建议使用{' '}
-              <ExternalLink href="https://orbstack.dev">OrbStack</ExternalLink>
-              （兼容 Docker 命令，性能更好）。
-            </>
-          ),
-          code: 'brew install orbstack',
-        },
         {
           title: '运行一键脚本',
           detail: '下载并执行安装脚本，自动生成 docker-compose.yaml。',
@@ -298,7 +287,7 @@ const methodsByOS: Record<OSKey, Method[]> = {
       label: 'Docker 单镜像版本',
       desc: '无需 Compose，适合最小化部署。',
       features: ['单镜像部署', '跨平台可用', '启动简单'],
-      requirements: ['已安装 Docker', 'macOS: 推荐 OrbStack'],
+      requirements: ['已安装 Docker', <>macOS: 推荐 <ExternalLink href="https://orbstack.dev">OrbStack</ExternalLink></>],
       steps: [
         {
           title: '拉取镜像',
@@ -503,8 +492,8 @@ export function InstallationMethods() {
               系统要求
             </h4>
             <ul className="grid gap-1 text-sm text-fd-muted-foreground">
-              {currentMethod.requirements.map((requirement) => (
-                <li key={requirement}>- {requirement}</li>
+              {currentMethod.requirements.map((requirement, i) => (
+                <li key={i}>- {requirement}</li>
               ))}
             </ul>
           </div>
