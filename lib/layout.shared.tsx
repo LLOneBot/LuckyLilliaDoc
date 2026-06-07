@@ -12,6 +12,6 @@ export function baseOptions(): BaseLayoutProps {
     nav: {
       title: 'LLBot 文档',
     },
-    githubUrl: `https://github.com/${gitConfig.user}/${gitConfig.repo}`,
+    githubUrl: 'https://github.com/LLOneBot/LuckyLilliaBot',
   };
 }
