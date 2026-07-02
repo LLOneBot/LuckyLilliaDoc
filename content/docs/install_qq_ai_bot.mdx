@@ -40,22 +40,26 @@ BOT_PORT=18080
 
 ONEBOT_MODE=forward
 ONEBOT_FORWARD_WS_URL=ws://127.0.0.1:3001
-ONEBOT_ACCESS_TOKEN=change-me
+ONEBOT_ACCESS_TOKEN=llonebot-shared-token
 ONEBOT_ALLOW_GROUP=true
 ONEBOT_REQUIRE_MENTION_IN_GROUP=true
 ONEBOT_ALLOW_PRIVATE=true
 ONEBOT_GROUP_CONFIG_FILE=./examples/group-rules.local.json
 ONEBOT_PROGRESS_MODE=message
 
-ACP_AGENT_COMMAND=your-acp-agent-command
-ACP_AGENT_ARGS_JSON=[]
+ACP_AGENT_COMMAND=traecli
+ACP_AGENT_ARGS_JSON=["acp","serve"]
 ACP_AGENT_WORKDIR=/path/to/your/workdir
 ACP_REUSE_SESSION=true
 ACP_VERBOSE_MODE=verbose
 ```
 
 <Callout type="info">
-这里使用 **正向 WS**，因为 LLOneBot 会作为 OneBot11 服务端，`qq-ai-bot` 作为客户端去连接它。
+这里使用 **正向 WS**，因为 LLOneBot 会作为 OneBot11 服务端，`qq-ai-bot` 作为客户端去连接它。`ONEBOT_ACCESS_TOKEN` 必须和 LLOneBot OneBot11 配置里的 `token` 完全一致，否则连接会直接鉴权失败。
+</Callout>
+
+<Callout type="info">
+上面的 agent 配置以 `traecli` 为例；如果你接的是自己的 ACP agent，只需要把 `ACP_AGENT_COMMAND` / `ACP_AGENT_ARGS_JSON` 换成对应启动命令与参数即可。
 </Callout>
 </Step>
 
@@ -70,7 +74,7 @@ ACP_VERBOSE_MODE=verbose
   "enable": true,
   "host": "127.0.0.1",
   "port": 3001,
-  "token": "change-me",
+  "token": "llonebot-shared-token",
   "messageFormat": "array",
   "reportSelfMessage": false
 }
