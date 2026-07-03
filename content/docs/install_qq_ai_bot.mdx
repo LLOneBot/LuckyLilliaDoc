@@ -59,6 +59,10 @@ ACP_VERBOSE_MODE=verbose
 </Callout>
 
 <Callout type="info">
+这里示例使用的是 `ws://127.0.0.1:3001` 根路径。当前 LLOneBot 的 OneBot11 正向 WS 服务端本身会在根路径接收连接，因此这里**不是**照抄 `qq-ai-bot` 默认示例里的 `/onebot/v11/ws` 路径；如果你前面自己加了代理或改了接入方式，再按实际地址调整。
+</Callout>
+
+<Callout type="info">
 上面的 agent 配置以 `traecli` 为例；如果你接的是自己的 ACP agent，只需要把 `ACP_AGENT_COMMAND` / `ACP_AGENT_ARGS_JSON` 换成对应启动命令与参数即可。
 </Callout>
 </Step>
