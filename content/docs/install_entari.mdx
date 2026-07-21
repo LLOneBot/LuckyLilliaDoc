@@ -1,0 +1,267 @@
+---
+title: 对接 Entari
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+import { Step, Steps } from 'fumadocs-ui/components/steps'
+
+[Entari](https://arclet.top/tutorial/entari) 是基于 Python 的跨平台聊天机器人框架，使用 Satori 协议（类似 Koishi），偏向于有基础的开发者。
+
+本教程以 [`astral-uv`](https://docs.astral.sh/uv/) 为例，介绍从零开始安装 Entari 并对接 LLBot 的完整流程。
+
+## 安装 Python
+
+在 [uv 安装教程](https://docs.astral.sh/uv/getting-started/installation) 中选择适合你系统的安装方式即可。
+
+以 Linux 为例，安装 uv：
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+<Callout type="info">
+官网的 uv 下载会访问 GitHub，国内网络可能会出现访问缓慢或失败的情况。可以使用 [国内镜像](https://uv.agentsmirror.com) 进行安装。
+
+```bash
+curl -LsSf https://uv.agentsmirror.com/install-cn.sh | sh
+```
+
+</Callout>
+
+如果一切顺利，安装过程应该类似于下：
+
+```text
+$ curl -LsSf https://uv.agentsmirror.com/install-cn.sh | sh
+downloading uv 0.11.30 x86_64-unknown-linux-gnu
+installing to /home/user/.local/bin
+  uv
+  uvx
+everything's installed!
+$ uv --version
+uv 0.11.30 (x86_64-unknown-linux-gnu)
+```
+
+<Callout type="info">
+Windows 用户推荐使用 [scoop 安装 uv](https://docs.astral.sh/uv/getting-started/installation/#scoop)
+
+如果你的电脑上已经安装了 Python，可以直接使用 `python -m pip install uv` 安装 uv。
+</Callout>
+
+
+## 安装 Entari
+
+<Steps>
+<Step>
+### 安装 Entari 脚手架 (entari-cli)
+
+```bash
+uv tool install entari-cli
+```
+
+安装完成后可以在命令行使用 `entari --version` 命令。如果提示找不到命令，请重启终端或参考 [Entari 文档](https://arclet.top/tutorial/entari/#%E6%96%B0%E5%BB%BA%E7%8E%AF%E5%A2%83) 来安装脚手架。
+</Step>
+
+<Step>
+
+### 创建项目
+
+<Callout type="info">
+我觉得这里应该不需要教授如何打开终端吧？如果你是新手，建议先学习一下如何使用终端。
+</Callout>
+
+在你想要创建项目的文件夹打开终端并执行：
+
+```bash
+mkdir my_entari_project && cd my_entari_project
+entari init
+```
+
+</Step>
+
+<Step>
+### 配置项目
+
+如果一切顺利，安装过程应该类似于下：
+
+```text
+$ entari init
+是否创建新的虚拟环境？ (Y/n): y
+请输入要使用的 Python 解释器路径
+ 0. cpython@3.11 (xxxx\Python311\python.EXE)
+ 1. cpython@3.14 (xxxx\uv\python\cpython-3.14.0-windows-x86_64-none\python.exe)
+请选择 (0): 0
+虚拟环境将创建在 D:\Projects\test-entari\.venv
+Entari 环境初始化成功。
+请输入要使用的包管理器
+ 0. uv (xxxx\scoop\shims\uv.EXE)
+ 1. pdm (xxxx\Python311\Scripts\pdm.EXE)
+ 2. uv pip (xxxx\scoop\shims\uv.EXE)
+ 3. pip (xxxx\Python311\Scripts\pip.EXE)
+请选择 (0): 2
+Resolved 34 packages in 8.94s
+Prepared 15 packages in 1.73s
+Installed 34 packages in 105ms
+ + ...
+请选择配置文件格式： (yml):
+配置文件已创建在 xxx\my_entari_project\entari.yml
+```
+
+</Step>
+
+<Step>
+### 启动 Entari
+
+```bash
+entari run
+```
+
+![](/docs/asset/img/configuration/entari-run.png)
+
+出现上图界面说明 NoneBot 启动成功。
+
+</Step>
+<Step>
+
+### 安装适配器 (可选)
+
+Entari 原生支持 Satori 协议，同时也支持通过适配器接入 OneBot11 或 Milky 协议。
+
+首先需要安装 `entari-plugin-server` 插件：
+
+```bash
+entari add entari-plugin-server
+```
+
+```
+$ entari add entari-plugin-server
+entari add entari-plugin-server
+Resolved 39 packages in 6.06s
+Prepared 6 packages in 2.07s
+Installed 10 packages in 96ms
+ + ...
+插件 entari-plugin-server 已成功添加到配置文件中。
+```
+
+
+</Step>
+</Steps>
+
+## 连接 LLBot
+
+下面举例三种协议的对接方式，选择其中一种使用即可 (本人讨厌 OneBot11, 所以请自行探索 OneBot11 的对接方式)。
+
+## 接入 Satori
+
+<Steps>
+<Step>
+### 在 LLBot 启用 Satori 协议
+
+在 LLBot 中启用 Satori，可以通过以下任一方式配置：
+
+- **LLBot Desktop**：Bot 配置 → 启用 Satori → 填入配置保存
+- **LLBot WebUI**（默认 http://localhost:3080）：启用 Satori → 填入配置保存
+- **直接修改配置文件** `data/config_<qq>.json`：
+
+```json5
+{
+  "satori": {
+    "enable": true,  // 是否启用 Satori 协议
+    "port": 5600,  // Satori 监听端口
+    "token": "your_token", // Satori token
+  },
+}
+```
+</Step>
+
+<Step>
+### 配置 Entari
+
+Entari 原生支持 Satori 协议，所以无需额外安装适配器，只需要在 Entari 的配置文件中配置[网络项](https://arclet.top/tutorial/entari/#%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE)即可：
+
+```yaml
+basic:
+  network:
+    - type: ws
+      host: localhost
+      port: 5600
+      token: "your_token"
+      path: ""
+```
+
+host 和 port 填写 LLBot 的 Satori 服务的地址（如 http://localhost:5600），token 填写 Satori 服务的 token（没有则不填写），即可连接到 LLBot
+</Step>
+</Steps>
+
+## 接入 Milky
+
+<Steps>
+<Step>
+### 在 LLBot 启用 Milky 协议
+
+在 LLBot 中启用 Milky，可以通过以下任一方式配置：
+
+- **LLBot Desktop**：Bot 配置 → 启用 Milky → 填入 http 配置保存
+- **LLBot WebUI**（默认 http://localhost:3080）：启用 Milky → 填入 http 配置保存
+- **直接修改配置文件** `data/config_<qq>.json`：
+
+```json5
+{
+  "milky": {
+    "enable": true,
+    "reportSelfMessage": false,
+    "http": {  // Milky 的 WS 和 HTTP 实际上是共用一个端口的
+      "port": 3010,
+      "prefix": "", // http api 路径前缀，可为空，默认是/api
+      "accessToken": ""
+    }
+  }
+}
+```
+</Step>
+
+<Step>
+### 安装 milky 适配器
+
+使用 `entari adapter add` 命令安装 milky 适配器：
+
+```
+$ entari adapter add
+
+请输入需要指定的适配器
+ 0. OneBot11-Forward  OneBot11 正向 WS 协议适配器 (satori-python-adapter-onebot11)
+ 1. OneBot11-Reverse  OneBot11 反向 WS 协议适配器 (satori-python-adapter-onebot11)
+ 2. Console           控制台适配器 (satori-python-adapter-console)
+ 3. Satori            Satori 协议适配器 (satori-python-adapter-satori)
+ 4. Milky             Milky 协议适配器 (satori-python-adapter-milky)
+ 5. Milky-Webhook     Milky Webhook 协议适配器 (satori-python-adapter-milky)
+ 6. Milky-SSE         Milky SSE 协议适配器 (satori-python-adapter-milky)
+ 7. QQ                QQ 适配器 (satori-python-adapter-qq)
+ 8. QQ-Websocket      QQ WebSocket 适配器 (satori-python-adapter-qq)
+ 9. Nekobot           Lagrange 适配器 (nekobot)
+请选择: 4
+Resolved 30 packages in 3.32s
+Prepared 1 package in 621ms
+Installed 1 package in 7ms
+ + satori-python-adapter-milky==0.5.0
+适配器 Milky 已成功添加到配置文件中。
+```
+</Step>
+<Step>
+### 配置 Entari
+
+修改 Entari 配置项，参考 [Entari 配置文档](https://arclet.top/tutorial/entari/server.html#%E9%80%82%E9%85%8D%E5%99%A8)。
+
+根据 [milky 适配器](https://arclet.top/tutorial/entari/server.html#milky-%E9%80%82%E9%85%8D%E5%99%A8) 的说明，添加以下配置：
+
+```yaml
+adapters:
+  - $path: '@milky.main'
+    endpoint: "http://localhost:3010/api"
+    token: "your_token"
+```
+
+注意 **endpoint** 中的端口需要和 LLBot 的 Milky HTTP 端口一致，**token** 需要和 LLBot 配置的 token 一致。
+</Step>
+</Steps>
+
+连接成功后，Entari 日志会显示 Bot 已连接。
