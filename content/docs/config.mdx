@@ -24,13 +24,13 @@ LLBot Desktop 可在左边 `Bot 配置`进行配置
 {
    "webui": {
     "enable": true,  // 是否启用 WebUI
-    "port": 3080 // WebUI 监听端口
+    "port": 3080,  // WebUI 监听端口
   },
   "milky": {
-    "enable": false,
-    "reportSelfMessage": false,
+    "enable": true,  // 是否启用 Milky 协议
+    "reportSelfMessage": false,  // 是否上报自己发送的消息
     "http": {
-      "port": 3010,
+      "port": 3010, // Milky 的 WS 和 HTTP 实际上是共用一个端口的
       "prefix": "", // http api 路径前缀，可为空，默认是/api
       "accessToken": ""
     },
@@ -38,7 +38,7 @@ LLBot Desktop 可在左边 `Bot 配置`进行配置
       "urls": [],  // 注意这里是个数组，每项都是字符串，需要用引号包裹起来，如 ["http://127.0.0.1:8080", "http://localhost:9090"]
       "accessToken": ""
     }
-  }
+  },
   "satori": {
     "enable": true,  // 是否启用 Satori 协议
     "port": 5600,  // Satori 监听端口
