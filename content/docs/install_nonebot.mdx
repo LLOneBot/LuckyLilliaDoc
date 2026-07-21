@@ -135,13 +135,15 @@ MILKY_CLIENTS='
 [
   {
     "host": "localhost",
-    "port": "3010",  # 这里的端口号需要和 LLBot 的 Milky HTTP 端口一致
-    "access_token": "xxx",  # 这里的 access_token 需要和 LLBot 的 Milky HTTP 配置一致
+    "port": "3010",
+    "access_token": "xxx",
     "secure": false
   }
 ]
 '
 ```
+
+注意 **port** 需要和 LLBot 的 Milky HTTP 端口一致，**access_token** 需要和 LLBot 配置的 token 一致。
 
 在 LLBot 中启用 Milky，可以通过以下任一方式配置：
 
