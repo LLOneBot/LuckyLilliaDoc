@@ -7,81 +7,69 @@ import { Step, Steps } from 'fumadocs-ui/components/steps'
 
 [NoneBot2](https://nonebot.dev/) 是基于 Python 的聊天机器人框架，偏向于有基础的开发者。
 
-本教程以 Windows 环境为例，介绍从零开始安装 NoneBot2 并对接 LLBot 的完整流程。
-
-## 前置依赖
-
-**Python >= 3.9**
-
-[Python 官网](https://www.python.org/) 下载安装。
+本教程以 [`astral-uv`](https://docs.astral.sh/uv/) 为例，介绍从零开始安装 NoneBot2 并对接 LLBot 的完整流程。
 
 ## 安装 Python
 
+在 [uv 安装教程](https://docs.astral.sh/uv/getting-started/installation) 中选择适合你系统的安装方式即可。
+
+以 Linux 为例，安装 uv：
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
 <Callout type="info">
-已有 Python 环境的可跳过此步骤。
+官网的 uv 下载会访问 GitHub，国内网络可能会出现访问缓慢或失败的情况。可以使用 [国内镜像](https://uv.agentsmirror.com) 进行安装。
+
+```bash
+curl -LsSf https://uv.agentsmirror.com/install-cn.sh | sh
+```
+
 </Callout>
 
-<Steps>
-<Step>
-### 安装 Python
+如果一切顺利，安装过程应该类似于下：
 
-打开安装包，注意勾选 **Add Python to PATH**（加入环境变量）。
-
-![](/docs/asset/img/configuration/nonebot1.png)
-</Step>
-
-<Step>
-### 配置 pip 源
-
-安装完成后，`Win+R` 输入 `cmd` 打开命令行，执行以下命令配置国内镜像源：
-
-```bash
-pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-pip config set install.trusted-host pypi.tuna.tsinghua.edu.cn
+```text
+$ curl -LsSf https://uv.agentsmirror.com/install-cn.sh | sh
+downloading uv 0.11.30 x86_64-unknown-linux-gnu
+installing to /home/user/.local/bin
+  uv
+  uvx
+everything's installed!
+$ uv --version
+uv 0.11.30 (x86_64-unknown-linux-gnu)
 ```
 
-再升级一下 pip：
+<Callout type="info">
+Windows 用户推荐使用 [scoop 安装 uv](https://docs.astral.sh/uv/getting-started/installation/#scoop)
 
-```bash
-pip install --upgrade pip
-```
+如果你的电脑上已经安装了 Python，可以直接使用 `python -m pip install uv` 安装 uv。
+</Callout>
 
-![](/docs/asset/img/configuration/nonebot2.png)
-</Step>
-</Steps>
 
 ## 安装 NoneBot
 
 <Steps>
 <Step>
-### 安装 pipx 和脚手架
+### 安装 NoneBot 脚手架 (nb-cli)
 
 ```bash
-python -m pip install --user pipx
-python -m pipx ensurepath
+uv tool install nb-cli
 ```
 
-<Callout type="warn">
-如果输出中出现 "open a new terminal" 或 "re-login" 字样，请关闭当前终端并重新打开。
-</Callout>
-
-安装 NoneBot 脚手架：
-
-```bash
-pipx install nb-cli
-```
-
-安装完成后可以在命令行使用 `nb` 命令。如果提示找不到命令，请重启终端或参考 [pipx 文档](https://pypa.github.io/pipx/) 检查环境变量。
+安装完成后可以在命令行使用 `nb --version` 命令。如果提示找不到命令，请重启终端或参考 [NoneBot2 文档](https://nonebot.dev/docs/quick-start) 来安装脚手架。
 </Step>
 
 <Step>
+
 ### 创建项目
 
-在你想要创建项目的文件夹地址栏中输入 `cmd` 回车打开命令行：
+<Callout type="info">
+我觉得这里应该不需要教授如何打开终端吧？如果你是新手，建议先学习一下如何使用终端。
+</Callout>
 
-![](/docs/asset/img/configuration/nonebot3.png)
-
-执行：
+在你想要创建项目的文件夹打开终端并执行：
 
 ```bash
 nb create
@@ -89,26 +77,35 @@ nb create
 
 选择模板 **bootstrap**（初学者或用户），回车。
 
-![](/docs/asset/img/configuration/nonebot4.png)
+![](/docs/asset/img/configuration/nonebot1.png)
 </Step>
 
 <Step>
 ### 配置项目
 
-项目名称随意填写（如 `llonebot_nb`），回车。空格选择第一个适配器（变绿后回车）。
+项目名称随意填写（如 `llonebot_nb`），回车。
+
+![](/docs/asset/img/configuration/nonebot2.png)
+
+按住方向键 **↓** 选择 **nonebot-adapter-milky**，回车。
+
+![](/docs/asset/img/configuration/nonebot3.png)
+
+因为 Milky 适配器需要 http-client 和 ws-client, 我们驱动先按空格取消勾选 **fastapi**, 然后再勾选 **httpx** 和 **websockets** (或者只选择 **aiohttp**)，回车。
+
+![](/docs/asset/img/configuration/nonebot4.png)
+
+本地存储策略选择使用 **当前项目**。
 
 ![](/docs/asset/img/configuration/nonebot5.png)
 
-驱动选择 **fastapi**：
+立即安装依赖选 **Y**，项目管理器选 **uv**，等待安装完成。
 
 ![](/docs/asset/img/configuration/nonebot6.png)
 
-立即安装依赖选 **Y**，创建虚拟环境选 **Y**，等待安装完成。
+内置插件和官方插件直接回车跳过，然后进入项目文件夹：
 
 ![](/docs/asset/img/configuration/nonebot7.png)
-
-内置插件直接回车跳过，然后进入项目文件夹：
-
 ![](/docs/asset/img/configuration/nonebot8.png)
 </Step>
 
@@ -123,40 +120,48 @@ nb run
 
 出现上图界面说明 NoneBot 启动成功。
 
-如需修改端口或 host 地址，在项目文件夹中创建 `.env` 文件：
-
-```bash
-HOST=0.0.0.0  # 配置 NoneBot 监听的 IP / 主机名
-PORT=8080  # 配置 NoneBot 监听的端口
-COMMAND_START=["/"]  # 配置命令起始字符
-COMMAND_SEP=["."]  # 配置命令分割字符
-```
-
-更多配置项参考 [NoneBot 配置文档](https://nonebot.dev/docs/appendices/config#内置配置项)。
-
 安装插件可前往 [NoneBot 插件商店](https://v2.nonebot.dev/store)。
 </Step>
 </Steps>
 
 ## 连接 LLBot
 
-在 LLBot 中启用 OneBot11，添加反向 WS 连接，地址为 `ws://127.0.0.1:8080/onebot/v11/ws`（`8080` 是 NoneBot 监听的端口，如果你修改过请对应调整）。
+首先修改 NoneBot 配置项，参考 [NoneBot 配置文档](https://nonebot.dev/docs/appendices/config#内置配置项)。
 
-可以通过以下任一方式配置：
+根据 [adapter-milky](https://github.com/nonebot/adapter-milky) 的说明，添加以下配置：
 
-- **LLBot Desktop**：Bot 配置 → 启用 OneBot11 → 启用反向 WS → 填入地址保存
-- **LLBot WebUI**（默认 http://localhost:3080）：启用 OneBot11 反向 WS → 填入地址保存
+```dotenv
+MILKY_CLIENTS='
+[
+  {
+    "host": "localhost",
+    "port": "3010",
+    "access_token": "xxx",
+    "secure": false
+  }
+]
+'
+```
+
+注意 **port** 需要和 LLBot 的 Milky HTTP 端口一致，**access_token** 需要和 LLBot 配置的 token 一致。
+
+在 LLBot 中启用 Milky，可以通过以下任一方式配置：
+
+- **LLBot Desktop**：Bot 配置 → 启用 Milky → 填入 http 配置保存
+- **LLBot WebUI**（默认 http://localhost:3080）：启用 Milky → 填入 http 配置保存
 - **直接修改配置文件** `data/config_<qq>.json`：
 
 ```json5
 {
-  "type": "ws-reverse",
-  "enable": true,
-  "url": "ws://127.0.0.1:8080/onebot/v11/ws",
-  "heartInterval": 60000,
-  "token": "",
-  "messageFormat": "array",
-  "reportSelfMessage": false
+  "milky": {
+    "enable": true,
+    "reportSelfMessage": false,
+    "http": {  // Milky 的 WS 和 HTTP 实际上是共用一个端口的
+      "port": 3010,
+      "prefix": "", // http api 路径前缀，可为空，默认是/api
+      "accessToken": ""
+    }
+  }
 }
 ```
 
