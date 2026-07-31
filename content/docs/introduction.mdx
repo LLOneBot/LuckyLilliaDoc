@@ -5,8 +5,14 @@ title: 什么是 LLBot
 import { Mermaid } from '@/components/mdx/mermaid'
 
 [LLBot](https://github.com/LLOneBot/LuckyLilliaBot)
-（全称 LuckyLilliaBot, 幸运莉莉娅）是一个基于原版电脑 NTQQ 的 QQ 机器人框架，
-通过 PMHQ 将 QQ 的功能暴露出来，再通过 LLBot 封装成标准协议通过 WS, HTTP 等形式暴露出来，供开发者编写自定义的应用逻辑使用。
+（全称 LuckyLilliaBot, 幸运莉莉娅）是一个基于 NTQQ 的 QQ 机器人框架，
+LLBot 实现了两种方式将 QQ 的功能暴露出来：
+
+1.通过 PMHQ 将 QQ 的功能暴露出来
+
+2.直接完整实现了 NTQQ 协议，不再依赖 QQ 客户端
+
+之后再通过 LLBot 封装成标准协议通过 WS, HTTP 等形式暴露出来，供开发者编写自定义的应用逻辑使用。
 
 如果你对 LLBot 有疑问欢迎加入以下社群提问
 
@@ -14,12 +20,20 @@ TG: [https://t.me/luckylillia](https://t.me/luckylillia)
 
 QQ: [545402644](https://qm.qq.com/q/3k5fzILp7y)
 
-## 工作原理
+## HOOK(有头模式) 工作原理
 
 <Mermaid chart={`flowchart LR
     A[NTQQ<br/>原版QQ] <--> B[PMHQ注入<br/>暴露QQ功能]
     B <--> C[LLBot<br/>转换协议]
     C <--> D[机器人框架<br/>功能实现]
+`} />
+
+## 纯协议(无头模式) 工作原理
+
+<Mermaid chart={`flowchart LR
+    A[NTQQ<br/>LLBot纯协议实现]
+    A <--> B[LLBot适配器<br/>转换协议]
+    B <--> C[机器人框架<br/>功能实现]
 `} />
 
 现代 QQ Bot 开发往往有三层结构：

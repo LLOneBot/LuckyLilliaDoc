@@ -101,7 +101,7 @@ const methodsByOS: Record<OSKey, Method[]> = {
         },
         {
           title: '登录 QQ',
-          detail: '按提示登录。必须由 LLBot 拉起 QQ，手动打开的 QQ 不生效。',
+          detail: '按提示登录。有头模式必须由 LLBot 拉起 QQ，无头模式不需要 QQ 客户端。',
         },
       ],
     },
@@ -295,10 +295,15 @@ const methodsByOS: Record<OSKey, Method[]> = {
           code: 'docker pull initialencounter/llonebot:latest',
         },
         {
+          title: '获取 Auth Token',
+          detail: '到下方网址获取 Auth Token，然后使用 -e AUTH_TOKEN="xxx" 填入。',
+          code: 'https://auth.luckylillia.com',
+        },
+        {
           title: '运行容器',
           detail: '启动容器并映射端口。',
-          code: 'docker run -d \\\n  --name llbot \\\n  -p 3080:3080 \\\n  initialencounter/llonebot:latest',
-          note: '可增加环境变量 QUICK_LOGIN_QQ 让容器下次启动自动登录QQ',
+          code: 'docker run -d \\\n  --name llbot \\\n -e AUTH_TOKEN="xxxx" \\\n  -p 3080:3080 \\\n  initialencounter/llonebot:latest',
+          note: '另外可增加环境变量 QUICK_LOGIN_QQ 让容器下次启动自动登录 QQ',
         },
         {
           title: '访问 WebUI',
@@ -311,11 +316,11 @@ const methodsByOS: Record<OSKey, Method[]> = {
   manual: [
     {
       value: 'manual',
-      label: '通用手动安装',
+      label: '通用手动安装有头模式',
       desc: '适用于特殊环境或需要完整自定义的场景。',
       features: ['跨平台', '可完全自定义', '适合高级用户'],
       requirements: [
-        'Node.js 22+',
+        'Node.js 24+',
         'PMHQ 与 LLBot 安装包',
         'Linux 可能需要额外系统库',
       ],
@@ -371,6 +376,39 @@ const methodsByOS: Record<OSKey, Method[]> = {
         {
           title: '验证连接',
           detail: 'QQ 登录后，确认 LLBot 输出连接成功日志。',
+        },
+      ],
+    },
+    {
+      value: 'manual',
+      label: '通用手动安装无头模式（纯协议）',
+      desc: '适用于特殊环境或需要完整自定义的场景。',
+      features: ['跨平台', '可完全自定义', '适合高级用户'],
+      requirements: [
+        'Node.js 22+',
+        'LLBot 安装包',
+      ],
+      steps: [
+        {
+          title: '下载 LLBot',
+          detail: (
+            <>
+              前往{' '}
+              <ExternalLink href="https://github.com/LLOneBot/LuckyLilliaBot/releases">
+                LuckyLilliaBot Releases
+              </ExternalLink>{' '}
+              下载 <code>LLBot.zip</code> 并解压。
+            </>
+          ),
+        },
+        {
+          title: '启动 LLBot',
+          detail: '使用 Node.js 运行 llbot.js',
+          code: 'node llbot.js',
+        },
+        {
+          title: '验证连接',
+          detail: '扫码 QQ 登录后，确认 LLBot 输出连接成功日志。下次登录可以使用 -q xxxx 参数免扫码快速登录。',
         },
       ],
     },
