@@ -1,0 +1,128 @@
+---
+title: 对接 qq-ai-bot
+---
+
+import { Callout } from 'fumadocs-ui/components/callout'
+import { Step, Steps } from 'fumadocs-ui/components/steps'
+
+[qq-ai-bot](https://github.com/happysnaker/qq-ai-bot) 是一个基于 **OneBot 11** 与 **ACP** 的自托管 QQ ↔ AI 机器人骨架，适合想把 LLOneBot 接到本地 agent 工作流的开发者。
+
+<Callout type="info">
+这条路线的特点不是“再套一层聊天框架”，而是把 **QQ transport、会话管理、进度播报、ACP agent bridge** 拆开，适合作为偏工程化的 bot 基础设施。
+</Callout>
+
+### 前置依赖
+
+- Node.js 22+
+- Git
+- 一个可通过 ACP 启动和通信的本地 agent
+
+<Steps>
+<Step>
+### 拉取 qq-ai-bot
+
+```bash
+git clone https://github.com/happysnaker/qq-ai-bot.git
+cd qq-ai-bot
+npm install
+cp .env.example .env
+cp examples/group-rules.example.json examples/group-rules.local.json
+```
+</Step>
+
+<Step>
+### 配置 qq-ai-bot
+
+编辑 `.env`，至少设置：
+
+```env
+BOT_PORT=18080
+
+ONEBOT_MODE=forward
+ONEBOT_FORWARD_WS_URL=ws://127.0.0.1:3001
+ONEBOT_ACCESS_TOKEN=llonebot-shared-token
+ONEBOT_ALLOW_GROUP=true
+ONEBOT_REQUIRE_MENTION_IN_GROUP=true
+ONEBOT_ALLOW_PRIVATE=true
+ONEBOT_GROUP_CONFIG_FILE=./examples/group-rules.local.json
+ONEBOT_PROGRESS_MODE=message
+
+ACP_AGENT_COMMAND=traecli
+ACP_AGENT_ARGS_JSON=["acp","serve"]
+ACP_AGENT_WORKDIR=/path/to/your/workdir
+ACP_REUSE_SESSION=true
+ACP_VERBOSE_MODE=verbose
+```
+
+<Callout type="info">
+这里使用 **正向 WS**，因为 LLOneBot 会作为 OneBot11 服务端，`qq-ai-bot` 作为客户端去连接它。`ONEBOT_ACCESS_TOKEN` 必须和 LLOneBot OneBot11 配置里的 `token` 完全一致，否则连接会直接鉴权失败。
+</Callout>
+
+<Callout type="info">
+这里示例使用的是 `ws://127.0.0.1:3001` 根路径。当前 LLOneBot 的 OneBot11 正向 WS 服务端本身会在根路径接收连接，因此这里**不是**照抄 `qq-ai-bot` 默认示例里的 `/onebot/v11/ws` 路径；如果你前面自己加了代理或改了接入方式，再按实际地址调整。
+</Callout>
+
+<Callout type="info">
+上面的 agent 配置以 `traecli` 为例；如果你接的是自己的 ACP agent，只需要把 `ACP_AGENT_COMMAND` / `ACP_AGENT_ARGS_JSON` 换成对应启动命令与参数即可。
+</Callout>
+</Step>
+
+<Step>
+### 配置 LLOneBot
+
+在 LLOneBot 中启用 OneBot11，添加 **正向 WS** 配置：
+
+```json5
+{
+  "type": "ws",
+  "enable": true,
+  "host": "127.0.0.1",
+  "port": 3001,
+  "token": "llonebot-shared-token",
+  "messageFormat": "array",
+  "reportSelfMessage": false
+}
+```
+
+也可以通过 LLBot Desktop / WebUI 在 OneBot11 配置页面添加同样的正向 WS 服务。
+</Step>
+
+<Step>
+### 先测 agent，再启动 qq-ai-bot
+
+```bash
+npm run smoke:agent
+npm run dev
+```
+
+如果你的 agent 是 `traecli`，也可以直接试：
+
+```bash
+npm run smoke:traecli
+```
+</Step>
+
+<Step>
+### 验证
+
+1. 在 LLOneBot 连接成功后，私聊机器人发一条普通文本
+2. 在群聊中 `@机器人` 再发一条文本
+3. 测试 `/status`、`/prompt`、`/reset`
+4. 确认你能看到进度消息，而不只是最终答案
+
+健康检查：
+
+```bash
+curl http://127.0.0.1:18080/healthz
+curl http://127.0.0.1:18080/readyz
+```
+</Step>
+</Steps>
+
+## 更多说明
+
+- 仓库主页：[qq-ai-bot](https://github.com/happysnaker/qq-ai-bot)
+- 项目页：[https://happysnaker.github.io/qq-ai-bot/](https://happysnaker.github.io/qq-ai-bot/)
+- 架构说明：仓库中的 `ARCHITECTURE.md`
+
+如果你想从“能跑”继续演进到更偏工程化的形态，`qq-ai-bot` 这条路线更适合做 **自托管 bot 基础设施**，而不是单纯插件集合。
